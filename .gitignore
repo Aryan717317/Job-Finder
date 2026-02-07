@@ -29,3 +29,6 @@ target/
 # IDE
 .vscode/
 .idea/
+
+# Temporary build artifacts
+tmpclaude-*-cwd
