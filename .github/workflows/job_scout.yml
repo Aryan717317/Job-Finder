@@ -1,0 +1,83 @@
+name: Job Scout
+
+on:
+  schedule:
+    - cron: "30 3 * * *"
+  workflow_dispatch:
+    inputs:
+      query:
+        description: "Search query for the scrape run"
+        required: false
+        default: "ML Engineer"
+      platforms:
+        description: "Optional CSV list of platforms (blank = all implemented)"
+        required: false
+        default: ""
+      send_email:
+        description: "Send email after scraping"
+        required: false
+        default: "true"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: job-scout-daily
+  cancel-in-progress: false
+
+jobs:
+  scrape-and-notify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    env:
+      AJH_ENV: prod
+      AJH_DATABASE_URL: sqlite:///./data/jobs.db
+      AJH_DATA_DIR: ./data
+      AJH_PROFILE_DIR: ./profiles
+      AJH_TIMEZONE: Asia/Kolkata
+      AJH_LOCALE: en-IN
+      AJH_CYCLE_LOG_PATH: services/scraper/data/logs/cycle_runner.log
+      GMAIL_SENDER: ${{ secrets.GMAIL_SENDER }}
+      GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+      GMAIL_RECIPIENT: ${{ secrets.GMAIL_RECIPIENT }}
+      EMAIL_MAX_RETRIES: ${{ secrets.EMAIL_MAX_RETRIES || '3' }}
+      EMAIL_RETRY_DELAY_SECONDS: ${{ secrets.EMAIL_RETRY_DELAY_SECONDS || '2.0' }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Setup Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install Python dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r services/scraper/requirements.txt
+
+      - name: Install Playwright Chromium + system deps
+        run: python -m playwright install --with-deps chromium
+
+      - name: Prepare runtime env overrides
+        run: |
+          mkdir -p data
+          echo "JOB_QUERY=${{ github.event.inputs.query || 'ML Engineer' }}" >> "$GITHUB_ENV"
+          echo "JOB_PLATFORMS=${{ github.event.inputs.platforms || '' }}" >> "$GITHUB_ENV"
+          echo "SEND_EMAIL=${{ github.event.inputs.send_email || 'true' }}" >> "$GITHUB_ENV"
+
+      - name: Run Job Scout cycle (forced headless)
+        run: python scraper.py
+
+      - name: Auto-commit updated jobs DB
+        if: always()
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore(data): update jobs database [skip ci]"
+          branch: main
+          file_pattern: data/jobs.db
+          commit_user_name: github-actions[bot]
+          commit_user_email: 41898282+github-actions[bot]@users.noreply.github.com

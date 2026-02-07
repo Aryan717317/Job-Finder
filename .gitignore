@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# Playwright artifacts
+playwright-report/
+output/playwright/
+
+# Runtime data
+services/scraper/data/
+services/scraper/profiles/
+profiles/
+data/*
+!data/jobs.db
+
+# Local secrets
+.env
+.env.*
+!.env.example
+services/scraper/.env
+services/scraper/.env.*
+!services/scraper/.env.example
+
+# Rust/Tauri
+target/
+**/target/
+
+# IDE
+.vscode/
+.idea/
