@@ -5,6 +5,7 @@ from urllib.parse import quote_plus, urljoin
 from playwright.async_api import BrowserContext
 
 from ..models import JobRecord
+from ..ranking import semantic_match_score
 from .base import BaseScraper
 from .stealth import apply_stealth
 
@@ -72,7 +73,7 @@ class FlexJobsScraper(BaseScraper):
                     employment_type=employment_type,
                     salary_text=salary_text,
                     tags=tags,
-                    semantic_score=0.0,
+                    semantic_score=semantic_match_score(query=query, title=title, description=description),
                 )
             )
         return jobs

@@ -15,10 +15,20 @@ def _build_html_table(rows: list[dict]) -> str:
     for row in rows:
         title = escape(row.get("title") or "Unknown")
         company = escape(row.get("company") or "Unknown")
+        platform = escape(row.get("platform") or "")
+        location = escape(row.get("location") or "")
+        salary = escape(row.get("salary_text") or "")
         link = row.get("url") or "#"
         safe_link = escape(link, quote=True)
         body_rows.append(
-            f"<tr><td>{title}</td><td>{company}</td><td><a href=\"{safe_link}\">Open Job</a></td></tr>"
+            f"<tr>"
+            f"<td>{platform}</td>"
+            f"<td>{title}</td>"
+            f"<td>{company}</td>"
+            f"<td>{location}</td>"
+            f"<td>{salary}</td>"
+            f"<td><a href=\"{safe_link}\">Open</a></td>"
+            f"</tr>"
         )
 
     table_rows = "".join(body_rows)
@@ -26,12 +36,15 @@ def _build_html_table(rows: list[dict]) -> str:
     <html>
       <body>
         <h2>New Job Alerts</h2>
-        <p>Here are the latest jobs discovered by your aggregator.</p>
-        <table border="1" cellpadding="8" cellspacing="0" style="border-collapse: collapse;">
+        <p>Here are the latest {len(rows)} jobs discovered by your aggregator.</p>
+        <table border="1" cellpadding="8" cellspacing="0" style="border-collapse: collapse; font-family: Arial, sans-serif; font-size: 14px;">
           <thead>
-            <tr>
+            <tr style="background: #f0f0f0;">
+              <th>Platform</th>
               <th>Job Title</th>
               <th>Company</th>
+              <th>Location</th>
+              <th>Salary</th>
               <th>Link</th>
             </tr>
           </thead>

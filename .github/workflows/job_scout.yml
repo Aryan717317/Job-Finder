@@ -31,7 +31,7 @@ jobs:
     timeout-minutes: 90
     env:
       AJH_ENV: prod
-      AJH_DATABASE_URL: sqlite:///./data/jobs.db
+      AJH_DATABASE_URL: sqlite:///./data/ajh.db
       AJH_DATA_DIR: ./data
       AJH_PROFILE_DIR: ./profiles
       AJH_TIMEZONE: Asia/Kolkata
@@ -78,6 +78,6 @@ jobs:
         with:
           commit_message: "chore(data): update jobs database [skip ci]"
           branch: main
-          file_pattern: data/jobs.db
+          file_pattern: data/ajh.db
           commit_user_name: github-actions[bot]
           commit_user_email: 41898282+github-actions[bot]@users.noreply.github.com

@@ -1,4 +1,5 @@
 from .arc_dev import ArcDevScraper
+from .base import BaseScraper
 from .cutshort import CutshortScraper
 from .flexjobs import FlexJobsScraper
 from .indeed import IndeedScraper
@@ -17,8 +18,8 @@ from .wellfound import WellfoundScraper
 from .working_nomads import WorkingNomadsScraper
 
 
-def build_scraper_registry() -> dict[str, object]:
-    registry: dict[str, object] = {
+def build_scraper_registry() -> dict[str, BaseScraper]:
+    registry: dict[str, BaseScraper] = {
         "arc_dev": ArcDevScraper(),
         "cutshort": CutshortScraper(),
         "flexjobs": FlexJobsScraper(),

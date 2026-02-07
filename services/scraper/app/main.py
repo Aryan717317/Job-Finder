@@ -2,9 +2,15 @@ from __future__ import annotations
 
 import asyncio
 import json
+from collections.abc import AsyncIterator
+from contextlib import asynccontextmanager
 from datetime import datetime, timezone
 
-from fastapi import FastAPI, HTTPException, Query
+from fastapi import FastAPI, HTTPException, Query, Request
+from fastapi.responses import JSONResponse
+from slowapi import Limiter
+from slowapi.util import get_remote_address
+from slowapi.errors import RateLimitExceeded
 
 from . import db
 from .config import settings
@@ -22,7 +28,30 @@ from .schemas import (
 )
 
 
-app = FastAPI(title="AJH Scraper Service", version="0.8.0")
+limiter = Limiter(key_func=get_remote_address)
+
+
+@asynccontextmanager
+async def lifespan(app: FastAPI) -> AsyncIterator[None]:
+    db.init_db()
+    app.state.run_tasks = {}
+    app.state.run_semaphore = asyncio.Semaphore(max(1, settings.max_parallel_runs))
+    yield
+    # Cleanup: cancel pending tasks on shutdown
+    for task in app.state.run_tasks.values():
+        task.cancel()
+
+
+app = FastAPI(title="AJH Scraper Service", version="0.9.0", lifespan=lifespan)
+app.state.limiter = limiter
+
+
+@app.exception_handler(RateLimitExceeded)
+async def rate_limit_handler(request: Request, exc: RateLimitExceeded) -> JSONResponse:
+    return JSONResponse(
+        status_code=429,
+        content={"detail": "Rate limit exceeded. Please try again later."},
+    )
 
 
 def _parse_dt(value: str | None) -> datetime | None:
@@ -67,15 +96,9 @@ def _run_row_to_detail(row) -> RunDetail:
     )
 
 
-@app.on_event("startup")
-async def startup() -> None:
-    db.init_db()
-    app.state.run_tasks: dict[str, asyncio.Task] = {}
-    app.state.run_semaphore = asyncio.Semaphore(max(1, settings.max_parallel_runs))
-
-
 @app.get("/health")
-async def health() -> dict:
+@limiter.limit("60/minute")
+async def health(request: Request) -> dict:
     return {
         "status": "ok",
         "service": "ajh-scraper",
@@ -121,7 +144,8 @@ async def _execute_run(run_id: str, query: str, platforms: list[str], headless: 
 
 
 @app.get("/v1/platforms", response_model=list[PlatformSupportOut])
-async def list_platforms() -> list[PlatformSupportOut]:
+@limiter.limit("30/minute")
+async def list_platforms(request: Request) -> list[PlatformSupportOut]:
     support = list_platform_support()
     return [
         PlatformSupportOut(
@@ -133,7 +157,8 @@ async def list_platforms() -> list[PlatformSupportOut]:
 
 
 @app.post("/v1/runs", response_model=RunResponse)
-async def create_run(payload: CreateRunRequest) -> RunResponse:
+@limiter.limit("5/minute")
+async def create_run(request: Request, payload: CreateRunRequest) -> RunResponse:
     platforms = [platform.value for platform in payload.platforms]
     run_id = db.create_run(query=payload.query, platforms=platforms, headless=payload.headless)
     db.add_run_event(run_id, "run.queued", "Run added to queue", {"platforms": platforms})
@@ -160,7 +185,8 @@ async def create_run(payload: CreateRunRequest) -> RunResponse:
 
 
 @app.get("/v1/runs", response_model=list[RunListItem])
-async def list_runs(limit: int = Query(default=25, ge=1, le=100)) -> list[RunListItem]:
+@limiter.limit("30/minute")
+async def list_runs(request: Request, limit: int = Query(default=25, ge=1, le=100)) -> list[RunListItem]:
     rows = db.list_runs(limit=limit)
     return [
         RunListItem(
@@ -178,7 +204,8 @@ async def list_runs(limit: int = Query(default=25, ge=1, le=100)) -> list[RunLis
 
 
 @app.get("/v1/runs/{run_id}", response_model=RunDetail)
-async def get_run(run_id: str) -> RunDetail:
+@limiter.limit("30/minute")
+async def get_run(request: Request, run_id: str) -> RunDetail:
     row = db.get_run(run_id)
     if row is None:
         raise HTTPException(status_code=404, detail="Run not found")
@@ -186,7 +213,8 @@ async def get_run(run_id: str) -> RunDetail:
 
 
 @app.get("/v1/runs/{run_id}/jobs", response_model=list[JobOut])
-async def get_run_jobs(run_id: str) -> list[JobOut]:
+@limiter.limit("30/minute")
+async def get_run_jobs(request: Request, run_id: str) -> list[JobOut]:
     run = db.get_run(run_id)
     if run is None:
         raise HTTPException(status_code=404, detail="Run not found")
@@ -213,7 +241,9 @@ async def get_run_jobs(run_id: str) -> list[JobOut]:
 
 
 @app.get("/v1/runs/{run_id}/events", response_model=list[RunEventOut])
+@limiter.limit("60/minute")
 async def get_run_events(
+    request: Request,
     run_id: str,
     since_id: int = Query(default=0, ge=0),
     limit: int = Query(default=200, ge=1, le=500),

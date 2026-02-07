@@ -19,6 +19,8 @@ def _db_path_from_url(url: str) -> Path:
 DB_PATH = _db_path_from_url(settings.database_url)
 DB_PATH.parent.mkdir(parents=True, exist_ok=True)
 
+_DB_INITIALIZED = False
+
 
 @contextmanager
 def get_conn():
@@ -50,6 +52,9 @@ def _ensure_column(conn: sqlite3.Connection, table: str, column: str, ddl_type: 
 
 
 def init_db() -> None:
+    global _DB_INITIALIZED
+    if _DB_INITIALIZED:
+        return
     with get_conn() as conn:
         conn.execute(
             """
@@ -143,6 +148,16 @@ def init_db() -> None:
         _ensure_column(conn, "jobs", "experience_text", "TEXT", "''")
         _ensure_column(conn, "jobs", "tags_json", "TEXT", "'[]'")
         _ensure_column(conn, "jobs", "is_notified", "INTEGER", "0")
+
+        conn.execute("CREATE INDEX IF NOT EXISTS idx_jobs_scraped_at ON jobs (scraped_at DESC)")
+        conn.execute("CREATE INDEX IF NOT EXISTS idx_jobs_is_notified ON jobs (is_notified)")
+        conn.execute("CREATE INDEX IF NOT EXISTS idx_jobs_platform ON jobs (platform)")
+        conn.execute("CREATE INDEX IF NOT EXISTS idx_jobs_run_id ON jobs (run_id)")
+        conn.execute("CREATE INDEX IF NOT EXISTS idx_run_events_run_id ON run_events (run_id, event_id)")
+        conn.execute("CREATE INDEX IF NOT EXISTS idx_scrape_runs_created ON scrape_runs (created_at DESC)")
+        conn.execute("CREATE INDEX IF NOT EXISTS idx_cycle_runs_status ON cycle_runs (status, ended_at)")
+
+    _DB_INITIALIZED = True
 
 
 def create_run(query: str, platforms: list[str], headless: bool) -> str:
@@ -415,17 +430,18 @@ def list_jobs_by_run(run_id: str) -> list[sqlite3.Row]:
         ).fetchall()
 
 
-def list_latest_jobs(limit: int = 20) -> list[sqlite3.Row]:
+def list_latest_jobs(limit: int = 20, offset: int = 0) -> list[sqlite3.Row]:
     safe_limit = max(1, min(limit, 500))
+    safe_offset = max(0, offset)
     with get_conn() as conn:
         return conn.execute(
             """
             SELECT *
             FROM jobs
             ORDER BY scraped_at DESC
-            LIMIT ?
+            LIMIT ? OFFSET ?
             """,
-            (safe_limit,),
+            (safe_limit, safe_offset),
         ).fetchall()
 
 

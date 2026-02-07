@@ -1,8 +1,12 @@
 from __future__ import annotations
 
-from dataclasses import dataclass, asdict
+from dataclasses import dataclass, asdict, field
 from datetime import datetime, timezone
 import hashlib
+
+
+def _now_iso() -> str:
+    return datetime.now(timezone.utc).isoformat()
 
 
 @dataclass(slots=True)
@@ -20,7 +24,7 @@ class JobRecord:
     experience_text: str = ""
     tags: list[str] | None = None
     semantic_score: float = 0.0
-    scraped_at: str = datetime.now(timezone.utc).isoformat()
+    scraped_at: str = field(default_factory=_now_iso)
 
     @property
     def external_id(self) -> str:

@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Job Aggregator Dashboard</title>
+    <style>
+      body { font-family: Arial, sans-serif; margin: 24px; background: #f7f8fa; color: #222; }
+      h1 { margin-top: 0; }
+      .row { display: flex; gap: 12px; margin-bottom: 16px; flex-wrap: wrap; }
+      form { display: inline-block; }
+      input[type=text] { padding: 8px; min-width: 280px; }
+      button { padding: 8px 12px; cursor: pointer; }
+      .meta { margin: 10px 0 20px 0; color: #444; }
+      table { width: 100%; border-collapse: collapse; background: white; }
+      th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+      th { background: #f0f0f0; }
+      .status { margin: 10px 0; padding: 10px; background: #eef7ff; border: 1px solid #c9e5ff; }
+      .pagination { margin: 16px 0; display: flex; gap: 8px; align-items: center; }
+      .pagination a, .pagination span { padding: 6px 12px; border: 1px solid #ccc; text-decoration: none; color: #333; }
+      .pagination span.current { background: #007bff; color: white; border-color: #007bff; }
+    </style>
+  </head>
+  <body>
+    <h1>Job Aggregator & Notifier</h1>
+    {% if message %}<div class="status">{{ message }}</div>{% endif %}
+
+    <div class="row">
+      <form method="post" action="{{ url_for('manual_scrape') }}">
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+        <input type="text" name="query" value="{{ query }}" />
+        <button type="submit">Manual Scrape</button>
+      </form>
+
+      <form method="post" action="{{ url_for('send_test_email') }}">
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+        <button type="submit">Send Test Email</button>
+      </form>
+
+      <form method="post" action="{{ url_for('run_full_cycle') }}">
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+        <input type="hidden" name="query" value="{{ query }}" />
+        <button type="submit">Run Full Cycle (Scrape + Notify)</button>
+      </form>
+
+      <form method="post" action="{{ url_for('run_smoke_test') }}">
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+        <input type="hidden" name="query" value="{{ query }}" />
+        <button type="submit">Run Selector Smoke Test</button>
+      </form>
+
+      <form method="post" action="{{ url_for('run_preflight') }}">
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+        <button type="submit">Run Preflight</button>
+      </form>
+
+      <form method="post" action="{{ url_for('run_self_test') }}">
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+        <input type="hidden" name="query" value="{{ query }}" />
+        <button type="submit">Run E2E Self-Test</button>
+      </form>
+
+      <form method="post" action="{{ url_for('run_maintenance') }}">
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+        <button type="submit">Run Maintenance</button>
+      </form>
+    </div>
+
+    <div class="meta">
+      <strong>Implemented Platforms:</strong> {{ platforms|join(", ") }}<br>
+      <strong>Total Jobs in DB:</strong> {{ total_jobs }}<br>
+      <strong>Auto Cycle:</strong> {{ "Enabled" if auto_cycle_enabled else "Disabled" }} (every {{ auto_cycle_minutes }} min)<br>
+      <strong>Scheduler State:</strong> {{ auto_cycle_state }}<br>
+      <strong>Next Auto Run (UTC):</strong> {{ auto_cycle_next_run_at or "n/a" }}<br>
+      <strong>DB Active Cycle:</strong> {{ "Yes" if db_active_cycle else "No" }}
+    </div>
+
+    <h2>Jobs (Page {{ page }})</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Platform</th>
+          <th>Title</th>
+          <th>Company</th>
+          <th>Location</th>
+          <th>Link</th>
+          <th>Notified</th>
+          <th>Scraped At</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for job in jobs %}
+        <tr>
+          <td>{{ job["platform"] }}</td>
+          <td>{{ job["title"] }}</td>
+          <td>{{ job["company"] }}</td>
+          <td>{{ job["location"] }}</td>
+          <td><a href="{{ job['url'] }}" target="_blank" rel="noreferrer">Open</a></td>
+          <td>{{ "Yes" if job["is_notified"] else "No" }}</td>
+          <td>{{ job["scraped_at"] }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <div class="pagination">
+      {% if page > 1 %}
+        <a href="{{ url_for('dashboard', page=page - 1, query=query) }}">Previous</a>
+      {% endif %}
+      <span class="current">Page {{ page }}</span>
+      {% if has_next_page %}
+        <a href="{{ url_for('dashboard', page=page + 1, query=query) }}">Next</a>
+      {% endif %}
+    </div>
+
+    <h2 style="margin-top: 24px;">Latest Smoke Test</h2>
+    {% if smoke_report %}
+    <div class="meta">
+      <strong>Started:</strong> {{ smoke_report["started_at"] }}<br>
+      <strong>Finished:</strong> {{ smoke_report["finished_at"] }}<br>
+      <strong>Summary:</strong>
+      pass={{ smoke_report["summary"]["pass"] }},
+      warning={{ smoke_report["summary"]["warning"] }},
+      fail={{ smoke_report["summary"]["fail"] }}
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>Platform</th>
+          <th>Status</th>
+          <th>Jobs</th>
+          <th>Captcha</th>
+          <th>Duration (ms)</th>
+          <th>Error</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for row in smoke_report["results"] %}
+        <tr>
+          <td>{{ row["platform"] }}</td>
+          <td>{{ row["status"] }}</td>
+          <td>{{ row["jobs_count"] }}</td>
+          <td>{{ "Yes" if row["captcha_detected"] else "No" }}</td>
+          <td>{{ row["duration_ms"] }}</td>
+          <td>{{ row["error"] or "" }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    {% else %}
+    <div class="meta">No smoke test report yet.</div>
+    {% endif %}
+
+    <h2 style="margin-top: 24px;">Latest Preflight</h2>
+    {% if preflight_report %}
+    <div class="meta">
+      <strong>Started:</strong> {{ preflight_report["started_at"] }}<br>
+      <strong>Finished:</strong> {{ preflight_report["finished_at"] }}<br>
+      <strong>Overall:</strong> {{ preflight_report["overall_status"] }}<br>
+      <strong>Summary:</strong>
+      pass={{ preflight_report["summary"]["pass"] }},
+      warning={{ preflight_report["summary"]["warning"] }},
+      fail={{ preflight_report["summary"]["fail"] }}
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>Check</th>
+          <th>Status</th>
+          <th>Message</th>
+          <th>Details</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for row in preflight_report["results"] %}
+        <tr>
+          <td>{{ row["check"] }}</td>
+          <td>{{ row["status"] }}</td>
+          <td>{{ row["message"] }}</td>
+          <td>{{ row["details"] }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    {% else %}
+    <div class="meta">No preflight report yet.</div>
+    {% endif %}
+
+    <h2 style="margin-top: 24px;">Latest E2E Self-Test</h2>
+    {% if self_test_report %}
+    <div class="meta">
+      <strong>Started:</strong> {{ self_test_report["started_at"] }}<br>
+      <strong>Finished:</strong> {{ self_test_report["finished_at"] }}<br>
+      <strong>Status:</strong> {{ self_test_report["status"] }}<br>
+      <strong>Run ID:</strong> {{ self_test_report["run_id"] or "n/a" }}<br>
+      <strong>Platforms:</strong> {{ self_test_report["selected_platforms"]|join(", ") if self_test_report["selected_platforms"] else "n/a" }}<br>
+      <strong>Jobs Processed:</strong> {{ self_test_report["jobs_processed"] }}<br>
+      <strong>Notified:</strong> {{ self_test_report["notified_count"] }}<br>
+      <strong>Error:</strong> {{ self_test_report["error"] or "" }}
+    </div>
+    {% else %}
+    <div class="meta">No self-test report yet.</div>
+    {% endif %}
+
+    <h2 style="margin-top: 24px;">Latest Maintenance</h2>
+    {% if maintenance_report %}
+    <div class="meta">
+      <strong>Started:</strong> {{ maintenance_report["started_at"] }}<br>
+      <strong>Finished:</strong> {{ maintenance_report["finished_at"] }}<br>
+      <strong>Status:</strong> {{ maintenance_report["status"] }}<br>
+      <strong>Files Deleted:</strong> {{ maintenance_report["cleanup_summary"]["files_deleted"] }}<br>
+      <strong>Bytes Freed:</strong> {{ maintenance_report["cleanup_summary"]["bytes_freed"] }}<br>
+      <strong>DB Vacuum:</strong> {{ "Yes" if maintenance_report["db_maintenance"]["vacuum_ran"] else "No" }}
+    </div>
+    {% else %}
+    <div class="meta">No maintenance report yet.</div>
+    {% endif %}
+
+    <h2 style="margin-top: 24px;">Recent Email Attempts</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Status</th>
+          <th>Job Count</th>
+          <th>Recipient</th>
+          <th>Subject</th>
+          <th>Error</th>
+          <th>Created At</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for item in email_attempts %}
+        <tr>
+          <td>{{ item["status"] }}</td>
+          <td>{{ item["job_count"] }}</td>
+          <td>{{ item["recipient"] }}</td>
+          <td>{{ item["subject"] }}</td>
+          <td>{{ item["error_message"] or "" }}</td>
+          <td>{{ item["created_at"] }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+    <h2 style="margin-top: 24px;">Recent Full-Cycle Runs</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Mode</th>
+          <th>Query</th>
+          <th>Status</th>
+          <th>Run ID</th>
+          <th>Jobs Processed</th>
+          <th>Notified</th>
+          <th>Error</th>
+          <th>Started At</th>
+          <th>Ended At</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for cycle in cycle_runs %}
+        <tr>
+          <td>{{ cycle["cycle_id"] }}</td>
+          <td>{{ cycle["mode"] }}</td>
+          <td>{{ cycle["query"] }}</td>
+          <td>{{ cycle["status"] }}</td>
+          <td>{{ cycle["run_id"] or "" }}</td>
+          <td>{{ cycle["jobs_processed"] }}</td>
+          <td>{{ cycle["notified_count"] }}</td>
+          <td>{{ cycle["error_message"] or "" }}</td>
+          <td>{{ cycle["started_at"] }}</td>
+          <td>{{ cycle["ended_at"] or "" }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </body>
+</html>
