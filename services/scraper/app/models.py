@@ -14,7 +14,7 @@ _FRESHER_PATTERNS = (
 )
 _PROMPT_PATTERNS = (
     re.compile(r"\bprompt\s+(?:engineering|engineer|design|writing)\b", re.IGNORECASE),
-    re.compile(r"\bllm\s+prompt", re.IGNORECASE),
+    re.compile(r"\bllm\s+(?:specialist|engineer|prompt)\b", re.IGNORECASE),
 )
 _GENAI_PATTERNS = (
     re.compile(r"\bgenerative\s+ai\b", re.IGNORECASE),
@@ -39,21 +39,34 @@ def _normalize_unique(values: list[str] | None) -> list[str]:
     return normalized
 
 
-def infer_category_tags(title: str, description: str, experience_text: str, raw_tags: list[str] | None = None) -> list[str]:
+def scan_fresher_keywords(description: str, experience_text: str, title: str = "") -> bool:
+    text = " ".join(part.strip() for part in (title, description, experience_text) if part and part.strip())
+    if not text:
+        return False
+    return any(pattern.search(text) for pattern in _FRESHER_PATTERNS)
+
+
+def infer_role_type(title: str, description: str, raw_tags: list[str] | None = None) -> str:
     text = " ".join(
-        part.strip()
-        for part in (title, description, experience_text, " ".join(raw_tags or []))
-        if part and part.strip()
+        part.strip() for part in (title, description, " ".join(raw_tags or [])) if part and part.strip()
     )
     if not text:
-        return []
-
-    labels: list[str] = []
-    if any(pattern.search(text) for pattern in _FRESHER_PATTERNS):
-        labels.append("Fresher")
+        return "ML"
     if any(pattern.search(text) for pattern in _PROMPT_PATTERNS):
-        labels.append("Prompt Engineering")
+        return "Prompt Engineering"
     if any(pattern.search(text) for pattern in _GENAI_PATTERNS):
+        return "Generative AI"
+    return "ML"
+
+
+def infer_category_tags(title: str, description: str, experience_text: str, raw_tags: list[str] | None = None) -> list[str]:
+    labels: list[str] = []
+    if scan_fresher_keywords(description=description, experience_text=experience_text, title=title):
+        labels.append("Fresher")
+    role_type = infer_role_type(title=title, description=description, raw_tags=raw_tags)
+    if role_type == "Prompt Engineering":
+        labels.append(role_type)
+    elif role_type == "Generative AI":
         labels.append("Generative AI")
     return labels
 
@@ -77,6 +90,8 @@ class JobRecord:
     experience_text: str = ""
     tags: list[str] | None = None
     category_tags: list[str] | None = None
+    is_fresher: bool = False
+    role_type: str = "ML"
     semantic_score: float = 0.0
     scraped_at: str = field(default_factory=_now_iso)
 
@@ -89,6 +104,16 @@ class JobRecord:
         data = asdict(self)
         data["external_id"] = self.external_id
         data["tags"] = _normalize_unique(data.get("tags"))
+        detected_is_fresher = scan_fresher_keywords(
+            description=data.get("description", ""),
+            experience_text=data.get("experience_text", ""),
+            title=data.get("title", ""),
+        )
+        detected_role_type = infer_role_type(
+            title=data.get("title", ""),
+            description=data.get("description", ""),
+            raw_tags=data["tags"],
+        )
         derived_category_tags = infer_category_tags(
             title=data.get("title", ""),
             description=data.get("description", ""),
@@ -96,4 +121,6 @@ class JobRecord:
             raw_tags=data["tags"],
         )
         data["category_tags"] = _normalize_unique((data.get("category_tags") or []) + derived_category_tags)
+        data["is_fresher"] = bool(data.get("is_fresher", False) or detected_is_fresher)
+        data["role_type"] = str(data.get("role_type") or detected_role_type)
         return data

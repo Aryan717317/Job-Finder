@@ -89,6 +89,8 @@ class JobOut(BaseModel):
     experience_text: str = ""
     tags: list[str] = Field(default_factory=list)
     category_tags: list[str] = Field(default_factory=list)
+    is_fresher: bool = False
+    role_type: str = "ML"
     semantic_score: float
 
 

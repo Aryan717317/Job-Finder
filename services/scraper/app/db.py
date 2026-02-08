@@ -51,6 +51,87 @@ def _ensure_column(conn: sqlite3.Connection, table: str, column: str, ddl_type: 
         conn.execute(f"ALTER TABLE {table} ADD COLUMN {column} {ddl_type} DEFAULT {default_sql}")
 
 
+def _table_sql(conn: sqlite3.Connection, table: str) -> str:
+    row = conn.execute(
+        "SELECT sql FROM sqlite_master WHERE type = 'table' AND name = ?",
+        (table,),
+    ).fetchone()
+    if not row or not row["sql"]:
+        return ""
+    return str(row["sql"])
+
+
+def _migrate_applications_table(conn: sqlite3.Connection) -> None:
+    sql = _table_sql(conn, "applications").lower()
+    if not sql:
+        return
+
+    # Upgrade legacy schema to include "Not Applied" and applied_at.
+    if "not applied" in sql and "applied_at" in sql:
+        return
+
+    conn.execute("ALTER TABLE applications RENAME TO applications_legacy")
+    conn.execute(
+        """
+        CREATE TABLE applications (
+            application_id INTEGER PRIMARY KEY AUTOINCREMENT,
+            job_id TEXT NOT NULL,
+            status TEXT NOT NULL DEFAULT 'Not Applied'
+                CHECK (status IN ('Not Applied', 'Applied', 'Interviewing', 'Rejected', 'Offer')),
+            applied_at TEXT,
+            notes TEXT NOT NULL DEFAULT '',
+            created_at TEXT NOT NULL,
+            updated_at TEXT NOT NULL,
+            UNIQUE(job_id),
+            FOREIGN KEY (job_id) REFERENCES jobs(external_id)
+        )
+        """
+    )
+
+    has_applied_at = _column_exists(conn, "applications_legacy", "applied_at")
+    has_applied_date = _column_exists(conn, "applications_legacy", "applied_date")
+    has_created_at = _column_exists(conn, "applications_legacy", "created_at")
+    has_updated_at = _column_exists(conn, "applications_legacy", "updated_at")
+
+    if has_applied_at and has_applied_date:
+        source_applied_expr = "COALESCE(applied_at, applied_date)"
+    elif has_applied_at:
+        source_applied_expr = "applied_at"
+    elif has_applied_date:
+        source_applied_expr = "applied_date"
+    else:
+        source_applied_expr = "NULL"
+
+    created_expr = "created_at" if has_created_at else "NULL"
+    updated_expr = "updated_at" if has_updated_at else "NULL"
+    order_expr_parts = [source_applied_expr]
+    if has_created_at:
+        order_expr_parts.append("created_at")
+    if has_updated_at:
+        order_expr_parts.append("updated_at")
+    order_expr = ", ".join(order_expr_parts + ["'1970-01-01T00:00:00+00:00'"])
+
+    conn.execute(
+        f"""
+        INSERT OR REPLACE INTO applications (job_id, status, applied_at, notes, created_at, updated_at)
+        SELECT
+            job_id,
+            CASE
+                WHEN status IN ('Not Applied', 'Applied', 'Interviewing', 'Rejected', 'Offer') THEN status
+                ELSE 'Not Applied'
+            END AS status,
+            {source_applied_expr} AS applied_at,
+            COALESCE(notes, '') AS notes,
+            COALESCE({created_expr}, '{_now_iso()}') AS created_at,
+            COALESCE({updated_expr}, '{_now_iso()}') AS updated_at
+        FROM applications_legacy
+        WHERE job_id IS NOT NULL AND TRIM(job_id) <> ''
+        ORDER BY COALESCE({order_expr}) ASC
+        """
+    )
+    conn.execute("DROP TABLE applications_legacy")
+
+
 def init_db() -> None:
     global _DB_INITIALIZED
     if _DB_INITIALIZED:
@@ -89,6 +170,8 @@ def init_db() -> None:
                 experience_text TEXT NOT NULL DEFAULT '',
                 tags_json TEXT NOT NULL DEFAULT '[]',
                 category_tags_json TEXT NOT NULL DEFAULT '[]',
+                is_fresher INTEGER NOT NULL DEFAULT 0,
+                role_type TEXT NOT NULL DEFAULT 'ML',
                 is_notified INTEGER NOT NULL DEFAULT 0,
                 semantic_score REAL NOT NULL,
                 scraped_at TEXT NOT NULL,
@@ -101,8 +184,9 @@ def init_db() -> None:
             CREATE TABLE IF NOT EXISTS applications (
                 application_id INTEGER PRIMARY KEY AUTOINCREMENT,
                 job_id TEXT NOT NULL,
-                status TEXT NOT NULL CHECK (status IN ('Applied', 'Interviewing', 'Rejected', 'Offer')),
-                applied_date TEXT NOT NULL,
+                status TEXT NOT NULL DEFAULT 'Not Applied'
+                    CHECK (status IN ('Not Applied', 'Applied', 'Interviewing', 'Rejected', 'Offer')),
+                applied_at TEXT,
                 notes TEXT NOT NULL DEFAULT '',
                 created_at TEXT NOT NULL,
                 updated_at TEXT NOT NULL,
@@ -155,6 +239,8 @@ def init_db() -> None:
             """
         )
 
+        _migrate_applications_table(conn)
+
         _ensure_column(conn, "scrape_runs", "headless", "INTEGER", "1")
         _ensure_column(conn, "scrape_runs", "started_at", "TEXT")
         _ensure_column(conn, "scrape_runs", "ended_at", "TEXT")
@@ -164,13 +250,17 @@ def init_db() -> None:
         _ensure_column(conn, "jobs", "experience_text", "TEXT", "''")
         _ensure_column(conn, "jobs", "tags_json", "TEXT", "'[]'")
         _ensure_column(conn, "jobs", "category_tags_json", "TEXT", "'[]'")
+        _ensure_column(conn, "jobs", "is_fresher", "INTEGER", "0")
+        _ensure_column(conn, "jobs", "role_type", "TEXT", "'ML'")
         _ensure_column(conn, "jobs", "is_notified", "INTEGER", "0")
+        _ensure_column(conn, "applications", "applied_at", "TEXT")
 
         conn.execute("CREATE INDEX IF NOT EXISTS idx_jobs_scraped_at ON jobs (scraped_at DESC)")
         conn.execute("CREATE INDEX IF NOT EXISTS idx_jobs_is_notified ON jobs (is_notified)")
+        conn.execute("CREATE INDEX IF NOT EXISTS idx_jobs_fresher_role ON jobs (is_fresher, role_type)")
         conn.execute("CREATE INDEX IF NOT EXISTS idx_jobs_platform ON jobs (platform)")
         conn.execute("CREATE INDEX IF NOT EXISTS idx_jobs_run_id ON jobs (run_id)")
-        conn.execute("CREATE INDEX IF NOT EXISTS idx_applications_status_date ON applications (status, applied_date DESC)")
+        conn.execute("CREATE INDEX IF NOT EXISTS idx_applications_status_date ON applications (status, applied_at DESC)")
         conn.execute("CREATE INDEX IF NOT EXISTS idx_applications_job_id ON applications (job_id)")
         conn.execute("CREATE INDEX IF NOT EXISTS idx_run_events_run_id ON run_events (run_id, event_id)")
         conn.execute("CREATE INDEX IF NOT EXISTS idx_scrape_runs_created ON scrape_runs (created_at DESC)")
@@ -258,8 +348,9 @@ def insert_jobs(rows: list[dict]) -> None:
             """
             INSERT INTO jobs (
                 external_id, run_id, platform, title, company, location, url, description, posted_at,
-                employment_type, salary_text, experience_text, tags_json, category_tags_json, is_notified, semantic_score, scraped_at
-            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                employment_type, salary_text, experience_text, tags_json, category_tags_json,
+                is_fresher, role_type, is_notified, semantic_score, scraped_at
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
             ON CONFLICT(external_id) DO UPDATE SET
                 run_id = excluded.run_id,
                 platform = excluded.platform,
@@ -274,6 +365,8 @@ def insert_jobs(rows: list[dict]) -> None:
                 experience_text = excluded.experience_text,
                 tags_json = excluded.tags_json,
                 category_tags_json = excluded.category_tags_json,
+                is_fresher = excluded.is_fresher,
+                role_type = excluded.role_type,
                 semantic_score = excluded.semantic_score,
                 scraped_at = excluded.scraped_at,
                 is_notified = jobs.is_notified
@@ -294,6 +387,8 @@ def insert_jobs(rows: list[dict]) -> None:
                     row.get("experience_text", ""),
                     json.dumps(row.get("tags", []), ensure_ascii=False),
                     json.dumps(row.get("category_tags", []), ensure_ascii=False),
+                    int(bool(row.get("is_fresher", False))),
+                    row.get("role_type", "ML"),
                     int(row.get("is_notified", 0)),
                     row.get("semantic_score", 0.0),
                     row["scraped_at"],

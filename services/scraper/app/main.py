@@ -235,6 +235,8 @@ async def get_run_jobs(request: Request, run_id: str) -> list[JobOut]:
             experience_text=row["experience_text"] or "",
             tags=_parse_json_list(row["tags_json"]),
             category_tags=_parse_json_list(row["category_tags_json"]),
+            is_fresher=bool(row["is_fresher"]),
+            role_type=row["role_type"] or "ML",
             semantic_score=row["semantic_score"],
         )
         for row in rows

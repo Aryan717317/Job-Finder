@@ -171,6 +171,15 @@
         margin-top: 12px;
         display: flex;
         gap: 8px;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+      .status-select {
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        background: #fff;
+        color: var(--ink);
+        padding: 8px 10px;
       }
       .link {
         text-decoration: none;
@@ -201,7 +210,10 @@
       <section id="jobsGrid" class="jobs"></section>
     </main>
     <script>
-      const APPLY_LOG_KEY = "job-search-os.apply-log.v1";
+      const APPLY_LOG_STORAGE_KEY = "job-search-os.apply-log.v2";
+      const APPLY_LOG_FILE_CACHE_KEY = "job-search-os.apply-log-file.v1";
+      const APPLICATION_STATUSES = ["Not Applied", "Applied", "Interviewing", "Rejected", "Offer"];
+
       const state = {
         jobs: [],
         dbApplications: new Map(),
@@ -216,8 +228,23 @@
         }
       }
 
+      function normalizeTags(tags) {
+        return Array.isArray(tags) ? tags.map((item) => String(item).trim()).filter(Boolean) : [];
+      }
+
+      function isPromptEngineeringRole(job) {
+        const roleType = String(job.role_type || "").toLowerCase();
+        if (roleType === "prompt engineering") return true;
+        return normalizeTags(job.category_tags).some((tag) => tag.toLowerCase() === "prompt engineering");
+      }
+
+      function isFresherRole(job) {
+        if (Boolean(job.is_fresher)) return true;
+        return normalizeTags(job.category_tags).some((tag) => tag.toLowerCase() === "fresher");
+      }
+
       function loadLocalApplications() {
-        const rows = safeJsonParse(localStorage.getItem(APPLY_LOG_KEY) || "[]", []);
+        const rows = safeJsonParse(localStorage.getItem(APPLY_LOG_STORAGE_KEY) || "[]", []);
         const map = new Map();
         rows.forEach((row) => {
           if (!row || !row.job_id) return;
@@ -226,40 +253,18 @@
         return map;
       }
 
-      function saveLocalApplications() {
-        const rows = [...state.localApplications.values()].sort((a, b) => a.applied_date < b.applied_date ? 1 : -1);
-        localStorage.setItem(APPLY_LOG_KEY, JSON.stringify(rows));
+      function writeApplyLogJson() {
+        const logRows = [...state.localApplications.values()].sort((a, b) => {
+          return String(b.updated_at || "").localeCompare(String(a.updated_at || ""));
+        });
+        const serialized = JSON.stringify(logRows, null, 2);
+        localStorage.setItem(APPLY_LOG_STORAGE_KEY, serialized);
+        localStorage.setItem(APPLY_LOG_FILE_CACHE_KEY, serialized);
       }
 
-      function normalizeTags(tags) {
-        return Array.isArray(tags) ? tags.map((t) => String(t).trim()).filter(Boolean) : [];
-      }
-
-      function hasTag(job, tag) {
-        const wanted = tag.toLowerCase();
-        return normalizeTags(job.category_tags).some((t) => t.toLowerCase() === wanted);
-      }
-
-      function effectiveApplication(jobId) {
-        return state.localApplications.get(jobId) || state.dbApplications.get(jobId) || null;
-      }
-
-      function markAsApplied(job) {
-        const entry = {
-          job_id: job.external_id,
-          status: "Applied",
-          applied_date: new Date().toISOString(),
-          notes: "",
-          source: "local-dashboard",
-        };
-        state.localApplications.set(job.external_id, entry);
-        saveLocalApplications();
-        render();
-      }
-
-      function exportLocalLog() {
-        const payload = [...state.localApplications.values()];
-        const blob = new Blob([JSON.stringify(payload, null, 2)], { type: "application/json" });
+      function exportApplyLogJson() {
+        const serialized = localStorage.getItem(APPLY_LOG_FILE_CACHE_KEY) || "[]";
+        const blob = new Blob([serialized], { type: "application/json" });
         const url = URL.createObjectURL(blob);
         const a = document.createElement("a");
         a.href = url;
@@ -268,9 +273,33 @@
         URL.revokeObjectURL(url);
       }
 
+      function effectiveApplication(jobId) {
+        return state.localApplications.get(jobId) || state.dbApplications.get(jobId) || null;
+      }
+
+      function updateApplicationStatus(job, status) {
+        const now = new Date().toISOString();
+        const normalizedStatus = APPLICATION_STATUSES.includes(status) ? status : "Not Applied";
+        const previous = effectiveApplication(job.external_id);
+        const entry = {
+          job_id: job.external_id,
+          status: normalizedStatus,
+          applied_at: normalizedStatus === "Not Applied" ? null : (previous?.applied_at || now),
+          notes: previous?.notes || "",
+          role_type: job.role_type || "ML",
+          is_fresher: Boolean(job.is_fresher),
+          updated_at: now,
+          source: "local-dashboard",
+        };
+        state.localApplications.set(job.external_id, entry);
+        writeApplyLogJson();
+        render();
+      }
+
       function statusClass(status) {
-        if (!status) return "none";
-        if (String(status).toLowerCase() === "applied") return "applied";
+        const value = String(status || "Not Applied").toLowerCase();
+        if (value === "not applied") return "none";
+        if (value === "applied") return "applied";
         return "other";
       }
 
@@ -278,21 +307,29 @@
         const search = document.getElementById("searchInput").value.trim().toLowerCase();
         const fresherOnly = document.getElementById("fresherOnly").checked;
         const promptOnly = document.getElementById("promptOnly").checked;
+
         return state.jobs.filter((job) => {
-          if (fresherOnly && !hasTag(job, "Fresher")) return false;
-          if (promptOnly && !hasTag(job, "Prompt Engineering")) return false;
+          if (fresherOnly && !isFresherRole(job)) return false;
+          if (promptOnly && !isPromptEngineeringRole(job)) return false;
           if (!search) return true;
           const haystack = `${job.title || ""} ${job.company || ""} ${job.url || ""}`.toLowerCase();
           return haystack.includes(search);
         });
       }
 
+      function statusOptionsMarkup(selectedStatus) {
+        return APPLICATION_STATUSES.map((status) => {
+          const selectedAttr = status === selectedStatus ? "selected" : "";
+          return `<option value="${status}" ${selectedAttr}>${status}</option>`;
+        }).join("");
+      }
+
       function render() {
         const grid = document.getElementById("jobsGrid");
         const stats = document.getElementById("stats");
         const rows = filteredJobs();
-        const appliedCount = [...state.jobs].filter((job) => effectiveApplication(job.external_id)).length;
-        stats.textContent = `${rows.length} shown / ${state.jobs.length} total | ${appliedCount} with application status`;
+        const trackedCount = state.jobs.filter((job) => effectiveApplication(job.external_id)).length;
+        stats.textContent = `${rows.length} shown / ${state.jobs.length} total | ${trackedCount} with tracked status`;
 
         if (!rows.length) {
           grid.innerHTML = "<article class=\"card\"><p class=\"title\">No jobs match your filters.</p></article>";
@@ -302,7 +339,11 @@
         grid.innerHTML = "";
         rows.forEach((job) => {
           const app = effectiveApplication(job.external_id);
+          const status = app?.status || "Not Applied";
           const tags = normalizeTags(job.category_tags);
+          const roleChip = job.role_type ? `<span class="chip">${job.role_type}</span>` : "";
+          const fresherChip = isFresherRole(job) ? "<span class=\"chip fresher\">Fresher</span>" : "";
+
           const card = document.createElement("article");
           card.className = "card";
           card.innerHTML = `
@@ -311,26 +352,31 @@
                 <h3 class="title">${job.title || "Untitled role"}</h3>
                 <p class="company">${job.company || "Unknown company"}</p>
               </div>
-              <span class="status ${statusClass(app?.status)}">${app?.status || "Not Applied"}</span>
+              <span class="status ${statusClass(status)}">${status}</span>
             </div>
             <div class="meta">${job.location || "Location n/a"} | ${job.platform || "platform n/a"}</div>
             <div class="chips">
-              ${tags.map((tag) => `<span class="chip ${tag.toLowerCase().includes("fresher") ? "fresher" : tag.toLowerCase().includes("prompt") ? "prompt" : ""}">${tag}</span>`).join("")}
+              ${fresherChip}
+              ${roleChip}
+              ${tags.map((tag) => `<span class="chip ${tag.toLowerCase().includes("prompt") ? "prompt" : ""}">${tag}</span>`).join("")}
             </div>
             <div class="actions">
               <a class="btn link secondary" href="${job.url || "#"}" target="_blank" rel="noreferrer">Open Link</a>
-              <button class="btn mark-btn" data-job-id="${job.external_id}" type="button">
-                ${app ? "Update Applied" : "Mark as Applied"}
-              </button>
+              <label>
+                <select class="status-select" data-job-id="${job.external_id}">
+                  ${statusOptionsMarkup(status)}
+                </select>
+              </label>
             </div>
           `;
           grid.appendChild(card);
         });
 
-        grid.querySelectorAll(".mark-btn").forEach((button) => {
-          button.addEventListener("click", () => {
-            const job = state.jobs.find((item) => item.external_id === button.dataset.jobId);
-            if (job) markAsApplied(job);
+        grid.querySelectorAll(".status-select").forEach((select) => {
+          select.addEventListener("change", () => {
+            const job = state.jobs.find((item) => item.external_id === select.dataset.jobId);
+            if (!job) return;
+            updateApplicationStatus(job, select.value);
           });
         });
       }
@@ -338,21 +384,29 @@
       async function loadData() {
         const response = await fetch("./data.json", { cache: "no-store" });
         if (!response.ok) throw new Error(`Failed to load data.json: ${response.status}`);
+
         const payload = await response.json();
         state.jobs = Array.isArray(payload.jobs) ? payload.jobs : [];
         state.localApplications = loadLocalApplications();
+
         state.dbApplications = new Map();
         const dbApplications = Array.isArray(payload.applications) ? payload.applications : [];
         dbApplications.forEach((row) => {
           if (!row || !row.job_id) return;
-          state.dbApplications.set(row.job_id, row);
+          state.dbApplications.set(row.job_id, {
+            ...row,
+            status: row.status || "Not Applied",
+            applied_at: row.applied_at || null,
+          });
         });
+
+        writeApplyLogJson();
       }
 
       document.getElementById("searchInput").addEventListener("input", render);
       document.getElementById("fresherOnly").addEventListener("change", render);
       document.getElementById("promptOnly").addEventListener("change", render);
-      document.getElementById("downloadLogsBtn").addEventListener("click", exportLocalLog);
+      document.getElementById("downloadLogsBtn").addEventListener("click", exportApplyLogJson);
 
       loadData().then(render).catch((error) => {
         document.getElementById("stats").textContent = error.message;

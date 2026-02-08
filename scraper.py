@@ -14,7 +14,8 @@ from cycle_runner import _configure_logging, _implemented_platforms, _run_cycle,
 
 DEFAULT_SEARCH_QUERIES = [
     "ML Engineer",
-    "Prompt Engineering",
+    "Prompt Engineer",
+    "LLM Specialist",
     "Generative AI",
 ]
 
