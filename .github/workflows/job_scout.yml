@@ -6,9 +6,13 @@ on:
   workflow_dispatch:
     inputs:
       query:
-        description: "Search query for the scrape run"
+        description: "Legacy single search query override (optional)"
         required: false
-        default: "ML Engineer"
+        default: ""
+      queries:
+        description: "CSV query list (blank uses defaults)"
+        required: false
+        default: ""
       platforms:
         description: "Optional CSV list of platforms (blank = all implemented)"
         required: false
@@ -31,7 +35,7 @@ jobs:
     timeout-minutes: 90
     env:
       AJH_ENV: prod
-      AJH_DATABASE_URL: sqlite:///./data/ajh.db
+      AJH_DATABASE_URL: sqlite:///./data/jobs.db
       AJH_DATA_DIR: ./data
       AJH_PROFILE_DIR: ./profiles
       AJH_TIMEZONE: Asia/Kolkata
@@ -65,19 +69,114 @@ jobs:
       - name: Prepare runtime env overrides
         run: |
           mkdir -p data
-          echo "JOB_QUERY=${{ github.event.inputs.query || 'ML Engineer' }}" >> "$GITHUB_ENV"
+          echo "JOB_QUERY_LIST=${{ github.event.inputs.queries || github.event.inputs.query || 'ML Engineer,Prompt Engineering,Generative AI' }}" >> "$GITHUB_ENV"
           echo "JOB_PLATFORMS=${{ github.event.inputs.platforms || '' }}" >> "$GITHUB_ENV"
           echo "SEND_EMAIL=${{ github.event.inputs.send_email || 'true' }}" >> "$GITHUB_ENV"
 
       - name: Run Job Scout cycle (forced headless)
         run: python scraper.py
 
+      - name: Export dashboard data.json
+        if: always()
+        run: |
+          mkdir -p docs
+          python - <<'PY'
+          import datetime
+          import json
+          import sqlite3
+          from pathlib import Path
+
+          db_path = Path("data/jobs.db")
+          out_path = Path("docs/data.json")
+
+          if not db_path.exists():
+            payload = {
+              "generated_at": datetime.datetime.now(datetime.timezone.utc).isoformat(),
+              "job_count": 0,
+              "application_count": 0,
+              "jobs": [],
+              "applications": [],
+            }
+            out_path.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+            raise SystemExit(0)
+
+          def parse_json_list(raw_value):
+            if not raw_value:
+              return []
+            try:
+              parsed = json.loads(raw_value)
+            except json.JSONDecodeError:
+              return []
+            if not isinstance(parsed, list):
+              return []
+            return [str(item).strip() for item in parsed if str(item).strip()]
+
+          conn = sqlite3.connect(db_path)
+          conn.row_factory = sqlite3.Row
+
+          jobs = []
+          for row in conn.execute(
+            """
+            SELECT
+              external_id,
+              run_id,
+              platform,
+              title,
+              company,
+              location,
+              url,
+              posted_at,
+              employment_type,
+              salary_text,
+              experience_text,
+              tags_json,
+              category_tags_json,
+              semantic_score,
+              scraped_at,
+              is_notified
+            FROM jobs
+            ORDER BY scraped_at DESC
+            """
+          ).fetchall():
+            data = dict(row)
+            data["tags"] = parse_json_list(data.pop("tags_json", "[]"))
+            data["category_tags"] = parse_json_list(data.pop("category_tags_json", "[]"))
+            data["is_notified"] = bool(data.get("is_notified"))
+            jobs.append(data)
+
+          applications = [dict(row) for row in conn.execute(
+            """
+            SELECT
+              application_id,
+              job_id,
+              status,
+              applied_date,
+              notes,
+              created_at,
+              updated_at
+            FROM applications
+            ORDER BY applied_date DESC
+            """
+          ).fetchall()]
+
+          conn.close()
+
+          payload = {
+            "generated_at": datetime.datetime.now(datetime.timezone.utc).isoformat(),
+            "job_count": len(jobs),
+            "application_count": len(applications),
+            "jobs": jobs,
+            "applications": applications,
+          }
+          out_path.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+          PY
+
       - name: Auto-commit updated jobs DB
         if: always()
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "chore(data): update jobs database [skip ci]"
+          commit_message: "chore(data): refresh jobs db and dashboard data [skip ci]"
           branch: main
-          file_pattern: data/ajh.db
+          file_pattern: data/jobs.db docs/**
           commit_user_name: github-actions[bot]
           commit_user_email: 41898282+github-actions[bot]@users.noreply.github.com

@@ -88,6 +88,7 @@ class JobOut(BaseModel):
     salary_text: str = ""
     experience_text: str = ""
     tags: list[str] = Field(default_factory=list)
+    category_tags: list[str] = Field(default_factory=list)
     semantic_score: float
 
 

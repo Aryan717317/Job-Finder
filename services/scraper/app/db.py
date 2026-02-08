@@ -88,10 +88,26 @@ def init_db() -> None:
                 salary_text TEXT NOT NULL DEFAULT '',
                 experience_text TEXT NOT NULL DEFAULT '',
                 tags_json TEXT NOT NULL DEFAULT '[]',
+                category_tags_json TEXT NOT NULL DEFAULT '[]',
                 is_notified INTEGER NOT NULL DEFAULT 0,
                 semantic_score REAL NOT NULL,
                 scraped_at TEXT NOT NULL,
                 FOREIGN KEY (run_id) REFERENCES scrape_runs(run_id)
+            )
+            """
+        )
+        conn.execute(
+            """
+            CREATE TABLE IF NOT EXISTS applications (
+                application_id INTEGER PRIMARY KEY AUTOINCREMENT,
+                job_id TEXT NOT NULL,
+                status TEXT NOT NULL CHECK (status IN ('Applied', 'Interviewing', 'Rejected', 'Offer')),
+                applied_date TEXT NOT NULL,
+                notes TEXT NOT NULL DEFAULT '',
+                created_at TEXT NOT NULL,
+                updated_at TEXT NOT NULL,
+                UNIQUE(job_id),
+                FOREIGN KEY (job_id) REFERENCES jobs(external_id)
             )
             """
         )
@@ -147,12 +163,15 @@ def init_db() -> None:
         _ensure_column(conn, "jobs", "salary_text", "TEXT", "''")
         _ensure_column(conn, "jobs", "experience_text", "TEXT", "''")
         _ensure_column(conn, "jobs", "tags_json", "TEXT", "'[]'")
+        _ensure_column(conn, "jobs", "category_tags_json", "TEXT", "'[]'")
         _ensure_column(conn, "jobs", "is_notified", "INTEGER", "0")
 
         conn.execute("CREATE INDEX IF NOT EXISTS idx_jobs_scraped_at ON jobs (scraped_at DESC)")
         conn.execute("CREATE INDEX IF NOT EXISTS idx_jobs_is_notified ON jobs (is_notified)")
         conn.execute("CREATE INDEX IF NOT EXISTS idx_jobs_platform ON jobs (platform)")
         conn.execute("CREATE INDEX IF NOT EXISTS idx_jobs_run_id ON jobs (run_id)")
+        conn.execute("CREATE INDEX IF NOT EXISTS idx_applications_status_date ON applications (status, applied_date DESC)")
+        conn.execute("CREATE INDEX IF NOT EXISTS idx_applications_job_id ON applications (job_id)")
         conn.execute("CREATE INDEX IF NOT EXISTS idx_run_events_run_id ON run_events (run_id, event_id)")
         conn.execute("CREATE INDEX IF NOT EXISTS idx_scrape_runs_created ON scrape_runs (created_at DESC)")
         conn.execute("CREATE INDEX IF NOT EXISTS idx_cycle_runs_status ON cycle_runs (status, ended_at)")
@@ -239,8 +258,8 @@ def insert_jobs(rows: list[dict]) -> None:
             """
             INSERT INTO jobs (
                 external_id, run_id, platform, title, company, location, url, description, posted_at,
-                employment_type, salary_text, experience_text, tags_json, is_notified, semantic_score, scraped_at
-            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                employment_type, salary_text, experience_text, tags_json, category_tags_json, is_notified, semantic_score, scraped_at
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
             ON CONFLICT(external_id) DO UPDATE SET
                 run_id = excluded.run_id,
                 platform = excluded.platform,
@@ -254,6 +273,7 @@ def insert_jobs(rows: list[dict]) -> None:
                 salary_text = excluded.salary_text,
                 experience_text = excluded.experience_text,
                 tags_json = excluded.tags_json,
+                category_tags_json = excluded.category_tags_json,
                 semantic_score = excluded.semantic_score,
                 scraped_at = excluded.scraped_at,
                 is_notified = jobs.is_notified
@@ -273,6 +293,7 @@ def insert_jobs(rows: list[dict]) -> None:
                     row.get("salary_text", ""),
                     row.get("experience_text", ""),
                     json.dumps(row.get("tags", []), ensure_ascii=False),
+                    json.dumps(row.get("category_tags", []), ensure_ascii=False),
                     int(row.get("is_notified", 0)),
                     row.get("semantic_score", 0.0),
                     row["scraped_at"],

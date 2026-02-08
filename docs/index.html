@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Job Search OS</title>
+    <style>
+      :root {
+        --bg: #f2eee6;
+        --panel: rgba(255, 255, 255, 0.8);
+        --ink: #1b1a17;
+        --muted: #6a645b;
+        --accent: #0e6e5f;
+        --accent-2: #b9512d;
+        --border: rgba(27, 26, 23, 0.14);
+        --chip: #ece6da;
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        font-family: "Avenir Next", "Trebuchet MS", "Segoe UI", sans-serif;
+        color: var(--ink);
+        background:
+          radial-gradient(circle at 10% 0%, rgba(185, 81, 45, 0.24), transparent 34%),
+          radial-gradient(circle at 90% 0%, rgba(14, 110, 95, 0.22), transparent 30%),
+          var(--bg);
+      }
+      .shell {
+        width: min(1120px, 94vw);
+        margin: 28px auto 36px;
+      }
+      .hero {
+        border: 1px solid var(--border);
+        background: var(--panel);
+        backdrop-filter: blur(5px);
+        border-radius: 18px;
+        padding: 24px;
+        box-shadow: 0 16px 38px rgba(27, 26, 23, 0.08);
+      }
+      .kicker {
+        margin: 0 0 8px;
+        color: var(--muted);
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        font-size: 0.76rem;
+      }
+      h1 {
+        margin: 0 0 8px;
+        font-family: "Georgia", "Times New Roman", serif;
+        font-size: clamp(1.8rem, 4vw, 3rem);
+        line-height: 1.06;
+      }
+      .lead {
+        margin: 0;
+        color: var(--muted);
+        max-width: 72ch;
+      }
+      .controls {
+        margin-top: 16px;
+        display: grid;
+        gap: 10px;
+        grid-template-columns: 1fr auto auto auto;
+        align-items: center;
+      }
+      .search {
+        width: 100%;
+        border-radius: 12px;
+        border: 1px solid var(--border);
+        background: #fff;
+        color: var(--ink);
+        padding: 11px 12px;
+      }
+      .toggle {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 0.9rem;
+        padding: 8px 10px;
+        border-radius: 10px;
+        border: 1px solid var(--border);
+        background: #fff;
+      }
+      .btn {
+        border: 1px solid var(--border);
+        background: var(--ink);
+        color: #fff;
+        border-radius: 10px;
+        padding: 10px 12px;
+        cursor: pointer;
+      }
+      .btn.secondary {
+        background: #fff;
+        color: var(--ink);
+      }
+      .stats {
+        margin-top: 12px;
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
+      .jobs {
+        margin-top: 18px;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 14px;
+      }
+      .card {
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        background: rgba(255, 255, 255, 0.86);
+        padding: 14px;
+      }
+      .top {
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+      }
+      .title {
+        margin: 0;
+        font-size: 1.04rem;
+        line-height: 1.25;
+      }
+      .company {
+        margin: 5px 0 0;
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
+      .status {
+        font-size: 0.75rem;
+        padding: 6px 8px;
+        border-radius: 999px;
+        align-self: flex-start;
+        border: 1px solid transparent;
+      }
+      .status.none {
+        background: #f6f1e7;
+        border-color: #e7dece;
+      }
+      .status.applied {
+        background: #e2f2ed;
+        color: #085146;
+      }
+      .status.other {
+        background: #fff2e8;
+        color: #8a451e;
+      }
+      .meta {
+        margin-top: 10px;
+        color: var(--muted);
+        font-size: 0.84rem;
+      }
+      .chips {
+        margin-top: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+      }
+      .chip {
+        display: inline-flex;
+        font-size: 0.74rem;
+        border-radius: 999px;
+        background: var(--chip);
+        padding: 4px 8px;
+      }
+      .chip.fresher {
+        background: rgba(14, 110, 95, 0.14);
+      }
+      .chip.prompt {
+        background: rgba(185, 81, 45, 0.14);
+      }
+      .actions {
+        margin-top: 12px;
+        display: flex;
+        gap: 8px;
+      }
+      .link {
+        text-decoration: none;
+        color: inherit;
+      }
+      @media (max-width: 850px) {
+        .controls { grid-template-columns: 1fr 1fr; }
+      }
+      @media (max-width: 560px) {
+        .controls { grid-template-columns: 1fr; }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="shell">
+      <section class="hero">
+        <p class="kicker">Job Search OS</p>
+        <h1>Application Tracking + Role Intelligence</h1>
+        <p class="lead">Filter fresher opportunities, isolate prompt-engineering roles, search company links, and log applications locally.</p>
+        <div class="controls">
+          <input id="searchInput" class="search" type="search" placeholder="Search company, title, or link">
+          <label class="toggle"><input id="fresherOnly" type="checkbox"> Fresher Only</label>
+          <label class="toggle"><input id="promptOnly" type="checkbox"> Prompt Engineering</label>
+          <button id="downloadLogsBtn" class="btn secondary" type="button">Download Apply Log</button>
+        </div>
+        <div id="stats" class="stats">Loading jobs...</div>
+      </section>
+      <section id="jobsGrid" class="jobs"></section>
+    </main>
+    <script>
+      const APPLY_LOG_KEY = "job-search-os.apply-log.v1";
+      const state = {
+        jobs: [],
+        dbApplications: new Map(),
+        localApplications: new Map(),
+      };
+
+      function safeJsonParse(raw, fallback) {
+        try {
+          return JSON.parse(raw);
+        } catch {
+          return fallback;
+        }
+      }
+
+      function loadLocalApplications() {
+        const rows = safeJsonParse(localStorage.getItem(APPLY_LOG_KEY) || "[]", []);
+        const map = new Map();
+        rows.forEach((row) => {
+          if (!row || !row.job_id) return;
+          map.set(row.job_id, row);
+        });
+        return map;
+      }
+
+      function saveLocalApplications() {
+        const rows = [...state.localApplications.values()].sort((a, b) => a.applied_date < b.applied_date ? 1 : -1);
+        localStorage.setItem(APPLY_LOG_KEY, JSON.stringify(rows));
+      }
+
+      function normalizeTags(tags) {
+        return Array.isArray(tags) ? tags.map((t) => String(t).trim()).filter(Boolean) : [];
+      }
+
+      function hasTag(job, tag) {
+        const wanted = tag.toLowerCase();
+        return normalizeTags(job.category_tags).some((t) => t.toLowerCase() === wanted);
+      }
+
+      function effectiveApplication(jobId) {
+        return state.localApplications.get(jobId) || state.dbApplications.get(jobId) || null;
+      }
+
+      function markAsApplied(job) {
+        const entry = {
+          job_id: job.external_id,
+          status: "Applied",
+          applied_date: new Date().toISOString(),
+          notes: "",
+          source: "local-dashboard",
+        };
+        state.localApplications.set(job.external_id, entry);
+        saveLocalApplications();
+        render();
+      }
+
+      function exportLocalLog() {
+        const payload = [...state.localApplications.values()];
+        const blob = new Blob([JSON.stringify(payload, null, 2)], { type: "application/json" });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = "apply_log.json";
+        a.click();
+        URL.revokeObjectURL(url);
+      }
+
+      function statusClass(status) {
+        if (!status) return "none";
+        if (String(status).toLowerCase() === "applied") return "applied";
+        return "other";
+      }
+
+      function filteredJobs() {
+        const search = document.getElementById("searchInput").value.trim().toLowerCase();
+        const fresherOnly = document.getElementById("fresherOnly").checked;
+        const promptOnly = document.getElementById("promptOnly").checked;
+        return state.jobs.filter((job) => {
+          if (fresherOnly && !hasTag(job, "Fresher")) return false;
+          if (promptOnly && !hasTag(job, "Prompt Engineering")) return false;
+          if (!search) return true;
+          const haystack = `${job.title || ""} ${job.company || ""} ${job.url || ""}`.toLowerCase();
+          return haystack.includes(search);
+        });
+      }
+
+      function render() {
+        const grid = document.getElementById("jobsGrid");
+        const stats = document.getElementById("stats");
+        const rows = filteredJobs();
+        const appliedCount = [...state.jobs].filter((job) => effectiveApplication(job.external_id)).length;
+        stats.textContent = `${rows.length} shown / ${state.jobs.length} total | ${appliedCount} with application status`;
+
+        if (!rows.length) {
+          grid.innerHTML = "<article class=\"card\"><p class=\"title\">No jobs match your filters.</p></article>";
+          return;
+        }
+
+        grid.innerHTML = "";
+        rows.forEach((job) => {
+          const app = effectiveApplication(job.external_id);
+          const tags = normalizeTags(job.category_tags);
+          const card = document.createElement("article");
+          card.className = "card";
+          card.innerHTML = `
+            <div class="top">
+              <div>
+                <h3 class="title">${job.title || "Untitled role"}</h3>
+                <p class="company">${job.company || "Unknown company"}</p>
+              </div>
+              <span class="status ${statusClass(app?.status)}">${app?.status || "Not Applied"}</span>
+            </div>
+            <div class="meta">${job.location || "Location n/a"} | ${job.platform || "platform n/a"}</div>
+            <div class="chips">
+              ${tags.map((tag) => `<span class="chip ${tag.toLowerCase().includes("fresher") ? "fresher" : tag.toLowerCase().includes("prompt") ? "prompt" : ""}">${tag}</span>`).join("")}
+            </div>
+            <div class="actions">
+              <a class="btn link secondary" href="${job.url || "#"}" target="_blank" rel="noreferrer">Open Link</a>
+              <button class="btn mark-btn" data-job-id="${job.external_id}" type="button">
+                ${app ? "Update Applied" : "Mark as Applied"}
+              </button>
+            </div>
+          `;
+          grid.appendChild(card);
+        });
+
+        grid.querySelectorAll(".mark-btn").forEach((button) => {
+          button.addEventListener("click", () => {
+            const job = state.jobs.find((item) => item.external_id === button.dataset.jobId);
+            if (job) markAsApplied(job);
+          });
+        });
+      }
+
+      async function loadData() {
+        const response = await fetch("./data.json", { cache: "no-store" });
+        if (!response.ok) throw new Error(`Failed to load data.json: ${response.status}`);
+        const payload = await response.json();
+        state.jobs = Array.isArray(payload.jobs) ? payload.jobs : [];
+        state.localApplications = loadLocalApplications();
+        state.dbApplications = new Map();
+        const dbApplications = Array.isArray(payload.applications) ? payload.applications : [];
+        dbApplications.forEach((row) => {
+          if (!row || !row.job_id) return;
+          state.dbApplications.set(row.job_id, row);
+        });
+      }
+
+      document.getElementById("searchInput").addEventListener("input", render);
+      document.getElementById("fresherOnly").addEventListener("change", render);
+      document.getElementById("promptOnly").addEventListener("change", render);
+      document.getElementById("downloadLogsBtn").addEventListener("click", exportLocalLog);
+
+      loadData().then(render).catch((error) => {
+        document.getElementById("stats").textContent = error.message;
+      });
+    </script>
+  </body>
+</html>
