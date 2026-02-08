@@ -20,6 +20,82 @@ from notifier import send_new_jobs_email
 from services.scraper.app import db
 
 
+_CS_TITLE_WHITELIST = (
+    "sde",
+    "software",
+    "developer",
+    "engineer",
+    "ai",
+    "ml",
+    "machine learning",
+    "data science",
+    "data analyst",
+    "prompt engineering",
+    "llm",
+    "fullstack",
+    "backend",
+    "frontend",
+)
+
+_NON_TECH_BLACKLIST = (
+    "accountant",
+    "sales",
+    "marketing",
+    "manager",
+    "bpo",
+    "content writer",
+    "hr",
+    "civil",
+    "mechanical",
+    "electrical",
+)
+
+
+def _normalize_title(value: str) -> str:
+    return " ".join((value or "").strip().lower().split())
+
+
+def _is_cs_ai_ml_title(title: str) -> bool:
+    normalized = _normalize_title(title)
+    if not normalized:
+        return False
+    return any(keyword in normalized for keyword in _CS_TITLE_WHITELIST)
+
+
+def _is_blacklisted_title(title: str) -> bool:
+    normalized = _normalize_title(title)
+    if not normalized:
+        return True
+
+    if "engineering manager" in normalized:
+        manager_blacklisted = False
+    else:
+        manager_blacklisted = "manager" in normalized
+
+    for keyword in _NON_TECH_BLACKLIST:
+        if keyword == "manager":
+            if manager_blacklisted:
+                return True
+            continue
+        if keyword in normalized:
+            return True
+    return False
+
+
+def _filter_cs_jobs(jobs: list, logger: logging.Logger) -> list:
+    filtered: list = []
+    for job in jobs:
+        title = getattr(job, "title", "") or ""
+        if _is_blacklisted_title(title):
+            logger.info("[Filtered Out] Non-CS role: %s", title)
+            continue
+        if not _is_cs_ai_ml_title(title):
+            logger.info("[Filtered Out] Non-CS role: %s", title)
+            continue
+        filtered.append(job)
+    return filtered
+
+
 def _configure_logging() -> logging.Logger:
     log_path = Path(os.getenv("AJH_CYCLE_LOG_PATH", "services/scraper/data/logs/cycle_runner.log"))
     log_path.parent.mkdir(parents=True, exist_ok=True)
@@ -126,6 +202,7 @@ def _run_cycle(
                 ),
             )
         )
+        jobs = _filter_cs_jobs(jobs, logger)
         jobs_processed = len(jobs)
         db.insert_jobs([job.to_dict() for job in jobs])
         db.mark_run_completed(run_id, jobs_collected=jobs_processed)

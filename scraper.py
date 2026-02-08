@@ -13,10 +13,11 @@ from cycle_runner import _configure_logging, _implemented_platforms, _run_cycle,
 
 
 DEFAULT_SEARCH_QUERIES = [
-    "ML Engineer",
-    "Prompt Engineer",
-    "LLM Specialist",
-    "Generative AI",
+    "Software Development Engineer SDE-1",
+    "Junior Machine Learning Engineer",
+    "Prompt Engineer LLM",
+    "Associate Data Scientist",
+    "Data Analyst Fresher",
 ]
 
 
