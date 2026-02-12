@@ -13,22 +13,26 @@ if ($DailyAtMinute -lt 0 -or $DailyAtMinute -gt 59) { throw "DailyAtMinute must 
 
 $repoRoot = Resolve-Path (Join-Path $PSScriptRoot "..")
 $runScript = Join-Path $repoRoot "ops\run_maintenance.ps1"
+$vbsLauncher = Join-Path $repoRoot "ops\silent_launch.vbs"
 if (-not (Test-Path $runScript)) {
   throw "Missing run script: $runScript"
 }
+if (-not (Test-Path $vbsLauncher)) {
+  throw "Missing silent launcher: $vbsLauncher"
+}
 
 $timeText = "{0:D2}:{1:D2}" -f $DailyAtHour, $DailyAtMinute
+# Use wscript + VBS wrapper so no console window ever appears.
 $argParts = @(
-  "-NoProfile",
-  "-ExecutionPolicy", "Bypass",
-  "-File", ('"{0}"' -f $runScript),
+  '"' + $vbsLauncher + '"',
+  '"' + $runScript + '"',
   "-ReportRetentionDays", "$ReportRetentionDays",
   "-LogRetentionDays", "$LogRetentionDays"
 )
 if ($SkipVacuum) { $argParts += "-SkipVacuum" }
 $taskArgs = $argParts -join " "
 
-$action = New-ScheduledTaskAction -Execute "powershell.exe" -Argument $taskArgs -WorkingDirectory $repoRoot
+$action = New-ScheduledTaskAction -Execute "wscript.exe" -Argument $taskArgs -WorkingDirectory $repoRoot
 $trigger = New-ScheduledTaskTrigger -Daily -At $timeText
 $settings = New-ScheduledTaskSettingsSet `
   -AllowStartIfOnBatteries `

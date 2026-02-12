@@ -26,22 +26,26 @@ if ($useDaily) {
 
 $repoRoot = Resolve-Path (Join-Path $PSScriptRoot "..")
 $runScript = Join-Path $repoRoot "ops\run_cycle.ps1"
+$vbsLauncher = Join-Path $repoRoot "ops\silent_launch.vbs"
 if (-not (Test-Path $runScript)) {
   throw "Missing run script: $runScript"
 }
+if (-not (Test-Path $vbsLauncher)) {
+  throw "Missing silent launcher: $vbsLauncher"
+}
 
+# Use wscript + VBS wrapper so no console window ever appears.
 $argParts = @(
-  "-NoProfile",
-  "-ExecutionPolicy", "Bypass",
-  "-File", ('"{0}"' -f $runScript),
+  '"' + $vbsLauncher + '"',
+  '"' + $runScript + '"',
   "-Mode", "scheduled-task",
-  "-Query", ('"{0}"' -f $Query)
+  "-Query", ('"' + $Query + '"')
 )
 if ($NoEmail) { $argParts += "-NoEmail" }
 if ($Headful) { $argParts += "-Headful" }
 $taskArgs = $argParts -join " "
 
-$action = New-ScheduledTaskAction -Execute "powershell.exe" -Argument $taskArgs -WorkingDirectory $repoRoot
+$action = New-ScheduledTaskAction -Execute "wscript.exe" -Argument $taskArgs -WorkingDirectory $repoRoot
 if ($useDaily) {
   $timeText = "{0:D2}:{1:D2}" -f $DailyAtHour, $DailyAtMinute
   $trigger = New-ScheduledTaskTrigger -Daily -At $timeText
