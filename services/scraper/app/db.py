@@ -554,6 +554,7 @@ def list_latest_jobs(limit: int = 20, offset: int = 0) -> list[sqlite3.Row]:
             """
             SELECT *
             FROM jobs
+            WHERE is_fresher = 1
             ORDER BY scraped_at DESC
             LIMIT ? OFFSET ?
             """,
@@ -563,7 +564,7 @@ def list_latest_jobs(limit: int = 20, offset: int = 0) -> list[sqlite3.Row]:
 
 def count_jobs() -> int:
     with get_conn() as conn:
-        row = conn.execute("SELECT COUNT(1) AS cnt FROM jobs").fetchone()
+        row = conn.execute("SELECT COUNT(1) AS cnt FROM jobs WHERE is_fresher = 1").fetchone()
         return int(row["cnt"]) if row else 0
 
 
@@ -574,7 +575,7 @@ def list_unnotified_jobs(limit: int = 500) -> list[sqlite3.Row]:
             """
             SELECT *
             FROM jobs
-            WHERE is_notified = 0
+            WHERE is_notified = 0 AND is_fresher = 1
             ORDER BY scraped_at DESC
             LIMIT ?
             """,

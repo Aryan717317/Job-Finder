@@ -96,6 +96,21 @@ def _filter_cs_jobs(jobs: list, logger: logging.Logger) -> list:
     return filtered
 
 
+def _filter_fresher_jobs(jobs: list, logger: logging.Logger) -> list:
+    from services.scraper.app.models import scan_fresher_keywords
+
+    filtered: list = []
+    for job in jobs:
+        title = getattr(job, "title", "") or ""
+        description = getattr(job, "description", "") or ""
+        experience_text = getattr(job, "experience_text", "") or ""
+        if not scan_fresher_keywords(description=description, experience_text=experience_text, title=title):
+            logger.info("[Filtered Out] Non-fresher role: %s", title)
+            continue
+        filtered.append(job)
+    return filtered
+
+
 def _configure_logging() -> logging.Logger:
     log_path = Path(os.getenv("AJH_CYCLE_LOG_PATH", "services/scraper/data/logs/cycle_runner.log"))
     log_path.parent.mkdir(parents=True, exist_ok=True)
@@ -203,6 +218,7 @@ def _run_cycle(
             )
         )
         jobs = _filter_cs_jobs(jobs, logger)
+        jobs = _filter_fresher_jobs(jobs, logger)
         jobs_processed = len(jobs)
         db.insert_jobs([job.to_dict() for job in jobs])
         db.mark_run_completed(run_id, jobs_collected=jobs_processed)

@@ -12,6 +12,12 @@ _FRESHER_PATTERNS = (
     re.compile(r"\b20(?:24|25|26)\s*batch\b", re.IGNORECASE),
     re.compile(r"\b(?:2024|2025|2026)(?:\s*[/,-]\s*(?:2024|2025|2026)){1,2}\s*batch\b", re.IGNORECASE),
 )
+_SENIOR_EXP_PATTERNS = (
+    re.compile(r"\b([2-9]|[1-9]\d+)\s*(?:\+|or\s+more)\s*(?:yr|yrs|year|years)\b", re.IGNORECASE),
+    re.compile(r"\b([2-9]|[1-9]\d+)\s*(?:-|/|to)\s*\d+\s*(?:yr|yrs|year|years)\b", re.IGNORECASE),
+    re.compile(r"\b(?:minimum|min|at\s+least)\s+([2-9]|[1-9]\d+)\s*(?:yr|yrs|year|years)\b", re.IGNORECASE),
+    re.compile(r"\b(?:senior|staff|lead|principal|sr\.?)\s+(?:software|data|ml|ai|machine\s+learning)\b", re.IGNORECASE),
+)
 _PROMPT_PATTERNS = (
     re.compile(r"\bprompt\s+(?:engineering|engineer|design|writing)\b", re.IGNORECASE),
     re.compile(r"\bllm\s+(?:specialist|engineer|prompt)\b", re.IGNORECASE),
@@ -39,9 +45,15 @@ def _normalize_unique(values: list[str] | None) -> list[str]:
     return normalized
 
 
+def _has_senior_experience(text: str) -> bool:
+    return any(pattern.search(text) for pattern in _SENIOR_EXP_PATTERNS)
+
+
 def scan_fresher_keywords(description: str, experience_text: str, title: str = "") -> bool:
     text = " ".join(part.strip() for part in (title, description, experience_text) if part and part.strip())
     if not text:
+        return False
+    if _has_senior_experience(text):
         return False
     return any(pattern.search(text) for pattern in _FRESHER_PATTERNS)
 
