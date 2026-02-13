@@ -445,11 +445,26 @@ def has_active_cycle_run() -> bool:
         return row is not None
 
 
-def create_cycle_run(mode: str, query: str, enforce_singleton: bool = False) -> int | None:
+def create_cycle_run(mode: str, query: str, enforce_singleton: bool = False, stale_timeout_hours: float = 2.0) -> int | None:
     now = _now_iso()
     with get_conn() as conn:
         if enforce_singleton:
             conn.execute("BEGIN IMMEDIATE")
+
+            # Auto-expire cycles stuck in 'running' longer than stale_timeout_hours
+            conn.execute(
+                """
+                UPDATE cycle_runs
+                SET status = 'failed',
+                    error_message = 'Auto-expired: exceeded stale cycle timeout',
+                    ended_at = ?
+                WHERE status = 'running'
+                  AND ended_at IS NULL
+                  AND started_at < datetime(?, '-' || ? || ' hours')
+                """,
+                (now, now, str(stale_timeout_hours)),
+            )
+
             active = conn.execute(
                 """
                 SELECT cycle_id
