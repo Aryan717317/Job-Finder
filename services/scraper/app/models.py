@@ -8,7 +8,12 @@ import re
 
 _FRESHER_PATTERNS = (
     re.compile(r"\b0\s*(?:-|/|to)\s*1\s*(?:yr|yrs|year|years)\b", re.IGNORECASE),
+    re.compile(r"\b0\s*(?:-|/|to)\s*1\b", re.IGNORECASE),
+    re.compile(r"\b(?:0|1)\s*(?:yr|yrs|year|years)\b", re.IGNORECASE),
+    re.compile(r"\b(?:no|zero)\s+experience\b", re.IGNORECASE),
     re.compile(r"\b(?:entry[\s-]*level|fresher|freshers)\b", re.IGNORECASE),
+    re.compile(r"\b(?:new|recent)\s+grad(?:uate)?s?\b", re.IGNORECASE),
+    re.compile(r"\b(?:intern(?:ship)?|trainee)\b", re.IGNORECASE),
     re.compile(r"\b20(?:24|25|26)\s*batch\b", re.IGNORECASE),
     re.compile(r"\b(?:2024|2025|2026)(?:\s*[/,-]\s*(?:2024|2025|2026)){1,2}\s*batch\b", re.IGNORECASE),
 )
@@ -16,7 +21,13 @@ _SENIOR_EXP_PATTERNS = (
     re.compile(r"\b([2-9]|[1-9]\d+)\s*(?:\+|or\s+more)\s*(?:yr|yrs|year|years)\b", re.IGNORECASE),
     re.compile(r"\b([2-9]|[1-9]\d+)\s*(?:-|/|to)\s*\d+\s*(?:yr|yrs|year|years)\b", re.IGNORECASE),
     re.compile(r"\b(?:minimum|min|at\s+least)\s+([2-9]|[1-9]\d+)\s*(?:yr|yrs|year|years)\b", re.IGNORECASE),
-    re.compile(r"\b(?:senior|staff|lead|principal|sr\.?)\s+(?:software|data|ml|ai|machine\s+learning)\b", re.IGNORECASE),
+    re.compile(r"\b(?:minimum|min|at\s+least)\s+1\s*(?:yr|yrs|year|years)\b", re.IGNORECASE),
+    re.compile(r"\b1\s*\+\s*(?:yr|yrs|year|years)\b", re.IGNORECASE),
+    re.compile(r"\b0\s*(?:-|/|to)\s*([2-9]|[1-9]\d+)\s*(?:yr|yrs|year|years)\b", re.IGNORECASE),
+    re.compile(r"\b1\s*(?:-|/|to)\s*([2-9]|[1-9]\d+)\s*(?:yr|yrs|year|years)\b", re.IGNORECASE),
+    re.compile(r"\b(?:senior|staff|lead|principal|sr\.?)\s+(?:software|data|ml|ai|machine\s+learning|developer|engineer|analyst|architect|sde|full[\s-]*stack|backend|frontend|devops)\b", re.IGNORECASE),
+    # Standalone "N years/yrs" where N >= 2 — catches "3 Yrs", "5 Years", etc.
+    re.compile(r"\b([2-9]|[1-9]\d+)\s*(?:yr|yrs|year|years)\b", re.IGNORECASE),
 )
 _PROMPT_PATTERNS = (
     re.compile(r"\bprompt\s+(?:engineering|engineer|design|writing)\b", re.IGNORECASE),
@@ -27,6 +38,33 @@ _GENAI_PATTERNS = (
     re.compile(r"\bgenai\b", re.IGNORECASE),
     re.compile(r"\blarge\s+language\s+model\b", re.IGNORECASE),
     re.compile(r"\bllm\b", re.IGNORECASE),
+)
+_CS_ROLE_PATTERNS = (
+    re.compile(r"\bsde\b", re.IGNORECASE),
+    re.compile(r"\bsoftware\b", re.IGNORECASE),
+    re.compile(r"\bdeveloper\b", re.IGNORECASE),
+    re.compile(r"\bengineer\b", re.IGNORECASE),
+    re.compile(r"\bai\b", re.IGNORECASE),
+    re.compile(r"\bml\b", re.IGNORECASE),
+    re.compile(r"\bmachine\s+learning\b", re.IGNORECASE),
+    re.compile(r"\bdata\s+science\b", re.IGNORECASE),
+    re.compile(r"\bdata\s+analyst\b", re.IGNORECASE),
+    re.compile(r"\bprompt\s+engineering\b", re.IGNORECASE),
+    re.compile(r"\bllm\b", re.IGNORECASE),
+    re.compile(r"\bfull[\s-]*stack\b", re.IGNORECASE),
+    re.compile(r"\bbackend\b", re.IGNORECASE),
+    re.compile(r"\bfrontend\b", re.IGNORECASE),
+)
+_NON_TECH_ROLE_PATTERNS = (
+    re.compile(r"\baccountant\b", re.IGNORECASE),
+    re.compile(r"\bsales\b", re.IGNORECASE),
+    re.compile(r"\bmarketing\b", re.IGNORECASE),
+    re.compile(r"\bbpo\b", re.IGNORECASE),
+    re.compile(r"\bcontent\s+writer\b", re.IGNORECASE),
+    re.compile(r"\bhr\b", re.IGNORECASE),
+    re.compile(r"\bcivil\b", re.IGNORECASE),
+    re.compile(r"\bmechanical\b", re.IGNORECASE),
+    re.compile(r"\belectrical\b", re.IGNORECASE),
 )
 
 
@@ -47,6 +85,30 @@ def _normalize_unique(values: list[str] | None) -> list[str]:
 
 def _has_senior_experience(text: str) -> bool:
     return any(pattern.search(text) for pattern in _SENIOR_EXP_PATTERNS)
+
+
+def is_cs_ai_ml_role(title: str, description: str = "") -> bool:
+    text = " ".join(part.strip() for part in (title, description) if part and part.strip())
+    if not text:
+        return False
+
+    if re.search(r"\bmanager\b", text, re.IGNORECASE) and not re.search(
+        r"\bengineering\s+manager\b", text, re.IGNORECASE
+    ):
+        return False
+
+    if any(pattern.search(text) for pattern in _NON_TECH_ROLE_PATTERNS):
+        return False
+    return any(pattern.search(text) for pattern in _CS_ROLE_PATTERNS)
+
+
+def normalize_fresher_query(query: str) -> str:
+    base = (query or "").strip() or "AI/ML Engineer"
+    lowered = base.lower()
+    hints = ("fresher", "entry level", "entry-level", "0-1", "0/1", "0 to 1", "new grad", "recent grad")
+    if any(token in lowered for token in hints):
+        return base
+    return f"{base} fresher 0-1 years entry level"
 
 
 def scan_fresher_keywords(description: str, experience_text: str, title: str = "") -> bool:

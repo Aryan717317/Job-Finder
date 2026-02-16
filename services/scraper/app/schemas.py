@@ -24,6 +24,22 @@ class Platform(str, Enum):
     remotive = "remotive"
     working_nomads = "working_nomads"
     relocate_me = "relocate_me"
+    freshersworld = "freshersworld"
+    shine = "shine"
+    simplyhired = "simplyhired"
+    timesjobs = "timesjobs"
+    remote_ok = "remote_ok"
+    glassdoor = "glassdoor"
+    dice = "dice"
+    builtin = "builtin"
+    adzuna = "adzuna"
+    talent = "talent"
+    himalayas = "himalayas"
+    jooble = "jooble"
+    careerjet = "careerjet"
+    just_remote = "just_remote"
+    the_muse = "the_muse"
+    jobgether = "jobgether"
 
 
 class RunStatus(str, Enum):
