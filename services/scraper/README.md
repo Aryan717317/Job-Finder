@@ -44,7 +44,7 @@ From repo root (PowerShell wrappers):
 ## One-Off Full Cycle (CLI)
 From repo root:
 ```powershell
-python cycle_runner.py --query "AI/ML Engineer"
+python cycle_runner.py --query "AI/ML Engineer fresher 0-1 years"
 ```
 Optional:
 - `--platform <name>` (repeatable)
@@ -55,7 +55,7 @@ Optional:
 ## E2E Self-Test (Preflight + Scrape)
 From repo root:
 ```powershell
-python self_test_runner.py --query "AI/ML Engineer"
+python self_test_runner.py --query "AI/ML Engineer fresher 0-1 years"
 ```
 Optional:
 - `--platform <name>` (repeatable)

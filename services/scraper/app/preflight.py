@@ -47,7 +47,7 @@ def _check_platform_registry() -> tuple[str, str, dict]:
         support = list_platform_support()
         implemented = [item["platform"] for item in support if item["implemented"]]
         elapsed_ms = int((perf_counter() - started) * 1000)
-        if len(implemented) < 16:
+        if len(implemented) < 20:
             return (
                 "warning",
                 "Not all target platforms are implemented",

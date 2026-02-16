@@ -18,79 +18,32 @@ except Exception:  # pragma: no cover - optional dependency fallback
 
 from notifier import send_new_jobs_email
 from services.scraper.app import db
-
-
-_CS_TITLE_WHITELIST = (
-    "sde",
-    "software",
-    "developer",
-    "engineer",
-    "ai",
-    "ml",
-    "machine learning",
-    "data science",
-    "data analyst",
-    "prompt engineering",
-    "llm",
-    "fullstack",
-    "backend",
-    "frontend",
-)
-
-_NON_TECH_BLACKLIST = (
-    "accountant",
-    "sales",
-    "marketing",
-    "manager",
-    "bpo",
-    "content writer",
-    "hr",
-    "civil",
-    "mechanical",
-    "electrical",
-)
-
-
-def _normalize_title(value: str) -> str:
-    return " ".join((value or "").strip().lower().split())
-
-
-def _is_cs_ai_ml_title(title: str) -> bool:
-    normalized = _normalize_title(title)
-    if not normalized:
-        return False
-    return any(keyword in normalized for keyword in _CS_TITLE_WHITELIST)
-
-
-def _is_blacklisted_title(title: str) -> bool:
-    normalized = _normalize_title(title)
-    if not normalized:
-        return True
-
-    if "engineering manager" in normalized:
-        manager_blacklisted = False
-    else:
-        manager_blacklisted = "manager" in normalized
-
-    for keyword in _NON_TECH_BLACKLIST:
-        if keyword == "manager":
-            if manager_blacklisted:
-                return True
-            continue
-        if keyword in normalized:
-            return True
-    return False
+from services.scraper.app.models import is_cs_ai_ml_role, normalize_fresher_query
+_DEFAULT_FRESHER_QUERY = "AI/ML Engineer fresher 0-1 years"
 
 
 def _filter_cs_jobs(jobs: list, logger: logging.Logger) -> list:
     filtered: list = []
     for job in jobs:
         title = getattr(job, "title", "") or ""
-        if _is_blacklisted_title(title):
+        description = getattr(job, "description", "") or ""
+        if not is_cs_ai_ml_role(title=title, description=description):
             logger.info("[Filtered Out] Non-CS role: %s", title)
             continue
-        if not _is_cs_ai_ml_title(title):
-            logger.info("[Filtered Out] Non-CS role: %s", title)
+        filtered.append(job)
+    return filtered
+
+
+def _filter_fresher_jobs(jobs: list, logger: logging.Logger) -> list:
+    from services.scraper.app.models import scan_fresher_keywords
+
+    filtered: list = []
+    for job in jobs:
+        title = getattr(job, "title", "") or ""
+        description = getattr(job, "description", "") or ""
+        experience_text = getattr(job, "experience_text", "") or ""
+        if not scan_fresher_keywords(description=description, experience_text=experience_text, title=title):
+            logger.info("[Filtered Out] Non-fresher/0-1 role: %s", title)
             continue
         filtered.append(job)
     return filtered
@@ -132,7 +85,7 @@ def _implemented_platforms() -> list[str]:
 
 def _parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Run one full job aggregation cycle (scrape + optional notify).")
-    parser.add_argument("--query", default=os.getenv("AUTO_CYCLE_QUERY", "AI/ML Engineer"))
+    parser.add_argument("--query", default=os.getenv("AUTO_CYCLE_QUERY", _DEFAULT_FRESHER_QUERY))
     parser.add_argument("--platform", action="append", dest="platforms", default=None)
     parser.add_argument("--headful", action="store_true", help="Run browser in headful mode.")
     parser.add_argument("--no-email", action="store_true", help="Skip email notification.")
@@ -203,6 +156,7 @@ def _run_cycle(
             )
         )
         jobs = _filter_cs_jobs(jobs, logger)
+        jobs = _filter_fresher_jobs(jobs, logger)
         jobs_processed = len(jobs)
         db.insert_jobs([job.to_dict() for job in jobs])
         db.mark_run_completed(run_id, jobs_collected=jobs_processed)
@@ -277,7 +231,7 @@ def main() -> int:
 
     exit_code, summary = _run_cycle(
         logger=logger,
-        query=(args.query or "AI/ML Engineer").strip() or "AI/ML Engineer",
+        query=normalize_fresher_query((args.query or _DEFAULT_FRESHER_QUERY).strip() or _DEFAULT_FRESHER_QUERY),
         platforms=platforms,
         headless=not args.headful,
         send_email=not args.no_email,

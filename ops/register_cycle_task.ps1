@@ -3,7 +3,7 @@ param(
   [int]$Minutes = 60,
   [int]$DailyAtHour = -1,
   [int]$DailyAtMinute = -1,
-  [string]$Query = "AI/ML Engineer",
+  [string]$Query = "AI/ML Engineer fresher 0-1 years",
   [switch]$NoEmail,
   [switch]$Headful
 )
