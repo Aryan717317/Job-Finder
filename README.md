@@ -4,7 +4,7 @@ Production-oriented scaffold for an autonomous job-hunting assistant targeting I
 
 ## Current Scope
 - Python scraper microservice (FastAPI + Playwright) + Flask dashboard
-- 20-platform registry (20 implemented extractors + 0 stubs)
+- 33-platform registry (33 implemented extractors + 0 stubs)
 - SQLite persistence for runs, jobs, and notification state
 - Rust/Tauri orchestration command contracts (legacy path)
 

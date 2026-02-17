@@ -8,27 +8,77 @@ import re
 
 _FRESHER_PATTERNS = (
     re.compile(r"\b0\s*(?:-|/|to)\s*1\s*(?:yr|yrs|year|years)\b", re.IGNORECASE),
-    re.compile(r"\b0\s*(?:-|/|to)\s*1\b", re.IGNORECASE),
-    re.compile(r"\b(?:0|1)\s*(?:yr|yrs|year|years)\b", re.IGNORECASE),
-    re.compile(r"\b(?:no|zero)\s+experience\b", re.IGNORECASE),
     re.compile(r"\b(?:entry[\s-]*level|fresher|freshers)\b", re.IGNORECASE),
-    re.compile(r"\b(?:new|recent)\s+grad(?:uate)?s?\b", re.IGNORECASE),
-    re.compile(r"\b(?:intern(?:ship)?|trainee)\b", re.IGNORECASE),
     re.compile(r"\b20(?:24|25|26)\s*batch\b", re.IGNORECASE),
     re.compile(r"\b(?:2024|2025|2026)(?:\s*[/,-]\s*(?:2024|2025|2026)){1,2}\s*batch\b", re.IGNORECASE),
+)
+_EARLY_CAREER_PATTERNS = (
+    re.compile(r"\b(?:entry[\s-]*level|early[\s-]*career)\b", re.IGNORECASE),
+    re.compile(r"\b(?:new|recent)\s+grad(?:uate)?s?\b", re.IGNORECASE),
+    re.compile(r"\b(?:graduate|campus)\s+(?:engineer|developer|hire|program|role|opportunit(?:y|ies))\b", re.IGNORECASE),
+    re.compile(r"\b(?:intern(?:ship)?|trainee|apprentice)\b", re.IGNORECASE),
+    re.compile(r"\b0\s*(?:-|/|to)\s*2\s*(?:yr|yrs|year|years)\b", re.IGNORECASE),
+    re.compile(r"\b1\s*(?:-|/|to)\s*2\s*(?:yr|yrs|year|years)\b", re.IGNORECASE),
+    re.compile(r"\b(?:up\s*to|max(?:imum)?)\s*2\s*(?:yr|yrs|year|years)\b", re.IGNORECASE),
+    re.compile(r"\b(?:sde|software|developer|engineer)\s*[- ]?(?:i|1)\b", re.IGNORECASE),
+    re.compile(r"\b(?:machine\s+learning|ml|ai|data)\s+(?:engineer|scientist)\s*[- ]?(?:i|1)\b", re.IGNORECASE),
 )
 _SENIOR_EXP_PATTERNS = (
     re.compile(r"\b([2-9]|[1-9]\d+)\s*(?:\+|or\s+more)\s*(?:yr|yrs|year|years)\b", re.IGNORECASE),
     re.compile(r"\b([2-9]|[1-9]\d+)\s*(?:-|/|to)\s*\d+\s*(?:yr|yrs|year|years)\b", re.IGNORECASE),
     re.compile(r"\b(?:minimum|min|at\s+least)\s+([2-9]|[1-9]\d+)\s*(?:yr|yrs|year|years)\b", re.IGNORECASE),
-    re.compile(r"\b(?:minimum|min|at\s+least)\s+1\s*(?:yr|yrs|year|years)\b", re.IGNORECASE),
-    re.compile(r"\b1\s*\+\s*(?:yr|yrs|year|years)\b", re.IGNORECASE),
-    re.compile(r"\b0\s*(?:-|/|to)\s*([2-9]|[1-9]\d+)\s*(?:yr|yrs|year|years)\b", re.IGNORECASE),
-    re.compile(r"\b1\s*(?:-|/|to)\s*([2-9]|[1-9]\d+)\s*(?:yr|yrs|year|years)\b", re.IGNORECASE),
-    re.compile(r"\b(?:senior|staff|lead|principal|sr\.?)\s+(?:software|data|ml|ai|machine\s+learning|developer|engineer|analyst|architect|sde|full[\s-]*stack|backend|frontend|devops)\b", re.IGNORECASE),
-    # Standalone "N years/yrs" where N >= 2 — catches "3 Yrs", "5 Years", etc.
-    re.compile(r"\b([2-9]|[1-9]\d+)\s*(?:yr|yrs|year|years)\b", re.IGNORECASE),
+    re.compile(r"\b(?:senior|staff|lead|principal|sr\.?)\s+(?:software|data|ml|ai|machine\s+learning)\b", re.IGNORECASE),
 )
+_EARLY_CAREER_TECH_TITLE_HINTS = (
+    "sde",
+    "software",
+    "developer",
+    "engineer",
+    "machine learning",
+    "ml",
+    "ai",
+    "data scientist",
+    "data analyst",
+    "data engineer",
+    "fullstack",
+    "full stack",
+    "backend",
+    "frontend",
+    "devops",
+    "qa",
+    "security",
+)
+_EARLY_CAREER_NON_TECH_TITLE_HINTS = (
+    "sales",
+    "marketing",
+    "account manager",
+    "business development",
+    "recruit",
+    "human resources",
+    " hr ",
+    "finance",
+    "legal",
+    "product manager",
+    "program manager",
+    "director",
+    "vice president",
+    "vp ",
+)
+_EARLY_CAREER_SENIOR_TITLE_HINTS = (
+    "senior",
+    " sr ",
+    "sr.",
+    "lead",
+    "staff",
+    "principal",
+    "manager",
+    "director",
+    "head",
+    "architect",
+    "vice president",
+    " vp ",
+)
+_EARLY_CAREER_PLATFORM_ALLOWLIST = {"it_org_careers"}
 _PROMPT_PATTERNS = (
     re.compile(r"\bprompt\s+(?:engineering|engineer|design|writing)\b", re.IGNORECASE),
     re.compile(r"\bllm\s+(?:specialist|engineer|prompt)\b", re.IGNORECASE),
@@ -38,33 +88,6 @@ _GENAI_PATTERNS = (
     re.compile(r"\bgenai\b", re.IGNORECASE),
     re.compile(r"\blarge\s+language\s+model\b", re.IGNORECASE),
     re.compile(r"\bllm\b", re.IGNORECASE),
-)
-_CS_ROLE_PATTERNS = (
-    re.compile(r"\bsde\b", re.IGNORECASE),
-    re.compile(r"\bsoftware\b", re.IGNORECASE),
-    re.compile(r"\bdeveloper\b", re.IGNORECASE),
-    re.compile(r"\bengineer\b", re.IGNORECASE),
-    re.compile(r"\bai\b", re.IGNORECASE),
-    re.compile(r"\bml\b", re.IGNORECASE),
-    re.compile(r"\bmachine\s+learning\b", re.IGNORECASE),
-    re.compile(r"\bdata\s+science\b", re.IGNORECASE),
-    re.compile(r"\bdata\s+analyst\b", re.IGNORECASE),
-    re.compile(r"\bprompt\s+engineering\b", re.IGNORECASE),
-    re.compile(r"\bllm\b", re.IGNORECASE),
-    re.compile(r"\bfull[\s-]*stack\b", re.IGNORECASE),
-    re.compile(r"\bbackend\b", re.IGNORECASE),
-    re.compile(r"\bfrontend\b", re.IGNORECASE),
-)
-_NON_TECH_ROLE_PATTERNS = (
-    re.compile(r"\baccountant\b", re.IGNORECASE),
-    re.compile(r"\bsales\b", re.IGNORECASE),
-    re.compile(r"\bmarketing\b", re.IGNORECASE),
-    re.compile(r"\bbpo\b", re.IGNORECASE),
-    re.compile(r"\bcontent\s+writer\b", re.IGNORECASE),
-    re.compile(r"\bhr\b", re.IGNORECASE),
-    re.compile(r"\bcivil\b", re.IGNORECASE),
-    re.compile(r"\bmechanical\b", re.IGNORECASE),
-    re.compile(r"\belectrical\b", re.IGNORECASE),
 )
 
 
@@ -87,28 +110,13 @@ def _has_senior_experience(text: str) -> bool:
     return any(pattern.search(text) for pattern in _SENIOR_EXP_PATTERNS)
 
 
-def is_cs_ai_ml_role(title: str, description: str = "") -> bool:
-    text = " ".join(part.strip() for part in (title, description) if part and part.strip())
-    if not text:
+def _looks_like_tech_title(title: str) -> bool:
+    normalized = " ".join((title or "").strip().lower().split())
+    if not normalized:
         return False
-
-    if re.search(r"\bmanager\b", text, re.IGNORECASE) and not re.search(
-        r"\bengineering\s+manager\b", text, re.IGNORECASE
-    ):
+    if any(token in normalized for token in _EARLY_CAREER_NON_TECH_TITLE_HINTS):
         return False
-
-    if any(pattern.search(text) for pattern in _NON_TECH_ROLE_PATTERNS):
-        return False
-    return any(pattern.search(text) for pattern in _CS_ROLE_PATTERNS)
-
-
-def normalize_fresher_query(query: str) -> str:
-    base = (query or "").strip() or "AI/ML Engineer"
-    lowered = base.lower()
-    hints = ("fresher", "entry level", "entry-level", "0-1", "0/1", "0 to 1", "new grad", "recent grad")
-    if any(token in lowered for token in hints):
-        return base
-    return f"{base} fresher 0-1 years entry level"
+    return any(token in normalized for token in _EARLY_CAREER_TECH_TITLE_HINTS)
 
 
 def scan_fresher_keywords(description: str, experience_text: str, title: str = "") -> bool:
@@ -118,6 +126,28 @@ def scan_fresher_keywords(description: str, experience_text: str, title: str = "
     if _has_senior_experience(text):
         return False
     return any(pattern.search(text) for pattern in _FRESHER_PATTERNS)
+
+
+def scan_early_career_keywords(description: str, experience_text: str, title: str = "") -> bool:
+    text = " ".join(part.strip() for part in (title, description, experience_text) if part and part.strip())
+    if not text:
+        return False
+    if _has_senior_experience(text):
+        return False
+    normalized_title = " ".join((title or "").strip().lower().split())
+    if normalized_title and any(token in normalized_title for token in _EARLY_CAREER_SENIOR_TITLE_HINTS):
+        return False
+    if not _looks_like_tech_title(title):
+        return False
+    return any(pattern.search(text) for pattern in _EARLY_CAREER_PATTERNS)
+
+
+def is_entry_level_role(platform: str, description: str, experience_text: str, title: str = "") -> bool:
+    if scan_fresher_keywords(description=description, experience_text=experience_text, title=title):
+        return True
+    if (platform or "").strip().lower() in _EARLY_CAREER_PLATFORM_ALLOWLIST:
+        return scan_early_career_keywords(description=description, experience_text=experience_text, title=title)
+    return False
 
 
 def infer_role_type(title: str, description: str, raw_tags: list[str] | None = None) -> str:
@@ -133,10 +163,24 @@ def infer_role_type(title: str, description: str, raw_tags: list[str] | None = N
     return "ML"
 
 
-def infer_category_tags(title: str, description: str, experience_text: str, raw_tags: list[str] | None = None) -> list[str]:
+def infer_category_tags(
+    title: str,
+    description: str,
+    experience_text: str,
+    raw_tags: list[str] | None = None,
+    platform: str = "",
+) -> list[str]:
     labels: list[str] = []
-    if scan_fresher_keywords(description=description, experience_text=experience_text, title=title):
+    fresher_hit = scan_fresher_keywords(description=description, experience_text=experience_text, title=title)
+    early_career_hit = (
+        not fresher_hit
+        and (platform or "").strip().lower() in _EARLY_CAREER_PLATFORM_ALLOWLIST
+        and scan_early_career_keywords(description=description, experience_text=experience_text, title=title)
+    )
+    if fresher_hit:
         labels.append("Fresher")
+    elif early_career_hit:
+        labels.append("Early Career")
     role_type = infer_role_type(title=title, description=description, raw_tags=raw_tags)
     if role_type == "Prompt Engineering":
         labels.append(role_type)
@@ -178,7 +222,8 @@ class JobRecord:
         data = asdict(self)
         data["external_id"] = self.external_id
         data["tags"] = _normalize_unique(data.get("tags"))
-        detected_is_fresher = scan_fresher_keywords(
+        detected_is_fresher = is_entry_level_role(
+            platform=data.get("platform", ""),
             description=data.get("description", ""),
             experience_text=data.get("experience_text", ""),
             title=data.get("title", ""),
@@ -193,6 +238,7 @@ class JobRecord:
             description=data.get("description", ""),
             experience_text=data.get("experience_text", ""),
             raw_tags=data["tags"],
+            platform=data.get("platform", ""),
         )
         data["category_tags"] = _normalize_unique((data.get("category_tags") or []) + derived_category_tags)
         data["is_fresher"] = bool(data.get("is_fresher", False) or detected_is_fresher)

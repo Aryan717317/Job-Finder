@@ -40,6 +40,7 @@ class Platform(str, Enum):
     just_remote = "just_remote"
     the_muse = "the_muse"
     jobgether = "jobgether"
+    it_org_careers = "it_org_careers"
 
 
 class RunStatus(str, Enum):

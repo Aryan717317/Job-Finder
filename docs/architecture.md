@@ -14,7 +14,7 @@
 5. Notifier sends HTML summaries for unnotified jobs and marks them as notified.
 
 ## Platform Status
-- Implemented: Arc.dev, Cutshort, FlexJobs, Foundit, Hirect, Hirist, Indeed, Internshala, LinkedIn, Naukri, Remote.co, Relocate.me, Remotive, We Work Remotely, Wellfound, Working Nomads
+- Implemented: Arc.dev, Cutshort, FlexJobs, Foundit, Hirect, Hirist, Indeed, Internshala, LinkedIn, Naukri, Remote.co, Relocate.me, Remotive, We Work Remotely, Wellfound, Working Nomads, plus additional platforms including direct IT organization careers (`it_org_careers`)
 - Stubbed with runtime markers: none
 
 ## Scale-Out Plan

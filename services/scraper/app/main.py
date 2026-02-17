@@ -14,7 +14,7 @@ from slowapi.errors import RateLimitExceeded
 
 from . import db
 from .config import settings
-from .models import is_cs_ai_ml_role, normalize_fresher_query, scan_fresher_keywords
+from .models import is_entry_level_role
 from .runner import list_platform_support, run_scrape
 from .schemas import (
     CreateRunRequest,
@@ -131,16 +131,15 @@ async def _execute_run(run_id: str, query: str, platforms: list[str], headless: 
             )
             jobs = [
                 job for job in jobs
-                if is_cs_ai_ml_role(
-                    title=getattr(job, "title", "") or "",
-                    description=getattr(job, "description", "") or "",
-                )
-                and scan_fresher_keywords(
+                if is_entry_level_role(
+                    platform=getattr(job, "platform", "") or "",
                     description=getattr(job, "description", "") or "",
                     experience_text=getattr(job, "experience_text", "") or "",
                     title=getattr(job, "title", "") or "",
                 )
             ]
+            for job in jobs:
+                job.is_fresher = True
             db.insert_jobs([job.to_dict() for job in jobs])
             db.mark_run_completed(run_id, jobs_collected=len(jobs))
             db.add_run_event(
@@ -172,7 +171,7 @@ async def list_platforms(request: Request) -> list[PlatformSupportOut]:
 @app.post("/v1/runs", response_model=RunResponse)
 @limiter.limit("5/minute")
 async def create_run(request: Request, payload: CreateRunRequest) -> RunResponse:
-    query = normalize_fresher_query(payload.query)
+    query = (payload.query or "AI/ML Engineer").strip() or "AI/ML Engineer"
     platforms = [platform.value for platform in payload.platforms]
     run_id = db.create_run(query=query, platforms=platforms, headless=payload.headless)
     db.add_run_event(run_id, "run.queued", "Run added to queue", {"platforms": platforms, "query": query})

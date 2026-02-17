@@ -4,22 +4,9 @@ FastAPI + Playwright microservice for read-only job scraping and normalization.
 
 ## Platform Coverage
 Implemented extractors:
-- Arc.dev
-- Cutshort
-- FlexJobs
-- Foundit
-- Hirect
-- Hirist
-- Indeed
-- Internshala
-- LinkedIn
-- Naukri
-- Remote.co
-- Relocate.me
-- Remotive
-- We Work Remotely
-- Wellfound
-- Working Nomads
+- Job boards and aggregators (Arc.dev, LinkedIn, Naukri, Indeed, Cutshort, Wellfound, and others)
+- Remote-focused boards (Remote.co, Remotive, We Work Remotely, Working Nomads, Remote OK, etc.)
+- IT organization career pages via ATS APIs (`it_org_careers`, using Greenhouse/Lever feeds)
 
 Scaffolded adapters (stub mode; zero extraction until parser is implemented):
 - None
