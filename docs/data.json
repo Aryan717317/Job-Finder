@@ -1,8 +1,308 @@
 {
-  "generated_at": "2026-02-22T05:14:23.239223+00:00",
+  "generated_at": "2026-02-23T05:24:18.698808+00:00",
   "job_count": 446,
   "application_count": 0,
   "jobs": [
+    {
+      "external_id": "0bdf0884e4e0d3a2ab06ae0c",
+      "run_id": "5e205a1d-9706-4855-8abc-171f46a6aa71",
+      "platform": "it_org_careers",
+      "title": "Data Engineer Intern (Summer 2026)",
+      "company": "Cloudflare",
+      "location": "In-Office",
+      "url": "https://boards.greenhouse.io/cloudflare/jobs/7374706?gh_jid=7374706",
+      "posted_at": "2026-02-06T10:04:45-05:00",
+      "employment_type": "",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": true,
+      "role_type": "ML",
+      "semantic_score": 0.267,
+      "scraped_at": "2026-02-23T05:23:09.541016+00:00",
+      "is_notified": true,
+      "tags": [
+        "Business Intelligence",
+        "Austin, TX",
+        "4991 - R&D Interns",
+        "['Austin, US']",
+        "['Early Talent']"
+      ],
+      "category_tags": [
+        "Early Career"
+      ]
+    },
+    {
+      "external_id": "6cfbf91d5dd893c428a50ce2",
+      "run_id": "5e205a1d-9706-4855-8abc-171f46a6aa71",
+      "platform": "it_org_careers",
+      "title": "AI Automation Intern (M&A Integration Ops) (Summer 2026)",
+      "company": "Cloudflare",
+      "location": "In-Office",
+      "url": "https://boards.greenhouse.io/cloudflare/jobs/7589903?gh_jid=7589903",
+      "posted_at": "2026-02-10T20:51:27-05:00",
+      "employment_type": "",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": true,
+      "role_type": "ML",
+      "semantic_score": 0.067,
+      "scraped_at": "2026-02-23T05:23:09.455866+00:00",
+      "is_notified": true,
+      "tags": [
+        "Strategy",
+        "Austin, TX",
+        "New York, NY",
+        "San Francisco, CA",
+        "6991 - G&A Interns",
+        "['Austin, US', 'New York, US', 'San Francisco, US']",
+        "['Early Talent']"
+      ],
+      "category_tags": [
+        "Early Career",
+        "Generative AI"
+      ]
+    },
+    {
+      "external_id": "55ada12bf83644bf3eeddd09",
+      "run_id": "5e205a1d-9706-4855-8abc-171f46a6aa71",
+      "platform": "it_org_careers",
+      "title": "Software Engineer - Android",
+      "company": "PhonePe",
+      "location": "Bangalore/Pune",
+      "url": "https://job-boards.greenhouse.io/phonepe/jobs/7579250003",
+      "posted_at": "2026-01-29T03:10:16-05:00",
+      "employment_type": "",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": true,
+      "role_type": "ML",
+      "semantic_score": 0.067,
+      "scraped_at": "2026-02-23T05:23:06.937272+00:00",
+      "is_notified": true,
+      "tags": [
+        "Engineering Development",
+        "PhonePe Insurance Broking Services Private Limited",
+        "FTE - Regular",
+        "Bengaluru - Salarpuria Softzone (SSZ)"
+      ],
+      "category_tags": [
+        "Early Career"
+      ]
+    },
+    {
+      "external_id": "4f823f92ee6f40a3aeb8dcf8",
+      "run_id": "5e205a1d-9706-4855-8abc-171f46a6aa71",
+      "platform": "it_org_careers",
+      "title": "Site Reliability Engineer 3",
+      "company": "PhonePe",
+      "location": "Bangalore",
+      "url": "https://job-boards.greenhouse.io/phonepe/jobs/6671983003",
+      "posted_at": "2026-02-18T03:26:04-05:00",
+      "employment_type": "",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": true,
+      "role_type": "ML",
+      "semantic_score": 0.067,
+      "scraped_at": "2026-02-23T05:23:06.916717+00:00",
+      "is_notified": true,
+      "tags": [
+        "Site Reliability",
+        "PhonePe Limited",
+        "FTE - Regular",
+        "Bengaluru - Salarpuria Softzone (SSZ)"
+      ],
+      "category_tags": [
+        "Early Career"
+      ]
+    },
+    {
+      "external_id": "7dbb78b7a4b8a748e7d082c6",
+      "run_id": "5e205a1d-9706-4855-8abc-171f46a6aa71",
+      "platform": "it_org_careers",
+      "title": "Site Reliability Engineer 2",
+      "company": "PhonePe",
+      "location": "Bangalore",
+      "url": "https://job-boards.greenhouse.io/phonepe/jobs/6545655003",
+      "posted_at": "2026-01-29T03:10:16-05:00",
+      "employment_type": "",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": true,
+      "role_type": "ML",
+      "semantic_score": 0.067,
+      "scraped_at": "2026-02-23T05:23:06.905897+00:00",
+      "is_notified": true,
+      "tags": [
+        "Site Reliability",
+        "PhonePe Limited",
+        "FTE - Regular",
+        "Bengaluru - Salarpuria Softzone (SSZ)"
+      ],
+      "category_tags": [
+        "Early Career"
+      ]
+    },
+    {
+      "external_id": "99295fbaf8017bf541ff2655",
+      "run_id": "5e205a1d-9706-4855-8abc-171f46a6aa71",
+      "platform": "it_org_careers",
+      "title": "Service Delivery Engineer, SRE",
+      "company": "PhonePe",
+      "location": "Bangalore",
+      "url": "https://job-boards.greenhouse.io/phonepe/jobs/7578979003",
+      "posted_at": "2026-01-29T03:10:16-05:00",
+      "employment_type": "",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": true,
+      "role_type": "ML",
+      "semantic_score": 0.067,
+      "scraped_at": "2026-02-23T05:23:06.904178+00:00",
+      "is_notified": true,
+      "tags": [
+        "Site Reliability",
+        "PhonePe Limited",
+        "FTE - Regular",
+        "Bengaluru - Salarpuria Softzone (SSZ)"
+      ],
+      "category_tags": [
+        "Early Career"
+      ]
+    },
+    {
+      "external_id": "4ba33017779a5060af67bf7b",
+      "run_id": "6ff953f7-f121-4c9b-a5ef-d51b32800671",
+      "platform": "it_org_careers",
+      "title": "Associate Technical Services Engineer I",
+      "company": "MongoDB",
+      "location": "Dublin",
+      "url": "https://www.mongodb.com/careers/job/?gh_jid=7547561",
+      "posted_at": "2026-02-20T14:44:54-05:00",
+      "employment_type": "Full-time",
+      "salary_text": "{'unit': 'EUR', 'max_value': '0.0', 'min_value': '0.0'}",
+      "experience_text": "",
+      "is_fresher": true,
+      "role_type": "ML",
+      "semantic_score": 0.267,
+      "scraped_at": "2026-02-23T05:21:17.833813+00:00",
+      "is_notified": true,
+      "tags": [
+        "Technical Support EMEA",
+        "Dublin",
+        "10013788",
+        "D11105-Technical Support EMEA",
+        "T10378-Technical Services - Cloud",
+        "EMEA",
+        "['2-Flexible']",
+        "IC - Professional",
+        "Full-time",
+        "Standard",
+        "https://docs.google.com/document/d/1k0BwRv8qk2rcjXESKQrifOQxOauMZZETYYr8bA_IPl0/edit?tab=t.0",
+        "{'unit': 'EUR', 'max_value': '0.0', 'min_value': '0.0'}"
+      ],
+      "category_tags": [
+        "Early Career"
+      ]
+    },
+    {
+      "external_id": "66a4f7558590f6e56b9c02fe",
+      "run_id": "52682588-c726-4718-ac5f-2ce18acccec6",
+      "platform": "it_org_careers",
+      "title": "Machine Learning Engineer Intern",
+      "company": "Coinbase",
+      "location": "Hybrid - San Francisco, CA",
+      "url": "https://www.coinbase.com/careers/positions/7294075?gh_jid=7294075",
+      "posted_at": "2026-02-17T11:38:45-05:00",
+      "employment_type": "",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": true,
+      "role_type": "ML",
+      "semantic_score": 0.2,
+      "scraped_at": "2026-02-23T05:19:24.158080+00:00",
+      "is_notified": true,
+      "tags": [
+        "Internships & Emerging Talent Positions",
+        "San Francisco",
+        "Coinbase",
+        "0.0"
+      ],
+      "category_tags": [
+        "Early Career"
+      ]
+    },
+    {
+      "external_id": "2caaf539818064b44ab6c47c",
+      "run_id": "52682588-c726-4718-ac5f-2ce18acccec6",
+      "platform": "it_org_careers",
+      "title": "2026 - Internal AI Product Management Intern, Palo Alto",
+      "company": "MongoDB",
+      "location": "Palo Alto",
+      "url": "https://www.mongodb.com/careers/job/?gh_jid=7336095",
+      "posted_at": "2026-02-20T14:44:54-05:00",
+      "employment_type": "Intern",
+      "salary_text": "{'unit': 'USD', 'max_value': '104000.0', 'min_value': '99840.0'}",
+      "experience_text": "",
+      "is_fresher": true,
+      "role_type": "ML",
+      "semantic_score": 0.133,
+      "scraped_at": "2026-02-23T05:19:22.841869+00:00",
+      "is_notified": true,
+      "tags": [
+        "IT PMO",
+        "Palo Alto",
+        "10009369",
+        "D85027-IT PMO",
+        "385-IT PMO",
+        "North America",
+        "['1-In Office']",
+        "Intern",
+        "Campus Intern",
+        "{'unit': 'USD', 'max_value': '104000.0', 'min_value': '99840.0'}",
+        "{'unit': 'USD', 'max_value': '88400.0', 'min_value': '84864.0'}",
+        "{'unit': 'USD', 'max_value': '114400.0', 'min_value': '79872.0'}",
+        "{'unit': 'USD', 'max_value': '0.0', 'min_value': '0.0'}"
+      ],
+      "category_tags": [
+        "Early Career",
+        "Prompt Engineering"
+      ]
+    },
+    {
+      "external_id": "caf4c25f39f8699093ca0acf",
+      "run_id": "8211002d-9ead-43b9-a5b9-1d1b6d37a9df",
+      "platform": "it_org_careers",
+      "title": "2026 - Software Engineering Intern, Dublin",
+      "company": "MongoDB",
+      "location": "Dublin",
+      "url": "https://www.mongodb.com/careers/job/?gh_jid=6918894",
+      "posted_at": "2026-02-20T14:44:54-05:00",
+      "employment_type": "Intern",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": true,
+      "role_type": "ML",
+      "semantic_score": 0.2,
+      "scraped_at": "2026-02-23T05:15:35.659708+00:00",
+      "is_notified": true,
+      "tags": [
+        "Intern",
+        "Dublin",
+        "n/a",
+        "D26100-PTO Interns",
+        "268-ENG Interns",
+        "EMEA",
+        "['1-In Office']",
+        "Campus Intern",
+        "https://docs.google.com/document/d/1RvuB1qmFGpJpy0YTSjB6MgOwbaMCBC2BBhry534vmXw/edit?tab=t.0",
+        "{'unit': 'USD', 'max_value': '0.01', 'min_value': '0.01'}",
+        "{'unit': 'USD', 'max_value': '0.0', 'min_value': '0.0'}"
+      ],
+      "category_tags": [
+        "Early Career"
+      ]
+    },
     {
       "external_id": "779979008b5486791cc8fa52",
       "run_id": "a6c2f98d-6d5a-468b-94ef-15fe7e77424b",
@@ -318,173 +618,6 @@
       ]
     },
     {
-      "external_id": "0bdf0884e4e0d3a2ab06ae0c",
-      "run_id": "a6c2f98d-6d5a-468b-94ef-15fe7e77424b",
-      "platform": "it_org_careers",
-      "title": "Data Engineer Intern (Summer 2026)",
-      "company": "Cloudflare",
-      "location": "In-Office",
-      "url": "https://boards.greenhouse.io/cloudflare/jobs/7374706?gh_jid=7374706",
-      "posted_at": "2026-02-06T10:04:45-05:00",
-      "employment_type": "",
-      "salary_text": "",
-      "experience_text": "",
-      "is_fresher": true,
-      "role_type": "ML",
-      "semantic_score": 0.267,
-      "scraped_at": "2026-02-22T05:13:03.200615+00:00",
-      "is_notified": true,
-      "tags": [
-        "Business Intelligence",
-        "Austin, TX",
-        "4991 - R&D Interns",
-        "['Austin, US']",
-        "['Early Talent']"
-      ],
-      "category_tags": [
-        "Early Career"
-      ]
-    },
-    {
-      "external_id": "6cfbf91d5dd893c428a50ce2",
-      "run_id": "a6c2f98d-6d5a-468b-94ef-15fe7e77424b",
-      "platform": "it_org_careers",
-      "title": "AI Automation Intern (M&A Integration Ops) (Summer 2026)",
-      "company": "Cloudflare",
-      "location": "In-Office",
-      "url": "https://boards.greenhouse.io/cloudflare/jobs/7589903?gh_jid=7589903",
-      "posted_at": "2026-02-10T20:51:27-05:00",
-      "employment_type": "",
-      "salary_text": "",
-      "experience_text": "",
-      "is_fresher": true,
-      "role_type": "ML",
-      "semantic_score": 0.067,
-      "scraped_at": "2026-02-22T05:13:03.093809+00:00",
-      "is_notified": true,
-      "tags": [
-        "Strategy",
-        "Austin, TX",
-        "New York, NY",
-        "San Francisco, CA",
-        "6991 - G&A Interns",
-        "['Austin, US', 'New York, US', 'San Francisco, US']",
-        "['Early Talent']"
-      ],
-      "category_tags": [
-        "Early Career",
-        "Generative AI"
-      ]
-    },
-    {
-      "external_id": "55ada12bf83644bf3eeddd09",
-      "run_id": "a6c2f98d-6d5a-468b-94ef-15fe7e77424b",
-      "platform": "it_org_careers",
-      "title": "Software Engineer - Android",
-      "company": "PhonePe",
-      "location": "Bangalore/Pune",
-      "url": "https://job-boards.greenhouse.io/phonepe/jobs/7579250003",
-      "posted_at": "2026-01-29T03:10:16-05:00",
-      "employment_type": "",
-      "salary_text": "",
-      "experience_text": "",
-      "is_fresher": true,
-      "role_type": "ML",
-      "semantic_score": 0.067,
-      "scraped_at": "2026-02-22T05:13:00.997424+00:00",
-      "is_notified": true,
-      "tags": [
-        "Engineering Development",
-        "PhonePe Insurance Broking Services Private Limited",
-        "FTE - Regular",
-        "Bengaluru - Salarpuria Softzone (SSZ)"
-      ],
-      "category_tags": [
-        "Early Career"
-      ]
-    },
-    {
-      "external_id": "4f823f92ee6f40a3aeb8dcf8",
-      "run_id": "a6c2f98d-6d5a-468b-94ef-15fe7e77424b",
-      "platform": "it_org_careers",
-      "title": "Site Reliability Engineer 3",
-      "company": "PhonePe",
-      "location": "Bangalore",
-      "url": "https://job-boards.greenhouse.io/phonepe/jobs/6671983003",
-      "posted_at": "2026-02-18T03:26:04-05:00",
-      "employment_type": "",
-      "salary_text": "",
-      "experience_text": "",
-      "is_fresher": true,
-      "role_type": "ML",
-      "semantic_score": 0.067,
-      "scraped_at": "2026-02-22T05:13:00.990629+00:00",
-      "is_notified": true,
-      "tags": [
-        "Site Reliability",
-        "PhonePe Limited",
-        "FTE - Regular",
-        "Bengaluru - Salarpuria Softzone (SSZ)"
-      ],
-      "category_tags": [
-        "Early Career"
-      ]
-    },
-    {
-      "external_id": "7dbb78b7a4b8a748e7d082c6",
-      "run_id": "a6c2f98d-6d5a-468b-94ef-15fe7e77424b",
-      "platform": "it_org_careers",
-      "title": "Site Reliability Engineer 2",
-      "company": "PhonePe",
-      "location": "Bangalore",
-      "url": "https://job-boards.greenhouse.io/phonepe/jobs/6545655003",
-      "posted_at": "2026-01-29T03:10:16-05:00",
-      "employment_type": "",
-      "salary_text": "",
-      "experience_text": "",
-      "is_fresher": true,
-      "role_type": "ML",
-      "semantic_score": 0.067,
-      "scraped_at": "2026-02-22T05:13:00.988198+00:00",
-      "is_notified": true,
-      "tags": [
-        "Site Reliability",
-        "PhonePe Limited",
-        "FTE - Regular",
-        "Bengaluru - Salarpuria Softzone (SSZ)"
-      ],
-      "category_tags": [
-        "Early Career"
-      ]
-    },
-    {
-      "external_id": "99295fbaf8017bf541ff2655",
-      "run_id": "a6c2f98d-6d5a-468b-94ef-15fe7e77424b",
-      "platform": "it_org_careers",
-      "title": "Service Delivery Engineer, SRE",
-      "company": "PhonePe",
-      "location": "Bangalore",
-      "url": "https://job-boards.greenhouse.io/phonepe/jobs/7578979003",
-      "posted_at": "2026-01-29T03:10:16-05:00",
-      "employment_type": "",
-      "salary_text": "",
-      "experience_text": "",
-      "is_fresher": true,
-      "role_type": "ML",
-      "semantic_score": 0.067,
-      "scraped_at": "2026-02-22T05:13:00.987657+00:00",
-      "is_notified": true,
-      "tags": [
-        "Site Reliability",
-        "PhonePe Limited",
-        "FTE - Regular",
-        "Bengaluru - Salarpuria Softzone (SSZ)"
-      ],
-      "category_tags": [
-        "Early Career"
-      ]
-    },
-    {
       "external_id": "f0a37b2c6456f905f6873894",
       "run_id": "a6c2f98d-6d5a-468b-94ef-15fe7e77424b",
       "platform": "freshersworld",
@@ -527,139 +660,6 @@
       "tags": [],
       "category_tags": [
         "Fresher"
-      ]
-    },
-    {
-      "external_id": "4ba33017779a5060af67bf7b",
-      "run_id": "08490320-498b-416d-910f-bbb614c3f7e8",
-      "platform": "it_org_careers",
-      "title": "Associate Technical Services Engineer I",
-      "company": "MongoDB",
-      "location": "Dublin",
-      "url": "https://www.mongodb.com/careers/job/?gh_jid=7547561",
-      "posted_at": "2026-02-20T14:44:54-05:00",
-      "employment_type": "Full-time",
-      "salary_text": "{'unit': 'EUR', 'max_value': '0.0', 'min_value': '0.0'}",
-      "experience_text": "",
-      "is_fresher": true,
-      "role_type": "ML",
-      "semantic_score": 0.267,
-      "scraped_at": "2026-02-22T05:11:11.395298+00:00",
-      "is_notified": true,
-      "tags": [
-        "Technical Support EMEA",
-        "Dublin",
-        "10013788",
-        "D11105-Technical Support EMEA",
-        "T10378-Technical Services - Cloud",
-        "EMEA",
-        "['2-Flexible']",
-        "IC - Professional",
-        "Full-time",
-        "Standard",
-        "https://docs.google.com/document/d/1k0BwRv8qk2rcjXESKQrifOQxOauMZZETYYr8bA_IPl0/edit?tab=t.0",
-        "{'unit': 'EUR', 'max_value': '0.0', 'min_value': '0.0'}"
-      ],
-      "category_tags": [
-        "Early Career"
-      ]
-    },
-    {
-      "external_id": "66a4f7558590f6e56b9c02fe",
-      "run_id": "71fccead-2623-4918-b6b3-e56e303c6221",
-      "platform": "it_org_careers",
-      "title": "Machine Learning Engineer Intern",
-      "company": "Coinbase",
-      "location": "Hybrid - San Francisco, CA",
-      "url": "https://www.coinbase.com/careers/positions/7294075?gh_jid=7294075",
-      "posted_at": "2026-02-17T11:38:45-05:00",
-      "employment_type": "",
-      "salary_text": "",
-      "experience_text": "",
-      "is_fresher": true,
-      "role_type": "ML",
-      "semantic_score": 0.2,
-      "scraped_at": "2026-02-22T05:09:12.185556+00:00",
-      "is_notified": true,
-      "tags": [
-        "Internships & Emerging Talent Positions",
-        "San Francisco",
-        "Coinbase",
-        "0.0"
-      ],
-      "category_tags": [
-        "Early Career"
-      ]
-    },
-    {
-      "external_id": "2caaf539818064b44ab6c47c",
-      "run_id": "71fccead-2623-4918-b6b3-e56e303c6221",
-      "platform": "it_org_careers",
-      "title": "2026 - Internal AI Product Management Intern, Palo Alto",
-      "company": "MongoDB",
-      "location": "Palo Alto",
-      "url": "https://www.mongodb.com/careers/job/?gh_jid=7336095",
-      "posted_at": "2026-02-20T14:44:54-05:00",
-      "employment_type": "Intern",
-      "salary_text": "{'unit': 'USD', 'max_value': '104000.0', 'min_value': '99840.0'}",
-      "experience_text": "",
-      "is_fresher": true,
-      "role_type": "ML",
-      "semantic_score": 0.133,
-      "scraped_at": "2026-02-22T05:09:10.915961+00:00",
-      "is_notified": true,
-      "tags": [
-        "IT PMO",
-        "Palo Alto",
-        "10009369",
-        "D85027-IT PMO",
-        "385-IT PMO",
-        "North America",
-        "['1-In Office']",
-        "Intern",
-        "Campus Intern",
-        "{'unit': 'USD', 'max_value': '104000.0', 'min_value': '99840.0'}",
-        "{'unit': 'USD', 'max_value': '88400.0', 'min_value': '84864.0'}",
-        "{'unit': 'USD', 'max_value': '114400.0', 'min_value': '79872.0'}",
-        "{'unit': 'USD', 'max_value': '0.0', 'min_value': '0.0'}"
-      ],
-      "category_tags": [
-        "Early Career",
-        "Prompt Engineering"
-      ]
-    },
-    {
-      "external_id": "caf4c25f39f8699093ca0acf",
-      "run_id": "3cea7d9d-4d53-4b12-8f9c-fbbe7084b69d",
-      "platform": "it_org_careers",
-      "title": "2026 - Software Engineering Intern, Dublin",
-      "company": "MongoDB",
-      "location": "Dublin",
-      "url": "https://www.mongodb.com/careers/job/?gh_jid=6918894",
-      "posted_at": "2026-02-20T14:44:54-05:00",
-      "employment_type": "Intern",
-      "salary_text": "",
-      "experience_text": "",
-      "is_fresher": true,
-      "role_type": "ML",
-      "semantic_score": 0.2,
-      "scraped_at": "2026-02-22T05:05:13.342123+00:00",
-      "is_notified": true,
-      "tags": [
-        "Intern",
-        "Dublin",
-        "n/a",
-        "D26100-PTO Interns",
-        "268-ENG Interns",
-        "EMEA",
-        "['1-In Office']",
-        "Campus Intern",
-        "https://docs.google.com/document/d/1RvuB1qmFGpJpy0YTSjB6MgOwbaMCBC2BBhry534vmXw/edit?tab=t.0",
-        "{'unit': 'USD', 'max_value': '0.01', 'min_value': '0.01'}",
-        "{'unit': 'USD', 'max_value': '0.0', 'min_value': '0.0'}"
-      ],
-      "category_tags": [
-        "Early Career"
       ]
     },
     {
