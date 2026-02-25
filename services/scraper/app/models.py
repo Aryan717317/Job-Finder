@@ -78,7 +78,25 @@ _EARLY_CAREER_SENIOR_TITLE_HINTS = (
     "vice president",
     " vp ",
 )
-_EARLY_CAREER_PLATFORM_ALLOWLIST = {"it_org_careers"}
+_EARLY_CAREER_PLATFORM_ALLOWLIST = {
+    "it_org_careers",
+    "internshala",
+    "freshersworld",
+    "linkedin",
+    "naukri",
+    "indeed",
+    "glassdoor",
+    "wellfound",
+    "builtin",
+    "dice",
+    "arc_dev",
+    "foundit",
+    "hirect",
+    "hirist",
+    "shine",
+    "timesjobs",
+    "the_muse",
+}
 _PROMPT_PATTERNS = (
     re.compile(r"\bprompt\s+(?:engineering|engineer|design|writing)\b", re.IGNORECASE),
     re.compile(r"\bllm\s+(?:specialist|engineer|prompt)\b", re.IGNORECASE),

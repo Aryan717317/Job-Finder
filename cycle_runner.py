@@ -225,7 +225,6 @@ def _run_cycle(
             )
         )
         jobs = _filter_cs_jobs(jobs, logger)
-        jobs = _filter_fresher_jobs(jobs, logger)
         jobs_processed = len(jobs)
         db.insert_jobs([job.to_dict() for job in jobs])
         db.mark_run_completed(run_id, jobs_collected=jobs_processed)

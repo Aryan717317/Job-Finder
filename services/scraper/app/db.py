@@ -445,11 +445,29 @@ def has_active_cycle_run() -> bool:
         return row is not None
 
 
+def _expire_stale_cycles(conn: sqlite3.Connection, stale_hours: int = 2) -> int:
+    """Auto-expire cycles stuck as 'running' for longer than *stale_hours*."""
+    cur = conn.execute(
+        """
+        UPDATE cycle_runs
+        SET status = 'failed',
+            error_message = 'Auto-expired: exceeded stale cycle timeout',
+            ended_at = ?
+        WHERE status = 'running'
+          AND ended_at IS NULL
+          AND created_at <= datetime('now', ? || ' hours')
+        """,
+        (_now_iso(), f"-{stale_hours}"),
+    )
+    return cur.rowcount if cur.rowcount else 0
+
+
 def create_cycle_run(mode: str, query: str, enforce_singleton: bool = False) -> int | None:
     now = _now_iso()
     with get_conn() as conn:
         if enforce_singleton:
             conn.execute("BEGIN IMMEDIATE")
+            _expire_stale_cycles(conn)
             active = conn.execute(
                 """
                 SELECT cycle_id
