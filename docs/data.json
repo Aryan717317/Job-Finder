@@ -1,8 +1,1362 @@
 {
-  "generated_at": "2026-02-17T05:18:45.899771+00:00",
-  "job_count": 392,
+  "generated_at": "2026-02-25T05:20:34.008703+00:00",
+  "job_count": 446,
   "application_count": 0,
   "jobs": [
+    {
+      "external_id": "0bdf0884e4e0d3a2ab06ae0c",
+      "run_id": "e1964556-ec6b-400e-9b1f-a0995c27c5c6",
+      "platform": "it_org_careers",
+      "title": "Data Engineer Intern (Summer 2026)",
+      "company": "Cloudflare",
+      "location": "In-Office",
+      "url": "https://boards.greenhouse.io/cloudflare/jobs/7374706?gh_jid=7374706",
+      "posted_at": "2026-02-06T10:04:45-05:00",
+      "employment_type": "",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": true,
+      "role_type": "ML",
+      "semantic_score": 0.267,
+      "scraped_at": "2026-02-25T05:19:23.656692+00:00",
+      "is_notified": true,
+      "tags": [
+        "Business Intelligence",
+        "Austin, TX",
+        "4991 - R&D Interns",
+        "['Austin, US']",
+        "['Early Talent']"
+      ],
+      "category_tags": [
+        "Early Career"
+      ]
+    },
+    {
+      "external_id": "6cfbf91d5dd893c428a50ce2",
+      "run_id": "e1964556-ec6b-400e-9b1f-a0995c27c5c6",
+      "platform": "it_org_careers",
+      "title": "AI Automation Intern (M&A Integration Ops) (Summer 2026)",
+      "company": "Cloudflare",
+      "location": "In-Office",
+      "url": "https://boards.greenhouse.io/cloudflare/jobs/7589903?gh_jid=7589903",
+      "posted_at": "2026-02-10T20:51:27-05:00",
+      "employment_type": "",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": true,
+      "role_type": "ML",
+      "semantic_score": 0.067,
+      "scraped_at": "2026-02-25T05:19:23.602641+00:00",
+      "is_notified": true,
+      "tags": [
+        "Strategy",
+        "Austin, TX",
+        "New York, NY",
+        "San Francisco, CA",
+        "6991 - G&A Interns",
+        "['Austin, US', 'New York, US', 'San Francisco, US']",
+        "['Early Talent']"
+      ],
+      "category_tags": [
+        "Early Career",
+        "Generative AI"
+      ]
+    },
+    {
+      "external_id": "55ada12bf83644bf3eeddd09",
+      "run_id": "e1964556-ec6b-400e-9b1f-a0995c27c5c6",
+      "platform": "it_org_careers",
+      "title": "Software Engineer - Android",
+      "company": "PhonePe",
+      "location": "Bangalore/Pune",
+      "url": "https://job-boards.greenhouse.io/phonepe/jobs/7579250003",
+      "posted_at": "2026-01-29T03:10:16-05:00",
+      "employment_type": "",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": true,
+      "role_type": "ML",
+      "semantic_score": 0.067,
+      "scraped_at": "2026-02-25T05:19:20.924571+00:00",
+      "is_notified": true,
+      "tags": [
+        "Engineering Development",
+        "PhonePe Insurance Broking Services Private Limited",
+        "FTE - Regular",
+        "Bengaluru - Salarpuria Softzone (SSZ)"
+      ],
+      "category_tags": [
+        "Early Career"
+      ]
+    },
+    {
+      "external_id": "4f823f92ee6f40a3aeb8dcf8",
+      "run_id": "e1964556-ec6b-400e-9b1f-a0995c27c5c6",
+      "platform": "it_org_careers",
+      "title": "Site Reliability Engineer 3",
+      "company": "PhonePe",
+      "location": "Bangalore",
+      "url": "https://job-boards.greenhouse.io/phonepe/jobs/6671983003",
+      "posted_at": "2026-02-18T03:26:04-05:00",
+      "employment_type": "",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": true,
+      "role_type": "ML",
+      "semantic_score": 0.067,
+      "scraped_at": "2026-02-25T05:19:20.913356+00:00",
+      "is_notified": true,
+      "tags": [
+        "Site Reliability",
+        "PhonePe Limited",
+        "FTE - Regular",
+        "Bengaluru - Salarpuria Softzone (SSZ)"
+      ],
+      "category_tags": [
+        "Early Career"
+      ]
+    },
+    {
+      "external_id": "7dbb78b7a4b8a748e7d082c6",
+      "run_id": "e1964556-ec6b-400e-9b1f-a0995c27c5c6",
+      "platform": "it_org_careers",
+      "title": "Site Reliability Engineer 2",
+      "company": "PhonePe",
+      "location": "Bangalore",
+      "url": "https://job-boards.greenhouse.io/phonepe/jobs/6545655003",
+      "posted_at": "2026-01-29T03:10:16-05:00",
+      "employment_type": "",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": true,
+      "role_type": "ML",
+      "semantic_score": 0.067,
+      "scraped_at": "2026-02-25T05:19:20.908889+00:00",
+      "is_notified": true,
+      "tags": [
+        "Site Reliability",
+        "PhonePe Limited",
+        "FTE - Regular",
+        "Bengaluru - Salarpuria Softzone (SSZ)"
+      ],
+      "category_tags": [
+        "Early Career"
+      ]
+    },
+    {
+      "external_id": "99295fbaf8017bf541ff2655",
+      "run_id": "e1964556-ec6b-400e-9b1f-a0995c27c5c6",
+      "platform": "it_org_careers",
+      "title": "Service Delivery Engineer, SRE",
+      "company": "PhonePe",
+      "location": "Bangalore",
+      "url": "https://job-boards.greenhouse.io/phonepe/jobs/7578979003",
+      "posted_at": "2026-01-29T03:10:16-05:00",
+      "employment_type": "",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": true,
+      "role_type": "ML",
+      "semantic_score": 0.067,
+      "scraped_at": "2026-02-25T05:19:20.908002+00:00",
+      "is_notified": true,
+      "tags": [
+        "Site Reliability",
+        "PhonePe Limited",
+        "FTE - Regular",
+        "Bengaluru - Salarpuria Softzone (SSZ)"
+      ],
+      "category_tags": [
+        "Early Career"
+      ]
+    },
+    {
+      "external_id": "4ba33017779a5060af67bf7b",
+      "run_id": "091dbadd-9d11-46f6-94d9-f65fbca34d3f",
+      "platform": "it_org_careers",
+      "title": "Associate Technical Services Engineer I",
+      "company": "MongoDB",
+      "location": "Dublin",
+      "url": "https://www.mongodb.com/careers/job/?gh_jid=7547561",
+      "posted_at": "2026-02-23T07:52:14-05:00",
+      "employment_type": "Full-time",
+      "salary_text": "{'unit': 'EUR', 'max_value': '0.0', 'min_value': '0.0'}",
+      "experience_text": "",
+      "is_fresher": true,
+      "role_type": "ML",
+      "semantic_score": 0.267,
+      "scraped_at": "2026-02-25T05:17:31.548736+00:00",
+      "is_notified": true,
+      "tags": [
+        "Technical Support EMEA",
+        "Dublin",
+        "10013788",
+        "D11105-Technical Support EMEA",
+        "T10378-Technical Services - Cloud",
+        "EMEA",
+        "['2-Flexible']",
+        "IC - Professional",
+        "Full-time",
+        "Standard",
+        "https://docs.google.com/document/d/1k0BwRv8qk2rcjXESKQrifOQxOauMZZETYYr8bA_IPl0/edit?tab=t.0",
+        "{'unit': 'EUR', 'max_value': '0.0', 'min_value': '0.0'}"
+      ],
+      "category_tags": [
+        "Early Career"
+      ]
+    },
+    {
+      "external_id": "66a4f7558590f6e56b9c02fe",
+      "run_id": "a6277554-1849-45c4-8034-4ed6b5dd425e",
+      "platform": "it_org_careers",
+      "title": "Machine Learning Engineer Intern",
+      "company": "Coinbase",
+      "location": "Hybrid - San Francisco, CA",
+      "url": "https://www.coinbase.com/careers/positions/7294075?gh_jid=7294075",
+      "posted_at": "2026-02-17T11:38:45-05:00",
+      "employment_type": "",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": true,
+      "role_type": "ML",
+      "semantic_score": 0.2,
+      "scraped_at": "2026-02-25T05:15:39.901640+00:00",
+      "is_notified": true,
+      "tags": [
+        "Internships & Emerging Talent Positions",
+        "San Francisco",
+        "Coinbase",
+        "0.0"
+      ],
+      "category_tags": [
+        "Early Career"
+      ]
+    },
+    {
+      "external_id": "caf4c25f39f8699093ca0acf",
+      "run_id": "534dfb08-a0ea-4882-b143-b11d683bdd9e",
+      "platform": "it_org_careers",
+      "title": "2026 - Software Engineering Intern, Dublin",
+      "company": "MongoDB",
+      "location": "Dublin",
+      "url": "https://www.mongodb.com/careers/job/?gh_jid=6918894",
+      "posted_at": "2026-02-20T14:44:54-05:00",
+      "employment_type": "Intern",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": true,
+      "role_type": "ML",
+      "semantic_score": 0.2,
+      "scraped_at": "2026-02-25T05:11:57.335132+00:00",
+      "is_notified": true,
+      "tags": [
+        "Intern",
+        "Dublin",
+        "n/a",
+        "D26100-PTO Interns",
+        "268-ENG Interns",
+        "EMEA",
+        "['1-In Office']",
+        "Campus Intern",
+        "https://docs.google.com/document/d/1RvuB1qmFGpJpy0YTSjB6MgOwbaMCBC2BBhry534vmXw/edit?tab=t.0",
+        "{'unit': 'USD', 'max_value': '0.01', 'min_value': '0.01'}",
+        "{'unit': 'USD', 'max_value': '0.0', 'min_value': '0.0'}"
+      ],
+      "category_tags": [
+        "Early Career"
+      ]
+    },
+    {
+      "external_id": "2caaf539818064b44ab6c47c",
+      "run_id": "52682588-c726-4718-ac5f-2ce18acccec6",
+      "platform": "it_org_careers",
+      "title": "2026 - Internal AI Product Management Intern, Palo Alto",
+      "company": "MongoDB",
+      "location": "Palo Alto",
+      "url": "https://www.mongodb.com/careers/job/?gh_jid=7336095",
+      "posted_at": "2026-02-20T14:44:54-05:00",
+      "employment_type": "Intern",
+      "salary_text": "{'unit': 'USD', 'max_value': '104000.0', 'min_value': '99840.0'}",
+      "experience_text": "",
+      "is_fresher": true,
+      "role_type": "ML",
+      "semantic_score": 0.133,
+      "scraped_at": "2026-02-23T05:19:22.841869+00:00",
+      "is_notified": true,
+      "tags": [
+        "IT PMO",
+        "Palo Alto",
+        "10009369",
+        "D85027-IT PMO",
+        "385-IT PMO",
+        "North America",
+        "['1-In Office']",
+        "Intern",
+        "Campus Intern",
+        "{'unit': 'USD', 'max_value': '104000.0', 'min_value': '99840.0'}",
+        "{'unit': 'USD', 'max_value': '88400.0', 'min_value': '84864.0'}",
+        "{'unit': 'USD', 'max_value': '114400.0', 'min_value': '79872.0'}",
+        "{'unit': 'USD', 'max_value': '0.0', 'min_value': '0.0'}"
+      ],
+      "category_tags": [
+        "Early Career",
+        "Prompt Engineering"
+      ]
+    },
+    {
+      "external_id": "779979008b5486791cc8fa52",
+      "run_id": "a6c2f98d-6d5a-468b-94ef-15fe7e77424b",
+      "platform": "linkedin",
+      "title": "Frontend Developer(Fresher)",
+      "company": "Delta4 Infotech",
+      "location": "Sahibzada Ajit Singh Nagar, Punjab, India",
+      "url": "https://in.linkedin.com/jobs/view/frontend-developer-fresher-at-delta4-infotech-4322126095?position=57&pageNum=0&refId=dF50m4NTYFoKCwoNsqGTIA%3D%3D&trackingId=ePGLzbjKjqxxC9UZ24N0RQ%3D%3D",
+      "posted_at": "3 months ago",
+      "employment_type": "",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": true,
+      "role_type": "ML",
+      "semantic_score": 0.2,
+      "scraped_at": "2026-02-22T05:13:34.272184+00:00",
+      "is_notified": true,
+      "tags": [
+        "Sahibzada Ajit Singh Nagar, Punjab, India"
+      ],
+      "category_tags": [
+        "Fresher"
+      ]
+    },
+    {
+      "external_id": "efd520f296d0c3d1d0c61187",
+      "run_id": "a6c2f98d-6d5a-468b-94ef-15fe7e77424b",
+      "platform": "linkedin",
+      "title": "Product Developer – Fresher (Lumel Star Hire Program 2026)",
+      "company": "Lumel",
+      "location": "Chennai, Tamil Nadu, India",
+      "url": "https://in.linkedin.com/jobs/view/product-developer-%E2%80%93-fresher-lumel-star-hire-program-2026-at-lumel-4366470394?position=56&pageNum=0&refId=dF50m4NTYFoKCwoNsqGTIA%3D%3D&trackingId=OR%2Fzj0zo0DDeOyIqFiImGg%3D%3D",
+      "posted_at": "3 weeks ago",
+      "employment_type": "",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": true,
+      "role_type": "ML",
+      "semantic_score": 0.2,
+      "scraped_at": "2026-02-22T05:13:34.229288+00:00",
+      "is_notified": true,
+      "tags": [
+        "Chennai, Tamil Nadu, India"
+      ],
+      "category_tags": [
+        "Fresher"
+      ]
+    },
+    {
+      "external_id": "12e044e23893d91c30eb3dfa",
+      "run_id": "a6c2f98d-6d5a-468b-94ef-15fe7e77424b",
+      "platform": "linkedin",
+      "title": "PHP Developer Fresher",
+      "company": "MoonFellow IT Solutions Pvt Ltd",
+      "location": "Noida, Uttar Pradesh, India",
+      "url": "https://in.linkedin.com/jobs/view/php-developer-fresher-at-moonfellow-it-solutions-pvt-ltd-4318237664?position=48&pageNum=0&refId=dF50m4NTYFoKCwoNsqGTIA%3D%3D&trackingId=bjkY67OXIE%2FzaXRm8d78uw%3D%3D",
+      "posted_at": "4 months ago",
+      "employment_type": "",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": true,
+      "role_type": "ML",
+      "semantic_score": 0.2,
+      "scraped_at": "2026-02-22T05:13:33.759092+00:00",
+      "is_notified": true,
+      "tags": [
+        "Noida, Uttar Pradesh, India"
+      ],
+      "category_tags": [
+        "Fresher"
+      ]
+    },
+    {
+      "external_id": "2be72e1b9863ab50deb76e2a",
+      "run_id": "a6c2f98d-6d5a-468b-94ef-15fe7e77424b",
+      "platform": "linkedin",
+      "title": "Software Engineer Fresher",
+      "company": "BOT Campus AI",
+      "location": "India",
+      "url": "https://in.linkedin.com/jobs/view/software-engineer-fresher-at-bot-campus-ai-4367759206?position=38&pageNum=0&refId=dF50m4NTYFoKCwoNsqGTIA%3D%3D&trackingId=IkO98RhQiZ9Rb3PNcqiL%2Fw%3D%3D",
+      "posted_at": "2 weeks ago",
+      "employment_type": "",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": true,
+      "role_type": "ML",
+      "semantic_score": 0.2,
+      "scraped_at": "2026-02-22T05:13:33.055313+00:00",
+      "is_notified": true,
+      "tags": [
+        "India"
+      ],
+      "category_tags": [
+        "Fresher"
+      ]
+    },
+    {
+      "external_id": "ee4f9eadb0df7e558614882f",
+      "run_id": "a6c2f98d-6d5a-468b-94ef-15fe7e77424b",
+      "platform": "linkedin",
+      "title": "Software Developer-Fresher",
+      "company": "Skill Hive Hub",
+      "location": "Hyderabad, Telangana, India",
+      "url": "https://in.linkedin.com/jobs/view/software-developer-fresher-at-skill-hive-hub-4372826850?position=37&pageNum=0&refId=dF50m4NTYFoKCwoNsqGTIA%3D%3D&trackingId=uSzO0GruSwpPbJF9qd5Rmw%3D%3D",
+      "posted_at": "1 week ago",
+      "employment_type": "",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": true,
+      "role_type": "ML",
+      "semantic_score": 0.2,
+      "scraped_at": "2026-02-22T05:13:33.005265+00:00",
+      "is_notified": true,
+      "tags": [
+        "Hyderabad, Telangana, India"
+      ],
+      "category_tags": [
+        "Fresher"
+      ]
+    },
+    {
+      "external_id": "bb719c859a7d7d15a528aedb",
+      "run_id": "a6c2f98d-6d5a-468b-94ef-15fe7e77424b",
+      "platform": "linkedin",
+      "title": "Fresher - Software Development Engineer",
+      "company": "Wohlig",
+      "location": "Mumbai Metropolitan Region",
+      "url": "https://in.linkedin.com/jobs/view/fresher-software-development-engineer-at-wohlig-4129623996?position=31&pageNum=0&refId=dF50m4NTYFoKCwoNsqGTIA%3D%3D&trackingId=xNbYNwujz4LuQo73I%2FieHw%3D%3D",
+      "posted_at": "1 year ago",
+      "employment_type": "",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": true,
+      "role_type": "ML",
+      "semantic_score": 0.2,
+      "scraped_at": "2026-02-22T05:13:32.730421+00:00",
+      "is_notified": true,
+      "tags": [
+        "Mumbai Metropolitan Region"
+      ],
+      "category_tags": [
+        "Fresher"
+      ]
+    },
+    {
+      "external_id": "0a3749803d2ab27155b0af8f",
+      "run_id": "a6c2f98d-6d5a-468b-94ef-15fe7e77424b",
+      "platform": "linkedin",
+      "title": "Fresher Php Developer",
+      "company": "Pixlogix Infotech Pvt. Ltd.",
+      "location": "Ahmedabad, Gujarat, India",
+      "url": "https://in.linkedin.com/jobs/view/fresher-php-developer-at-pixlogix-infotech-pvt-ltd-4217803475?position=28&pageNum=0&refId=dF50m4NTYFoKCwoNsqGTIA%3D%3D&trackingId=R7tAdFfLjimKtof0%2BuduBA%3D%3D",
+      "posted_at": "9 months ago",
+      "employment_type": "",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": true,
+      "role_type": "ML",
+      "semantic_score": 0.2,
+      "scraped_at": "2026-02-22T05:13:32.583518+00:00",
+      "is_notified": true,
+      "tags": [
+        "Ahmedabad, Gujarat, India",
+        "Actively Hiring"
+      ],
+      "category_tags": [
+        "Fresher"
+      ]
+    },
+    {
+      "external_id": "1d77b46668e042c994f3a16d",
+      "run_id": "a6c2f98d-6d5a-468b-94ef-15fe7e77424b",
+      "platform": "linkedin",
+      "title": "Fresher - Cloud, AI & Enterprise Technology Roles",
+      "company": "TantranZm",
+      "location": "Faridabad, Haryana, India",
+      "url": "https://in.linkedin.com/jobs/view/fresher-cloud-ai-enterprise-technology-roles-at-tantranzm-4355051064?position=27&pageNum=0&refId=dF50m4NTYFoKCwoNsqGTIA%3D%3D&trackingId=YAT8Wl5Wcmhe2oMOeMBJog%3D%3D",
+      "posted_at": "1 month ago",
+      "employment_type": "",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": true,
+      "role_type": "ML",
+      "semantic_score": 0.2,
+      "scraped_at": "2026-02-22T05:13:32.536739+00:00",
+      "is_notified": true,
+      "tags": [
+        "Faridabad, Haryana, India"
+      ],
+      "category_tags": [
+        "Fresher"
+      ]
+    },
+    {
+      "external_id": "81a7fea87ed259d2e504ddb4",
+      "run_id": "a6c2f98d-6d5a-468b-94ef-15fe7e77424b",
+      "platform": "linkedin",
+      "title": "Junior Software Developer (Fresher) Internship",
+      "company": "Cognic Systems LLC",
+      "location": "Jabalpur, Madhya Pradesh, India",
+      "url": "https://in.linkedin.com/jobs/view/junior-software-developer-fresher-internship-at-cognic-systems-llc-4312279996?position=26&pageNum=0&refId=dF50m4NTYFoKCwoNsqGTIA%3D%3D&trackingId=5gGPdOwowK9OcubBVoBKmA%3D%3D",
+      "posted_at": "4 months ago",
+      "employment_type": "",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": true,
+      "role_type": "ML",
+      "semantic_score": 0.2,
+      "scraped_at": "2026-02-22T05:13:32.493373+00:00",
+      "is_notified": true,
+      "tags": [
+        "Jabalpur, Madhya Pradesh, India"
+      ],
+      "category_tags": [
+        "Fresher"
+      ]
+    },
+    {
+      "external_id": "3f43a8252f8a94d38824788a",
+      "run_id": "a6c2f98d-6d5a-468b-94ef-15fe7e77424b",
+      "platform": "linkedin",
+      "title": "Data Analyst-Fresher",
+      "company": "Skill Hive Hub",
+      "location": "Greater Visakhapatnam Area",
+      "url": "https://in.linkedin.com/jobs/view/data-analyst-fresher-at-skill-hive-hub-4372839175?position=8&pageNum=0&refId=dF50m4NTYFoKCwoNsqGTIA%3D%3D&trackingId=dMxqSwi0J8Fk75FcLSgoPA%3D%3D",
+      "posted_at": "5 days ago",
+      "employment_type": "",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": true,
+      "role_type": "ML",
+      "semantic_score": 0.6,
+      "scraped_at": "2026-02-22T05:13:31.456185+00:00",
+      "is_notified": true,
+      "tags": [
+        "Greater Visakhapatnam Area"
+      ],
+      "category_tags": [
+        "Fresher"
+      ]
+    },
+    {
+      "external_id": "e6ddfc4014414ed335eeaae3",
+      "run_id": "a6c2f98d-6d5a-468b-94ef-15fe7e77424b",
+      "platform": "linkedin",
+      "title": "Data Analyst-Fresher",
+      "company": "SYNAPTICA TECH",
+      "location": "Hyderabad, Telangana, India",
+      "url": "https://in.linkedin.com/jobs/view/data-analyst-fresher-at-synaptica-tech-4372828940?position=6&pageNum=0&refId=dF50m4NTYFoKCwoNsqGTIA%3D%3D&trackingId=stUn4raCFJm89og3tN1nCg%3D%3D",
+      "posted_at": "5 days ago",
+      "employment_type": "",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": true,
+      "role_type": "ML",
+      "semantic_score": 0.6,
+      "scraped_at": "2026-02-22T05:13:31.362748+00:00",
+      "is_notified": true,
+      "tags": [
+        "Hyderabad, Telangana, India"
+      ],
+      "category_tags": [
+        "Fresher"
+      ]
+    },
+    {
+      "external_id": "4ff1c0d21d7d4727da4bbaaf",
+      "run_id": "a6c2f98d-6d5a-468b-94ef-15fe7e77424b",
+      "platform": "linkedin",
+      "title": "Data Analyst-Fresher",
+      "company": "SparkNovaTechSolutions",
+      "location": "Greater Vijayawada District",
+      "url": "https://in.linkedin.com/jobs/view/data-analyst-fresher-at-sparknovatechsolutions-4372833976?position=5&pageNum=0&refId=dF50m4NTYFoKCwoNsqGTIA%3D%3D&trackingId=loVl2TAjcmhv5B1AYzHpwg%3D%3D",
+      "posted_at": "5 days ago",
+      "employment_type": "",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": true,
+      "role_type": "ML",
+      "semantic_score": 0.6,
+      "scraped_at": "2026-02-22T05:13:31.318162+00:00",
+      "is_notified": true,
+      "tags": [
+        "Greater Vijayawada District"
+      ],
+      "category_tags": [
+        "Fresher"
+      ]
+    },
+    {
+      "external_id": "7bc2c88eb4ee1dc6e9947504",
+      "run_id": "a6c2f98d-6d5a-468b-94ef-15fe7e77424b",
+      "platform": "linkedin",
+      "title": "Data Analyst (Fresher)",
+      "company": "Clovity",
+      "location": "India",
+      "url": "https://in.linkedin.com/jobs/view/data-analyst-fresher-at-clovity-4371787159?position=2&pageNum=0&refId=dF50m4NTYFoKCwoNsqGTIA%3D%3D&trackingId=Mru%2F4FJe3gDXEmX3Na300Q%3D%3D",
+      "posted_at": "1 week ago",
+      "employment_type": "",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": true,
+      "role_type": "ML",
+      "semantic_score": 0.6,
+      "scraped_at": "2026-02-22T05:13:31.173843+00:00",
+      "is_notified": true,
+      "tags": [
+        "India",
+        "Actively Hiring"
+      ],
+      "category_tags": [
+        "Fresher"
+      ]
+    },
+    {
+      "external_id": "f0a37b2c6456f905f6873894",
+      "run_id": "a6c2f98d-6d5a-468b-94ef-15fe7e77424b",
+      "platform": "freshersworld",
+      "title": "Data Analyst",
+      "company": "7s IQ private limited",
+      "location": "Chennai",
+      "url": "https://www.freshersworld.com/jobs/data-analyst-jobs-opening-in-7s-iq-private-limited-at-ashok-nagar-chennai-2837635",
+      "posted_at": null,
+      "employment_type": "",
+      "salary_text": "0 to 1 Years",
+      "experience_text": "0 to 1 Years",
+      "is_fresher": true,
+      "role_type": "ML",
+      "semantic_score": 0.533,
+      "scraped_at": "2026-02-22T05:12:44.444474+00:00",
+      "is_notified": true,
+      "tags": [],
+      "category_tags": [
+        "Fresher",
+        "Generative AI"
+      ]
+    },
+    {
+      "external_id": "ba634c1e8d9a81d897907aa1",
+      "run_id": "a6c2f98d-6d5a-468b-94ef-15fe7e77424b",
+      "platform": "freshersworld",
+      "title": "Data Analyst",
+      "company": "Black Olive Ventures Pvt. Ltd.",
+      "location": "Bangalore, Coimbatore, Noida",
+      "url": "https://www.freshersworld.com/jobs/data-analyst-jobs-opening-in-black-olive-ventures-pvt-ltd-at-jp-nagar-r-s-puram-sector-62-noida-bangalore-coimbatore-noida-2844827",
+      "posted_at": null,
+      "employment_type": "",
+      "salary_text": "0 to 1 Years",
+      "experience_text": "0 to 1 Years",
+      "is_fresher": true,
+      "role_type": "ML",
+      "semantic_score": 0.533,
+      "scraped_at": "2026-02-22T05:12:44.059868+00:00",
+      "is_notified": true,
+      "tags": [],
+      "category_tags": [
+        "Fresher"
+      ]
+    },
+    {
+      "external_id": "001e0449a4d39f8318dcc7f0",
+      "run_id": "3278bff5-994b-4910-8738-813333891161",
+      "platform": "linkedin",
+      "title": "PHP Developer Fresher",
+      "company": "MoonFellow IT Solutions Pvt Ltd",
+      "location": "Noida, Uttar Pradesh, India",
+      "url": "https://in.linkedin.com/jobs/view/php-developer-fresher-at-moonfellow-it-solutions-pvt-ltd-4318237664?position=58&pageNum=0&refId=%2FokcI5lQ8qy7WHcNf4DdZA%3D%3D&trackingId=3hSGHYKg2X73f4WjThDOVQ%3D%3D",
+      "posted_at": "4 months ago",
+      "employment_type": "",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": true,
+      "role_type": "ML",
+      "semantic_score": 0.2,
+      "scraped_at": "2026-02-20T05:12:21.632075+00:00",
+      "is_notified": true,
+      "tags": [
+        "Noida, Uttar Pradesh, India"
+      ],
+      "category_tags": [
+        "Fresher"
+      ]
+    },
+    {
+      "external_id": "eb67e49751fdc4a25fa3084d",
+      "run_id": "3278bff5-994b-4910-8738-813333891161",
+      "platform": "linkedin",
+      "title": "Software Developer-Fresher",
+      "company": "Skill Hive Hub",
+      "location": "Hyderabad, Telangana, India",
+      "url": "https://in.linkedin.com/jobs/view/software-developer-fresher-at-skill-hive-hub-4372826850?position=45&pageNum=0&refId=%2FokcI5lQ8qy7WHcNf4DdZA%3D%3D&trackingId=OsljJ5Dy3odExyYd3bSoFw%3D%3D",
+      "posted_at": "5 days ago",
+      "employment_type": "",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": true,
+      "role_type": "ML",
+      "semantic_score": 0.2,
+      "scraped_at": "2026-02-20T05:12:21.042730+00:00",
+      "is_notified": true,
+      "tags": [
+        "Hyderabad, Telangana, India"
+      ],
+      "category_tags": [
+        "Fresher"
+      ]
+    },
+    {
+      "external_id": "6d4c4e9dbf9bf7a266976196",
+      "run_id": "3278bff5-994b-4910-8738-813333891161",
+      "platform": "linkedin",
+      "title": "Software Engineer Fresher",
+      "company": "BOT Campus AI",
+      "location": "India",
+      "url": "https://in.linkedin.com/jobs/view/software-engineer-fresher-at-bot-campus-ai-4367759206?position=43&pageNum=0&refId=%2FokcI5lQ8qy7WHcNf4DdZA%3D%3D&trackingId=lis%2BGK7ECqN6EkMxA6yijw%3D%3D",
+      "posted_at": "2 weeks ago",
+      "employment_type": "",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": true,
+      "role_type": "ML",
+      "semantic_score": 0.2,
+      "scraped_at": "2026-02-20T05:12:20.952454+00:00",
+      "is_notified": true,
+      "tags": [
+        "India"
+      ],
+      "category_tags": [
+        "Fresher"
+      ]
+    },
+    {
+      "external_id": "bcf32cec6069bf922be6ef0c",
+      "run_id": "3278bff5-994b-4910-8738-813333891161",
+      "platform": "linkedin",
+      "title": "Freshers Gen AI Engineer Job Overview",
+      "company": "Cyber Infrastructure (CIS)",
+      "location": "Indore, Madhya Pradesh, India",
+      "url": "https://in.linkedin.com/jobs/view/freshers-gen-ai-engineer-job-overview-at-cyber-infrastructure-cis-4263422319?position=38&pageNum=0&refId=%2FokcI5lQ8qy7WHcNf4DdZA%3D%3D&trackingId=IfOA%2BdHq9VItvp6GgAWWvA%3D%3D",
+      "posted_at": "7 months ago",
+      "employment_type": "",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": true,
+      "role_type": "ML",
+      "semantic_score": 0.0,
+      "scraped_at": "2026-02-20T05:12:20.723387+00:00",
+      "is_notified": true,
+      "tags": [
+        "Indore, Madhya Pradesh, India"
+      ],
+      "category_tags": [
+        "Fresher"
+      ]
+    },
+    {
+      "external_id": "fc52ee75a7ac7870bb1390ae",
+      "run_id": "3278bff5-994b-4910-8738-813333891161",
+      "platform": "linkedin",
+      "title": "Freshers Python/ Django Developers Job Overview",
+      "company": "Cyber Infrastructure (CIS)",
+      "location": "Indore, Madhya Pradesh, India",
+      "url": "https://in.linkedin.com/jobs/view/freshers-python-django-developers-job-overview-at-cyber-infrastructure-cis-4263425195?position=36&pageNum=0&refId=%2FokcI5lQ8qy7WHcNf4DdZA%3D%3D&trackingId=MRbh9wAnIYYshYy7Tg%2Bsqw%3D%3D",
+      "posted_at": "7 months ago",
+      "employment_type": "",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": true,
+      "role_type": "ML",
+      "semantic_score": 0.0,
+      "scraped_at": "2026-02-20T05:12:20.630444+00:00",
+      "is_notified": true,
+      "tags": [
+        "Indore, Madhya Pradesh, India"
+      ],
+      "category_tags": [
+        "Fresher"
+      ]
+    },
+    {
+      "external_id": "4c08abe4c01336dfe992ac2c",
+      "run_id": "3278bff5-994b-4910-8738-813333891161",
+      "platform": "linkedin",
+      "title": "Fresher - Software Development Engineer",
+      "company": "Wohlig",
+      "location": "Mumbai Metropolitan Region",
+      "url": "https://in.linkedin.com/jobs/view/fresher-software-development-engineer-at-wohlig-4129623996?position=35&pageNum=0&refId=%2FokcI5lQ8qy7WHcNf4DdZA%3D%3D&trackingId=s5oBYuWejgsSAG%2BriZTK2A%3D%3D",
+      "posted_at": "1 year ago",
+      "employment_type": "",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": true,
+      "role_type": "ML",
+      "semantic_score": 0.2,
+      "scraped_at": "2026-02-20T05:12:20.587594+00:00",
+      "is_notified": true,
+      "tags": [
+        "Mumbai Metropolitan Region"
+      ],
+      "category_tags": [
+        "Fresher"
+      ]
+    },
+    {
+      "external_id": "7e856b9a112cac48961b99a0",
+      "run_id": "3278bff5-994b-4910-8738-813333891161",
+      "platform": "linkedin",
+      "title": "Fresher Php Developer",
+      "company": "Pixlogix Infotech Pvt. Ltd.",
+      "location": "Ahmedabad, Gujarat, India",
+      "url": "https://in.linkedin.com/jobs/view/fresher-php-developer-at-pixlogix-infotech-pvt-ltd-4217803475?position=29&pageNum=0&refId=%2FokcI5lQ8qy7WHcNf4DdZA%3D%3D&trackingId=N0wOFmmzaIv%2BYOZylazyOQ%3D%3D",
+      "posted_at": "9 months ago",
+      "employment_type": "",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": true,
+      "role_type": "ML",
+      "semantic_score": 0.2,
+      "scraped_at": "2026-02-20T05:12:20.312459+00:00",
+      "is_notified": true,
+      "tags": [
+        "Ahmedabad, Gujarat, India"
+      ],
+      "category_tags": [
+        "Fresher"
+      ]
+    },
+    {
+      "external_id": "77f6ecfcdd4edd81eaf46e00",
+      "run_id": "3278bff5-994b-4910-8738-813333891161",
+      "platform": "linkedin",
+      "title": "Fresher Software Engineer",
+      "company": "Scalix Enterprise Solution LLP",
+      "location": "Mumbai, Maharashtra, India",
+      "url": "https://in.linkedin.com/jobs/view/fresher-software-engineer-at-scalix-enterprise-solution-llp-4373388227?position=28&pageNum=0&refId=%2FokcI5lQ8qy7WHcNf4DdZA%3D%3D&trackingId=HCGAjVgVluysbFRQt%2BU6FQ%3D%3D",
+      "posted_at": "21 hours ago",
+      "employment_type": "",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": true,
+      "role_type": "ML",
+      "semantic_score": 0.2,
+      "scraped_at": "2026-02-20T05:12:20.263981+00:00",
+      "is_notified": true,
+      "tags": [
+        "Mumbai, Maharashtra, India"
+      ],
+      "category_tags": [
+        "Fresher"
+      ]
+    },
+    {
+      "external_id": "dc8cf3133a0e77b73e70e291",
+      "run_id": "3278bff5-994b-4910-8738-813333891161",
+      "platform": "linkedin",
+      "title": "Fresher - Cloud, AI & Enterprise Technology Roles",
+      "company": "TantranZm",
+      "location": "Faridabad, Haryana, India",
+      "url": "https://in.linkedin.com/jobs/view/fresher-cloud-ai-enterprise-technology-roles-at-tantranzm-4355051064?position=26&pageNum=0&refId=%2FokcI5lQ8qy7WHcNf4DdZA%3D%3D&trackingId=StcDZxLUK9N653TYjrUbqA%3D%3D",
+      "posted_at": "1 month ago",
+      "employment_type": "",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": true,
+      "role_type": "ML",
+      "semantic_score": 0.2,
+      "scraped_at": "2026-02-20T05:12:20.173957+00:00",
+      "is_notified": true,
+      "tags": [
+        "Faridabad, Haryana, India"
+      ],
+      "category_tags": [
+        "Fresher"
+      ]
+    },
+    {
+      "external_id": "28243d31dc3d94d13403fe94",
+      "run_id": "3278bff5-994b-4910-8738-813333891161",
+      "platform": "linkedin",
+      "title": "Junior Software Developer (Fresher) Internship",
+      "company": "Cognic Systems LLC",
+      "location": "Jabalpur, Madhya Pradesh, India",
+      "url": "https://in.linkedin.com/jobs/view/junior-software-developer-fresher-internship-at-cognic-systems-llc-4312279996?position=25&pageNum=0&refId=%2FokcI5lQ8qy7WHcNf4DdZA%3D%3D&trackingId=Jw%2FzqjgBuuuwiZZWIBm1ZQ%3D%3D",
+      "posted_at": "4 months ago",
+      "employment_type": "",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": true,
+      "role_type": "ML",
+      "semantic_score": 0.2,
+      "scraped_at": "2026-02-20T05:12:20.124219+00:00",
+      "is_notified": true,
+      "tags": [
+        "Jabalpur, Madhya Pradesh, India"
+      ],
+      "category_tags": [
+        "Fresher"
+      ]
+    },
+    {
+      "external_id": "b39f811c82a50256be93e81a",
+      "run_id": "3278bff5-994b-4910-8738-813333891161",
+      "platform": "linkedin",
+      "title": "Data Analyst-Fresher",
+      "company": "Skill Hive Hub",
+      "location": "Greater Visakhapatnam Area",
+      "url": "https://in.linkedin.com/jobs/view/data-analyst-fresher-at-skill-hive-hub-4372839175?position=8&pageNum=0&refId=%2FokcI5lQ8qy7WHcNf4DdZA%3D%3D&trackingId=TaJakRNflNxSposYsBmqMg%3D%3D",
+      "posted_at": "3 days ago",
+      "employment_type": "",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": true,
+      "role_type": "ML",
+      "semantic_score": 0.6,
+      "scraped_at": "2026-02-20T05:12:19.322618+00:00",
+      "is_notified": true,
+      "tags": [
+        "Greater Visakhapatnam Area"
+      ],
+      "category_tags": [
+        "Fresher"
+      ]
+    },
+    {
+      "external_id": "1a5975c6b9075189e6124ba5",
+      "run_id": "3278bff5-994b-4910-8738-813333891161",
+      "platform": "linkedin",
+      "title": "Fresher Data Analyst",
+      "company": "CryptoChakra",
+      "location": "India",
+      "url": "https://in.linkedin.com/jobs/view/fresher-data-analyst-at-cryptochakra-4375113109?position=7&pageNum=0&refId=%2FokcI5lQ8qy7WHcNf4DdZA%3D%3D&trackingId=IyHZhvrEAauOx5zp25omEw%3D%3D",
+      "posted_at": "1 day ago",
+      "employment_type": "",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": true,
+      "role_type": "ML",
+      "semantic_score": 0.6,
+      "scraped_at": "2026-02-20T05:12:19.273696+00:00",
+      "is_notified": true,
+      "tags": [
+        "India"
+      ],
+      "category_tags": [
+        "Fresher"
+      ]
+    },
+    {
+      "external_id": "58d6714e30664ccd37df52c2",
+      "run_id": "3278bff5-994b-4910-8738-813333891161",
+      "platform": "linkedin",
+      "title": "Data Analyst-Fresher",
+      "company": "SYNAPTICA TECH",
+      "location": "Hyderabad, Telangana, India",
+      "url": "https://in.linkedin.com/jobs/view/data-analyst-fresher-at-synaptica-tech-4372828940?position=5&pageNum=0&refId=%2FokcI5lQ8qy7WHcNf4DdZA%3D%3D&trackingId=Di9dZJ91wDNbl%2FbfxNSylw%3D%3D",
+      "posted_at": "3 days ago",
+      "employment_type": "",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": true,
+      "role_type": "ML",
+      "semantic_score": 0.6,
+      "scraped_at": "2026-02-20T05:12:19.175065+00:00",
+      "is_notified": true,
+      "tags": [
+        "Hyderabad, Telangana, India"
+      ],
+      "category_tags": [
+        "Fresher"
+      ]
+    },
+    {
+      "external_id": "5111f8491c36c4bec9ddaa4b",
+      "run_id": "3278bff5-994b-4910-8738-813333891161",
+      "platform": "linkedin",
+      "title": "Data Analyst-Fresher",
+      "company": "SparkNovaTechSolutions",
+      "location": "Greater Vijayawada District",
+      "url": "https://in.linkedin.com/jobs/view/data-analyst-fresher-at-sparknovatechsolutions-4372833976?position=4&pageNum=0&refId=%2FokcI5lQ8qy7WHcNf4DdZA%3D%3D&trackingId=K02%2FlYymKC7hPL2Wwui3rA%3D%3D",
+      "posted_at": "3 days ago",
+      "employment_type": "",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": true,
+      "role_type": "ML",
+      "semantic_score": 0.6,
+      "scraped_at": "2026-02-20T05:12:19.116084+00:00",
+      "is_notified": true,
+      "tags": [
+        "Greater Vijayawada District"
+      ],
+      "category_tags": [
+        "Fresher"
+      ]
+    },
+    {
+      "external_id": "61d10ad82ffa7f2f7a8f380d",
+      "run_id": "99cabb13-f84c-4c02-b52a-95d93abd8850",
+      "platform": "linkedin",
+      "title": "Freshers Android Developers Job Overview",
+      "company": "Cyber Infrastructure (CIS)",
+      "location": "Indore, Madhya Pradesh, India",
+      "url": "https://in.linkedin.com/jobs/view/freshers-android-developers-job-overview-at-cyber-infrastructure-cis-4263422296?position=60&pageNum=0&refId=t8mjs%2BPNy2ik7RIxS5jhIQ%3D%3D&trackingId=c4ARlLKnsTyMCvX3w2DlyA%3D%3D",
+      "posted_at": "7 months ago",
+      "employment_type": "",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": true,
+      "role_type": "ML",
+      "semantic_score": 0.0,
+      "scraped_at": "2026-02-19T05:18:40.465253+00:00",
+      "is_notified": true,
+      "tags": [
+        "Indore, Madhya Pradesh, India"
+      ],
+      "category_tags": [
+        "Fresher"
+      ]
+    },
+    {
+      "external_id": "49da5429145263354ba3191b",
+      "run_id": "99cabb13-f84c-4c02-b52a-95d93abd8850",
+      "platform": "linkedin",
+      "title": "PHP Developer Fresher",
+      "company": "MoonFellow IT Solutions Pvt Ltd",
+      "location": "Noida, Uttar Pradesh, India",
+      "url": "https://in.linkedin.com/jobs/view/php-developer-fresher-at-moonfellow-it-solutions-pvt-ltd-4318237664?position=55&pageNum=0&refId=t8mjs%2BPNy2ik7RIxS5jhIQ%3D%3D&trackingId=xobn%2BcKmimV%2BDOKjn2P8IQ%3D%3D",
+      "posted_at": "3 months ago",
+      "employment_type": "",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": true,
+      "role_type": "ML",
+      "semantic_score": 0.2,
+      "scraped_at": "2026-02-19T05:18:40.221028+00:00",
+      "is_notified": true,
+      "tags": [
+        "Noida, Uttar Pradesh, India"
+      ],
+      "category_tags": [
+        "Fresher"
+      ]
+    },
+    {
+      "external_id": "7d24951fb5c5400c5fada9e2",
+      "run_id": "99cabb13-f84c-4c02-b52a-95d93abd8850",
+      "platform": "linkedin",
+      "title": "Software Engineer Fresher",
+      "company": "BOT Campus AI",
+      "location": "India",
+      "url": "https://in.linkedin.com/jobs/view/software-engineer-fresher-at-bot-campus-ai-4367759206?position=42&pageNum=0&refId=t8mjs%2BPNy2ik7RIxS5jhIQ%3D%3D&trackingId=I2D%2FFA3j9MDquaLGD1pavg%3D%3D",
+      "posted_at": "2 weeks ago",
+      "employment_type": "",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": true,
+      "role_type": "ML",
+      "semantic_score": 0.2,
+      "scraped_at": "2026-02-19T05:18:39.573523+00:00",
+      "is_notified": true,
+      "tags": [
+        "India"
+      ],
+      "category_tags": [
+        "Fresher"
+      ]
+    },
+    {
+      "external_id": "8501839029437f1f577f17dd",
+      "run_id": "99cabb13-f84c-4c02-b52a-95d93abd8850",
+      "platform": "linkedin",
+      "title": "Freshers Gen AI Engineer Job Overview",
+      "company": "Cyber Infrastructure (CIS)",
+      "location": "Indore, Madhya Pradesh, India",
+      "url": "https://in.linkedin.com/jobs/view/freshers-gen-ai-engineer-job-overview-at-cyber-infrastructure-cis-4263422319?position=37&pageNum=0&refId=t8mjs%2BPNy2ik7RIxS5jhIQ%3D%3D&trackingId=rVVldvXQLMdwfRrqnfIclw%3D%3D",
+      "posted_at": "7 months ago",
+      "employment_type": "",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": true,
+      "role_type": "ML",
+      "semantic_score": 0.0,
+      "scraped_at": "2026-02-19T05:18:39.286979+00:00",
+      "is_notified": true,
+      "tags": [
+        "Indore, Madhya Pradesh, India"
+      ],
+      "category_tags": [
+        "Fresher"
+      ]
+    },
+    {
+      "external_id": "65e576c0338fea160448f119",
+      "run_id": "99cabb13-f84c-4c02-b52a-95d93abd8850",
+      "platform": "linkedin",
+      "title": "Freshers Python/ Django Developers Job Overview",
+      "company": "Cyber Infrastructure (CIS)",
+      "location": "Indore, Madhya Pradesh, India",
+      "url": "https://in.linkedin.com/jobs/view/freshers-python-django-developers-job-overview-at-cyber-infrastructure-cis-4263425195?position=35&pageNum=0&refId=t8mjs%2BPNy2ik7RIxS5jhIQ%3D%3D&trackingId=LoGfvXmGfusDjkxYbhjl7Q%3D%3D",
+      "posted_at": "7 months ago",
+      "employment_type": "",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": true,
+      "role_type": "ML",
+      "semantic_score": 0.0,
+      "scraped_at": "2026-02-19T05:18:39.192471+00:00",
+      "is_notified": true,
+      "tags": [
+        "Indore, Madhya Pradesh, India"
+      ],
+      "category_tags": [
+        "Fresher"
+      ]
+    },
+    {
+      "external_id": "90d7dd2666d2b64453fe6478",
+      "run_id": "99cabb13-f84c-4c02-b52a-95d93abd8850",
+      "platform": "linkedin",
+      "title": "Fresher - Software Development Engineer",
+      "company": "Wohlig",
+      "location": "Mumbai Metropolitan Region",
+      "url": "https://in.linkedin.com/jobs/view/fresher-software-development-engineer-at-wohlig-4129623996?position=34&pageNum=0&refId=t8mjs%2BPNy2ik7RIxS5jhIQ%3D%3D&trackingId=ejwXqmlsBrSUQYQ6pbfbkA%3D%3D",
+      "posted_at": "1 year ago",
+      "employment_type": "",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": true,
+      "role_type": "ML",
+      "semantic_score": 0.2,
+      "scraped_at": "2026-02-19T05:18:39.146189+00:00",
+      "is_notified": true,
+      "tags": [
+        "Mumbai Metropolitan Region"
+      ],
+      "category_tags": [
+        "Fresher"
+      ]
+    },
+    {
+      "external_id": "c1e376c777a13101bd341451",
+      "run_id": "99cabb13-f84c-4c02-b52a-95d93abd8850",
+      "platform": "linkedin",
+      "title": "Software Developer-Fresher",
+      "company": "Skill Hive Hub",
+      "location": "Hyderabad, Telangana, India",
+      "url": "https://in.linkedin.com/jobs/view/software-developer-fresher-at-skill-hive-hub-4372826850?position=28&pageNum=0&refId=t8mjs%2BPNy2ik7RIxS5jhIQ%3D%3D&trackingId=laiUIf4BqkEGuxVcOckCrA%3D%3D",
+      "posted_at": "4 days ago",
+      "employment_type": "",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": true,
+      "role_type": "ML",
+      "semantic_score": 0.2,
+      "scraped_at": "2026-02-19T05:18:38.850168+00:00",
+      "is_notified": true,
+      "tags": [
+        "Hyderabad, Telangana, India"
+      ],
+      "category_tags": [
+        "Fresher"
+      ]
+    },
+    {
+      "external_id": "8b297dca030f7ac8c9b5ebd7",
+      "run_id": "99cabb13-f84c-4c02-b52a-95d93abd8850",
+      "platform": "linkedin",
+      "title": "Fresher - Cloud, AI & Enterprise Technology Roles",
+      "company": "TantranZm",
+      "location": "Faridabad, Haryana, India",
+      "url": "https://in.linkedin.com/jobs/view/fresher-cloud-ai-enterprise-technology-roles-at-tantranzm-4355051064?position=27&pageNum=0&refId=t8mjs%2BPNy2ik7RIxS5jhIQ%3D%3D&trackingId=oXnp6308PtgIXtjsUPdVxw%3D%3D",
+      "posted_at": "1 month ago",
+      "employment_type": "",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": true,
+      "role_type": "ML",
+      "semantic_score": 0.2,
+      "scraped_at": "2026-02-19T05:18:38.784936+00:00",
+      "is_notified": true,
+      "tags": [
+        "Faridabad, Haryana, India"
+      ],
+      "category_tags": [
+        "Fresher"
+      ]
+    },
+    {
+      "external_id": "b1ac2c773269d8f11af31e21",
+      "run_id": "99cabb13-f84c-4c02-b52a-95d93abd8850",
+      "platform": "linkedin",
+      "title": "Junior Software Developer (Fresher) Internship",
+      "company": "Cognic Systems LLC",
+      "location": "Jabalpur, Madhya Pradesh, India",
+      "url": "https://in.linkedin.com/jobs/view/junior-software-developer-fresher-internship-at-cognic-systems-llc-4312279996?position=26&pageNum=0&refId=t8mjs%2BPNy2ik7RIxS5jhIQ%3D%3D&trackingId=eMilpNVSgG4hF6hSxe8DNA%3D%3D",
+      "posted_at": "4 months ago",
+      "employment_type": "",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": true,
+      "role_type": "ML",
+      "semantic_score": 0.2,
+      "scraped_at": "2026-02-19T05:18:38.736293+00:00",
+      "is_notified": true,
+      "tags": [
+        "Jabalpur, Madhya Pradesh, India"
+      ],
+      "category_tags": [
+        "Fresher"
+      ]
+    },
+    {
+      "external_id": "d455a4f9fccaf605afdca3b8",
+      "run_id": "99cabb13-f84c-4c02-b52a-95d93abd8850",
+      "platform": "linkedin",
+      "title": "Data Analyst-Fresher",
+      "company": "Skill Hive Hub",
+      "location": "Greater Visakhapatnam Area",
+      "url": "https://in.linkedin.com/jobs/view/data-analyst-fresher-at-skill-hive-hub-4372839175?position=9&pageNum=0&refId=t8mjs%2BPNy2ik7RIxS5jhIQ%3D%3D&trackingId=Nqbf1VoOr8dQl0mYTKN6rg%3D%3D",
+      "posted_at": "2 days ago",
+      "employment_type": "",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": true,
+      "role_type": "ML",
+      "semantic_score": 0.6,
+      "scraped_at": "2026-02-19T05:18:37.701803+00:00",
+      "is_notified": true,
+      "tags": [
+        "Greater Visakhapatnam Area"
+      ],
+      "category_tags": [
+        "Fresher"
+      ]
+    },
+    {
+      "external_id": "24fcd67595fe811cba31fd71",
+      "run_id": "99cabb13-f84c-4c02-b52a-95d93abd8850",
+      "platform": "linkedin",
+      "title": "Fresher Data Analyst",
+      "company": "CryptoChakra",
+      "location": "India",
+      "url": "https://in.linkedin.com/jobs/view/fresher-data-analyst-at-cryptochakra-4375113109?position=8&pageNum=0&refId=t8mjs%2BPNy2ik7RIxS5jhIQ%3D%3D&trackingId=Udp%2FT9jEyMYKFaGcdS77QA%3D%3D",
+      "posted_at": "41 minutes ago",
+      "employment_type": "",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": true,
+      "role_type": "ML",
+      "semantic_score": 0.6,
+      "scraped_at": "2026-02-19T05:18:37.655757+00:00",
+      "is_notified": true,
+      "tags": [
+        "India"
+      ],
+      "category_tags": [
+        "Fresher"
+      ]
+    },
+    {
+      "external_id": "2ef0651d24c6c2465d1677ef",
+      "run_id": "99cabb13-f84c-4c02-b52a-95d93abd8850",
+      "platform": "linkedin",
+      "title": "Data Analyst-Fresher",
+      "company": "SYNAPTICA TECH",
+      "location": "Hyderabad, Telangana, India",
+      "url": "https://in.linkedin.com/jobs/view/data-analyst-fresher-at-synaptica-tech-4372828940?position=6&pageNum=0&refId=t8mjs%2BPNy2ik7RIxS5jhIQ%3D%3D&trackingId=z12wS8jC8kT5RgLaBMAD8g%3D%3D",
+      "posted_at": "2 days ago",
+      "employment_type": "",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": true,
+      "role_type": "ML",
+      "semantic_score": 0.6,
+      "scraped_at": "2026-02-19T05:18:37.549197+00:00",
+      "is_notified": true,
+      "tags": [
+        "Hyderabad, Telangana, India"
+      ],
+      "category_tags": [
+        "Fresher"
+      ]
+    },
+    {
+      "external_id": "e6d9ddc91652d3f6071e72c6",
+      "run_id": "99cabb13-f84c-4c02-b52a-95d93abd8850",
+      "platform": "linkedin",
+      "title": "Data Analyst-Fresher",
+      "company": "SparkNovaTechSolutions",
+      "location": "Greater Vijayawada District",
+      "url": "https://in.linkedin.com/jobs/view/data-analyst-fresher-at-sparknovatechsolutions-4372833976?position=5&pageNum=0&refId=t8mjs%2BPNy2ik7RIxS5jhIQ%3D%3D&trackingId=Eni1H8I6TrY%2Br%2BghykxeOQ%3D%3D",
+      "posted_at": "2 days ago",
+      "employment_type": "",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": true,
+      "role_type": "ML",
+      "semantic_score": 0.6,
+      "scraped_at": "2026-02-19T05:18:37.502599+00:00",
+      "is_notified": true,
+      "tags": [
+        "Greater Vijayawada District"
+      ],
+      "category_tags": [
+        "Fresher"
+      ]
+    },
+    {
+      "external_id": "fe9d226ab3b6b8dc44c02afb",
+      "run_id": "99cabb13-f84c-4c02-b52a-95d93abd8850",
+      "platform": "linkedin",
+      "title": "Data Analyst (Fresher)",
+      "company": "Clovity",
+      "location": "India",
+      "url": "https://in.linkedin.com/jobs/view/data-analyst-fresher-at-clovity-4371787159?position=3&pageNum=0&refId=t8mjs%2BPNy2ik7RIxS5jhIQ%3D%3D&trackingId=lvDqZTWwmnzhUFQ9S4I38A%3D%3D",
+      "posted_at": "5 days ago",
+      "employment_type": "",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": true,
+      "role_type": "ML",
+      "semantic_score": 0.6,
+      "scraped_at": "2026-02-19T05:18:37.404014+00:00",
+      "is_notified": true,
+      "tags": [
+        "India",
+        "Actively Hiring"
+      ],
+      "category_tags": [
+        "Fresher"
+      ]
+    },
+    {
+      "external_id": "8bab777be9889a160c5e2f9a",
+      "run_id": "e6da1541-c0c2-47a8-b5a8-09805511fd9a",
+      "platform": "freshersworld",
+      "title": "Site Engineer",
+      "company": "Theertha Builders and developers LLP",
+      "location": "Alappuzha, Ernakulam",
+      "url": "https://www.freshersworld.com/jobs/site-engineer-jobs-opening-in-theertha-builders-and-developers-llp-at-alappuzha-ernakulam-2821766",
+      "posted_at": null,
+      "employment_type": "",
+      "salary_text": "0 to 1 Years",
+      "experience_text": "0 to 1 Years",
+      "is_fresher": true,
+      "role_type": "ML",
+      "semantic_score": 0.267,
+      "scraped_at": "2026-02-18T05:14:47.717303+00:00",
+      "is_notified": true,
+      "tags": [],
+      "category_tags": [
+        "Fresher"
+      ]
+    },
     {
       "external_id": "a6ba190ab21bb3e4c0a122af",
       "run_id": "d9a0b116-aaeb-4f8a-9c32-0f1eee1c5515",
