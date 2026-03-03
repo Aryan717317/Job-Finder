@@ -80,6 +80,21 @@ def send_new_jobs_email() -> int:
         raise RuntimeError("Set GMAIL_SENDER, GMAIL_APP_PASSWORD, and GMAIL_RECIPIENT in environment.")
 
     jobs = [dict(row) for row in rows]
+
+    # Deduplicate by title+company+platform for the email
+    seen_keys: set[str] = set()
+    unique_jobs: list[dict] = []
+    for job in jobs:
+        key = "|".join([
+            " ".join((job.get("title") or "").strip().lower().split()),
+            " ".join((job.get("company") or "").strip().lower().split()),
+            (job.get("platform") or "").strip().lower(),
+        ])
+        if key not in seen_keys:
+            seen_keys.add(key)
+            unique_jobs.append(job)
+    jobs = unique_jobs
+
     html = _build_html_table(jobs)
     subject = f"Job Aggregator: {len(jobs)} New Jobs"
 

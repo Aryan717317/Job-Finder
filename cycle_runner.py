@@ -114,6 +114,29 @@ def _normalize_title(value: str) -> str:
     return " ".join((value or "").strip().lower().split())
 
 
+def _dedup_key(job) -> str:
+    """Normalize title+company+platform into a stable dedup key."""
+    title = _normalize_title(getattr(job, "title", "") or "")
+    company = " ".join((getattr(job, "company", "") or "").strip().lower().split())
+    platform = (getattr(job, "platform", "") or "").strip().lower()
+    return f"{platform}|{title}|{company}"
+
+
+def _deduplicate_jobs(jobs: list, logger: logging.Logger) -> list:
+    """Drop duplicate jobs with the same title+company+platform, keeping the highest score."""
+    best: dict[str, object] = {}
+    for job in jobs:
+        key = _dedup_key(job)
+        existing = best.get(key)
+        if existing is None or (getattr(job, "semantic_score", 0) > getattr(existing, "semantic_score", 0)):
+            best[key] = job
+    deduped = list(best.values())
+    removed = len(jobs) - len(deduped)
+    if removed:
+        logger.info("[Dedup] Removed %d duplicate job(s) (title+company+platform).", removed)
+    return deduped
+
+
 def _is_cs_ai_ml_title(title: str) -> bool:
     normalized = _normalize_title(title)
     if not normalized:
@@ -298,6 +321,7 @@ def _run_cycle(
         )
         jobs = _filter_cs_jobs(jobs, logger)
         jobs = _filter_fresher_jobs(jobs, logger)
+        jobs = _deduplicate_jobs(jobs, logger)
         jobs_processed = len(jobs)
         db.insert_jobs([job.to_dict() for job in jobs])
         db.mark_run_completed(run_id, jobs_collected=jobs_processed)

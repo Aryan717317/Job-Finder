@@ -118,13 +118,15 @@ class LinkedInScraper(BaseScraper):
         india_remote_jobs = await self._scrape_url(page, india_remote_url, query, run_id, "Remote/India")
         all_jobs.extend(india_remote_jobs)
 
-        # Deduplicate by URL
-        seen_urls: set[str] = set()
+        # Deduplicate by normalized title+company (LinkedIn assigns different IDs to same postings)
+        seen_keys: set[str] = set()
         deduped: list[JobRecord] = []
         for job in all_jobs:
-            normalized = job.url.split("?")[0].rstrip("/")
-            if normalized not in seen_urls:
-                seen_urls.add(normalized)
+            title_norm = " ".join((job.title or "").strip().lower().split())
+            company_norm = " ".join((job.company or "").strip().lower().split())
+            key = f"{title_norm}|{company_norm}"
+            if key not in seen_keys:
+                seen_keys.add(key)
                 deduped.append(job)
 
         logger.info("[linkedin] Total: %d India + %d global remote + %d India remote = %d unique",

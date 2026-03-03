@@ -69,7 +69,7 @@ jobs:
       - name: Prepare runtime env overrides
         run: |
           mkdir -p data
-          echo "JOB_QUERY_LIST=${{ github.event.inputs.queries || github.event.inputs.query || 'Software Development Engineer SDE-1,Junior Machine Learning Engineer,Prompt Engineer LLM,Associate Data Scientist,Data Analyst Fresher' }}" >> "$GITHUB_ENV"
+          echo "JOB_QUERY_LIST=${{ github.event.inputs.queries || github.event.inputs.query || 'Software Development Engineer SDE-1,AI ML Engineer Fresher,Machine Learning Engineer,Data Scientist Fresher,Prompt Engineer LLM,Data Analyst Fresher' }}" >> "$GITHUB_ENV"
           echo "JOB_PLATFORMS=${{ github.event.inputs.platforms || '' }}" >> "$GITHUB_ENV"
           echo "SEND_EMAIL=${{ github.event.inputs.send_email || 'true' }}" >> "$GITHUB_ENV"
 
@@ -121,6 +121,7 @@ jobs:
           applications_time_column = "applied_at" if has_column("applications", "applied_at") else "applied_date"
 
           jobs = []
+          seen_job_keys = set()
           for row in conn.execute(
             """
             SELECT
@@ -147,6 +148,15 @@ jobs:
             """
           ).fetchall():
             data = dict(row)
+            # Deduplicate by normalized title+company+platform
+            dedup_key = "|".join([
+                " ".join((data.get("title") or "").strip().lower().split()),
+                " ".join((data.get("company") or "").strip().lower().split()),
+                (data.get("platform") or "").strip().lower(),
+            ])
+            if dedup_key in seen_job_keys:
+                continue
+            seen_job_keys.add(dedup_key)
             data["tags"] = parse_json_list(data.pop("tags_json", "[]"))
             data["category_tags"] = parse_json_list(data.pop("category_tags_json", "[]"))
             data["is_notified"] = bool(data.get("is_notified"))
