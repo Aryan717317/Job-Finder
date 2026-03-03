@@ -305,8 +305,12 @@ def _run_cycle(
         logger.info("Scrape completed. run_id=%s jobs_processed=%s", run_id, jobs_processed)
 
         if send_email:
-            notified_count = send_new_jobs_email()
-            logger.info("Email notification completed. notified_count=%s", notified_count)
+            try:
+                notified_count = send_new_jobs_email()
+                logger.info("Email notification completed. notified_count=%s", notified_count)
+            except Exception as email_exc:
+                logger.warning("Email notification failed (non-fatal): %s", email_exc)
+                notified_count = 0
         else:
             logger.info("Email step skipped (--no-email).")
 
