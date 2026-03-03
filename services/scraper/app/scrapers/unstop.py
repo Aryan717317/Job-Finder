@@ -69,6 +69,11 @@ class UnstopScraper(BaseScraper):
                 cards = await page.query_selector_all(selector)
                 if cards:
                     break
+                    
+            if not cards:
+                title = await page.title()
+                html_snippet = (await page.content())[:800]
+                raise Exception(f"UNSTOP ZERO CARDS. Title: {title} | HTML Snippet: {html_snippet}")
 
             for card in cards[:60]:
                 jobs = await self._extract_card(card, query, run_id, seen_urls)

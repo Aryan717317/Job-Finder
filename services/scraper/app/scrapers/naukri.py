@@ -31,6 +31,11 @@ class NaukriScraper(BaseScraper):
             cards = await page.query_selector_all(selector)
             if cards:
                 break
+                
+        if not cards:
+            title = await page.title()
+            html_snippet = (await page.content())[:800]
+            raise Exception(f"NAUKRI ZERO CARDS. Title: {title} | HTML Snippet: {html_snippet}")
 
         jobs: list[JobRecord] = []
         for card in cards[:120]:
