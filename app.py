@@ -15,7 +15,7 @@ from notifier import send_new_jobs_email
 from services.scraper.app import db
 from services.scraper.app.maintenance import load_latest_maintenance_report, run_and_save_maintenance
 from services.scraper.app.preflight import load_latest_preflight_report, run_and_save_preflight
-from services.scraper.app.models import is_entry_level_role
+from services.scraper.app.models import scan_fresher_keywords
 from services.scraper.app.runner import list_platform_support, run_scrape
 from services.scraper.app.self_test import load_latest_self_test_report, run_and_save_self_test
 from services.scraper.app.smoke import load_latest_smoke_report, run_and_save_smoke_test
@@ -51,15 +51,12 @@ def _run_manual_scrape(query: str) -> tuple[int, str]:
         )
         jobs = [
             job for job in jobs
-            if is_entry_level_role(
-                platform=getattr(job, "platform", "") or "",
+            if scan_fresher_keywords(
                 description=getattr(job, "description", "") or "",
                 experience_text=getattr(job, "experience_text", "") or "",
                 title=getattr(job, "title", "") or "",
             )
         ]
-        for job in jobs:
-            job.is_fresher = True
         db.insert_jobs([job.to_dict() for job in jobs])
         db.mark_run_completed(run_id, len(jobs))
         db.add_run_event(run_id, "run.completed", "Manual scrape completed", {"jobs_collected": len(jobs)})

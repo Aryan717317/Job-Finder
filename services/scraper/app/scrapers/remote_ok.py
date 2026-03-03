@@ -1,6 +1,8 @@
-from __future__ import annotations
+﻿from __future__ import annotations
 
-from urllib.parse import quote_plus, urljoin
+import json
+import logging
+from urllib.parse import quote_plus
 
 from playwright.async_api import BrowserContext
 
@@ -9,74 +11,105 @@ from ..ranking import semantic_match_score
 from .base import BaseScraper
 from .stealth import apply_stealth
 
+logger = logging.getLogger("cycle_runner")
+
 
 class RemoteOkScraper(BaseScraper):
+    """RemoteOK scraper using their public JSON API.
+
+    API: https://remoteok.com/api (returns JSON array).
+    The first element is metadata, the rest are job objects.
+    Cloudflare blocks browser scraping, so the API is far more reliable.
+    """
+
     platform = "remote_ok"
-    start_url = "https://remoteok.com/remote-jobs"
+    start_url = "https://remoteok.com/api"
 
     async def scrape(self, context: BrowserContext, query: str, run_id: str) -> list[JobRecord]:
         page = context.pages[0] if context.pages else await context.new_page()
         await apply_stealth(page)
 
-        target_url = f"{self.start_url}?query={quote_plus(query)}"
-        await page.goto(target_url, wait_until="domcontentloaded")
-        await self.human_pause(1.0, 2.0)
+        # RemoteOK API accepts tag-based filtering
+        query_slug = query.lower().replace(" ", "-").replace("/", "-")
+        api_url = f"{self.start_url}?tag={query_slug}"
+        logger.info("[remote_ok] Fetching API: %s", api_url)
 
-        # Wait for table rows to hydrate from JS
+        # Set headers to look like a normal request
+        await page.set_extra_http_headers({
+            "Accept": "application/json",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+        })
+
         try:
-            await page.wait_for_selector("tr.job, tr[data-slug]", timeout=10000)
-        except Exception:
-            pass
+            response = await page.goto(api_url, wait_until="domcontentloaded")
+            if not response or response.status != 200:
+                logger.warning("[remote_ok] API returned status %s", response.status if response else "None")
+                return []
 
-        for _ in range(6):
-            await page.mouse.wheel(0, 1500)
-            await self.human_pause(0.5, 1.1)
+            body = await page.inner_text("body")
+            data = json.loads(body)
+        except Exception as exc:
+            logger.warning("[remote_ok] API request failed: %s", exc)
+            return []
 
-        # Remote OK uses a table layout with tr.job rows
-        cards = []
-        for selector in ["tr.job", "tr[data-slug]", "tr:has(td.company)", "article"]:
-            cards = await page.query_selector_all(selector)
-            if cards:
-                break
+        # First element is metadata/legal notice, skip it
+        raw_jobs = data[1:] if isinstance(data, list) and len(data) > 1 else []
+        logger.info("[remote_ok] API returned %d jobs", len(raw_jobs))
 
+        query_lower = query.lower()
         jobs: list[JobRecord] = []
-        for card in cards[:100]:
-            title = await self.pick_text(card, ["h2", "td.company h2", "[itemprop='title']", "h3"])
-            company = await self.pick_text(card, ["h3", "td.company h3", "[itemprop='name']", ".company-name"])
-            location = await self.pick_text(card, [".location", "td.location", ".location.tooltip"])
-            description = await self.pick_text(card, ["p", ".description", "td.description"])
-            salary_text = await self.pick_text(card, [".salary", "td.salary"])
-
-            tag_nodes = await card.query_selector_all(".tag, td.tags .tag, .tags a")
-            tags: list[str] = []
-            for node in tag_nodes[:8]:
-                text = (await node.inner_text()).strip()
-                if text:
-                    tags.append(text)
-
-            anchor = await card.query_selector("a[href*='/remote-jobs/'], a[href]")
-            href = await anchor.get_attribute("href") if anchor else None
-            # Fallback: use data-slug attribute to construct URL
-            if not href:
-                slug = await card.get_attribute("data-slug")
-                if slug:
-                    href = f"/remote-jobs/{slug}"
-            if not title or not href:
+        for item in raw_jobs:
+            if not isinstance(item, dict):
                 continue
 
-            score = semantic_match_score(query=query, title=title, description=description)
+            position = (item.get("position") or "").strip()
+            company = (item.get("company") or "").strip()
+            location = (item.get("location") or "Remote").strip()
+            description = (item.get("description") or "").strip()[:500]
+            slug = (item.get("slug") or "").strip()
+            epoch = item.get("epoch")
+            salary_min = item.get("salary_min")
+            salary_max = item.get("salary_max")
+            raw_tags = item.get("tags") or []
+
+            url = f"https://remoteok.com/remote-jobs/{slug}" if slug else (item.get("url") or "")
+            if not position or not url:
+                continue
+
+            salary_text = ""
+            if salary_min and salary_max:
+                salary_text = f" - "
+            elif salary_min:
+                salary_text = f"+"
+
+            tags: list[str] = []
+            for tag in raw_tags:
+                if isinstance(tag, str) and tag.strip():
+                    tags.append(tag.strip())
+
+            posted_at = ""
+            if epoch:
+                try:
+                    from datetime import datetime, timezone
+                    posted_at = datetime.fromtimestamp(int(epoch), tz=timezone.utc).isoformat()
+                except Exception:
+                    pass
+
+            score = semantic_match_score(query=query, title=position, description=description)
             jobs.append(
                 JobRecord(
                     run_id=run_id,
                     platform=self.platform,
-                    title=title,
+                    title=position,
                     company=company or "Unknown",
-                    location=location or "Remote/Unknown",
-                    url=urljoin("https://remoteok.com", href),
+                    location=location or "Remote/Worldwide",
+                    url=url,
                     description=description,
+                    posted_at=posted_at or None,
                     salary_text=salary_text,
-                    tags=tags,
+                    tags=tags[:8],
                     semantic_score=score,
                 )
             )
+        logger.info("[remote_ok] Parsed %d valid jobs", len(jobs))
         return jobs

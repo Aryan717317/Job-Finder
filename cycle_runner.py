@@ -35,6 +35,65 @@ _CS_TITLE_WHITELIST = (
     "fullstack",
     "backend",
     "frontend",
+    # Additional titles common on remote/international job boards
+    "python",
+    "java",
+    "javascript",
+    "typescript",
+    "golang",
+    "rust",
+    "cloud",
+    "devops",
+    "sre",
+    "data engineer",
+    "deep learning",
+    "nlp",
+    "computer vision",
+    "generative ai",
+    "genai",
+    "automation",
+    "qa",
+    "security engineer",
+    "platform engineer",
+    "infrastructure",
+)
+
+# Remote-only job platforms that do not use 'fresher'/'batch' language.
+# The fresher filter is relaxed for these: any entry-level or junior title passes.
+_REMOTE_PLATFORMS = frozenset({
+    "remotive",
+    "remote_ok",
+    "himalayas",
+    "jobicy",
+    "arbeitnow",
+    "working_nomads",
+    "we_work_remotely",
+    "remote_co",
+    "just_remote",
+    "jobgether",
+    "flexjobs",
+    "arc_dev",
+    "builtin",
+    "relocate_me",
+})
+
+_ENTRY_LEVEL_TITLE_HINTS = (
+    "junior",
+    "jr.",
+    "jr ",
+    "entry",
+    "entry-level",
+    "associate",
+    "trainee",
+    "intern",
+    "graduate",
+    "fresher",
+    "sde-1",
+    "sde 1",
+    "level 1",
+    "l1 ",
+    "new grad",
+    "early career",
 )
 
 _NON_TECH_BLACKLIST = (
@@ -96,8 +155,14 @@ def _filter_cs_jobs(jobs: list, logger: logging.Logger) -> list:
     return filtered
 
 
+def _is_entry_level_title(title: str) -> bool:
+    """True when the title itself signals a junior/entry-level role."""
+    normalized = _normalize_title(title)
+    return any(hint in normalized for hint in _ENTRY_LEVEL_TITLE_HINTS)
+
+
 def _filter_fresher_jobs(jobs: list, logger: logging.Logger) -> list:
-    from services.scraper.app.models import is_entry_level_role
+    from services.scraper.app.models import scan_fresher_keywords
 
     filtered: list = []
     for job in jobs:
@@ -105,15 +170,22 @@ def _filter_fresher_jobs(jobs: list, logger: logging.Logger) -> list:
         title = getattr(job, "title", "") or ""
         description = getattr(job, "description", "") or ""
         experience_text = getattr(job, "experience_text", "") or ""
-        if not is_entry_level_role(
-            platform=platform,
-            description=description,
-            experience_text=experience_text,
-            title=title,
-        ):
-            logger.info("[Filtered Out] Non-entry-level role: %s", title)
+
+        # For remote/international platforms: accept any entry-level title
+        # since they don't use Indian 'fresher'/'batch' terminology.
+        if platform in _REMOTE_PLATFORMS:
+            if _is_entry_level_title(title) or scan_fresher_keywords(
+                description=description, experience_text=experience_text, title=title
+            ):
+                filtered.append(job)
+            else:
+                logger.info("[Filtered Out] Non-entry-level remote role: %s", title)
             continue
-        job.is_fresher = True
+
+        # For India-centric platforms: original fresher keyword filter applies.
+        if not scan_fresher_keywords(description=description, experience_text=experience_text, title=title):
+            logger.info("[Filtered Out] Non-fresher role: %s", title)
+            continue
         filtered.append(job)
     return filtered
 
@@ -225,6 +297,7 @@ def _run_cycle(
             )
         )
         jobs = _filter_cs_jobs(jobs, logger)
+        jobs = _filter_fresher_jobs(jobs, logger)
         jobs_processed = len(jobs)
         db.insert_jobs([job.to_dict() for job in jobs])
         db.mark_run_completed(run_id, jobs_collected=jobs_processed)

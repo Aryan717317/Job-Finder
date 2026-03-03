@@ -18,6 +18,12 @@ DEFAULT_SEARCH_QUERIES = [
     "Prompt Engineer LLM",
     "Associate Data Scientist",
     "Data Analyst Fresher",
+    # Remote / WFH-specific queries
+    "Remote Software Developer",
+    "Remote Machine Learning Engineer",
+    "Work From Home Developer India",
+    "Remote Data Scientist",
+    "Remote Python Developer",
 ]
 
 

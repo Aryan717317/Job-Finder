@@ -32,7 +32,10 @@ from .careerjet import CareerJetScraper
 from .just_remote import JustRemoteScraper
 from .the_muse import TheMuseScraper
 from .jobgether import JobgetherScraper
+from .jobicy import JobicyScraper
+from .arbeitnow import ArbeitnowScraper
 from .it_org_careers import ITOrgCareersScraper
+from .unstop import UnstopScraper
 
 
 def build_scraper_registry() -> dict[str, BaseScraper]:
@@ -69,7 +72,10 @@ def build_scraper_registry() -> dict[str, BaseScraper]:
         "just_remote": JustRemoteScraper(),
         "the_muse": TheMuseScraper(),
         "jobgether": JobgetherScraper(),
+        "jobicy": JobicyScraper(),
+        "arbeitnow": ArbeitnowScraper(),
         "it_org_careers": ITOrgCareersScraper(),
+        "unstop": UnstopScraper(),
     }
     for platform, url in STUB_SCRAPER_CONFIG.items():
         registry[platform] = StubPlatformScraper(platform=platform, start_url=url)
@@ -109,7 +115,10 @@ __all__ = [
     "JustRemoteScraper",
     "TheMuseScraper",
     "JobgetherScraper",
+    "JobicyScraper",
+    "ArbeitnowScraper",
     "ITOrgCareersScraper",
+    "UnstopScraper",
     "StubPlatformScraper",
     "build_scraper_registry",
 ]

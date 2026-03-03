@@ -18,7 +18,7 @@ The system is designed to eliminate manual job hunting across multiple platforms
 
 ### 1. **Multi-Platform Scraping**
 - Scrapes from **16 platforms simultaneously** with parallel processing (4 concurrent):
-  - Indian platforms: Naukri, Foundit, Hirect, Hirist, Internshala, Cutshort
+  - Indian platforms: Naukri, Foundit, Hirect, Hirist, Internshala, Cutshort, Unstop
   - Global platforms: LinkedIn, Indeed, Arc.dev, Wellfound, Remote.co, Remotive, We Work Remotely, Relocate.me, FlexJobs, Working Nomads
 - **Intelligent retry logic** with exponential backoff for transient failures
 - **CAPTCHA detection** with human handoff option
@@ -290,6 +290,7 @@ JobFinder/
 │           ├── remote_co.py        # Remote.co scraper
 │           ├── we_work_remotely.py # We Work Remotely scraper
 │           ├── working_nomads.py   # Working Nomads scraper
+│           ├── unstop.py           # Unstop scraper
 │           └── platform_stubs.py   # Stub/placeholder scrapers
 │
 ├── data/                           # Runtime data directory

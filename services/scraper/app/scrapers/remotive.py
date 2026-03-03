@@ -1,6 +1,8 @@
-from __future__ import annotations
+﻿from __future__ import annotations
 
-from urllib.parse import quote_plus, urljoin
+import json
+import logging
+from urllib.parse import quote_plus
 
 from playwright.async_api import BrowserContext
 
@@ -8,53 +10,63 @@ from ..models import JobRecord
 from ..ranking import semantic_match_score
 from .base import BaseScraper
 
+logger = logging.getLogger("cycle_runner")
+
 
 class RemotiveScraper(BaseScraper):
+    """Remotive scraper using their free public JSON API.
+
+    API: https://remotive.com/api/remote-jobs
+    No auth required. Returns up to 100 jobs per request.
+    """
+
     platform = "remotive"
-    start_url = "https://remotive.com/remote-jobs"
+    start_url = "https://remotive.com/api/remote-jobs"
 
     async def scrape(self, context: BrowserContext, query: str, run_id: str) -> list[JobRecord]:
         page = context.pages[0] if context.pages else await context.new_page()
-        target_url = f"{self.start_url}?search={quote_plus(query)}"
-        await page.goto(target_url, wait_until="domcontentloaded")
-        await self.human_pause()
 
-        for _ in range(6):
-            await page.mouse.wheel(0, 1650)
-            await self.human_pause(0.5, 1.1)
+        api_url = f"{self.start_url}?search={quote_plus(query)}&limit=100"
+        logger.info("[remotive] Fetching API: %s", api_url)
 
-        cards = []
-        for selector in [".job-tile", "article", "li:has(a[href*='/remote-jobs/'])"]:
-            cards = await page.query_selector_all(selector)
-            if cards:
-                break
+        try:
+            response = await page.goto(api_url, wait_until="domcontentloaded")
+            if not response or response.status != 200:
+                logger.warning("[remotive] API returned status %s", response.status if response else "None")
+                return []
+
+            body = await page.inner_text("body")
+            data = json.loads(body)
+        except Exception as exc:
+            logger.warning("[remotive] API request failed: %s", exc)
+            return []
+
+        raw_jobs = data.get("jobs", [])
+        logger.info("[remotive] API returned %d jobs", len(raw_jobs))
 
         jobs: list[JobRecord] = []
-        for card in cards[:100]:
-            title = await self.pick_text(card, ["h2", "h3", "[data-testid*='title']"])
-            company = await self.pick_text(card, [".company", "[data-testid*='company']"])
-            location = await self.pick_text(card, [".location", "[data-testid*='location']"])
-            description = await self.pick_text(card, ["p", ".description", "[data-testid*='description']"])
-            posted_at = await self.pick_text(card, ["time", ".date", ".published"])
+        for item in raw_jobs:
+            title = (item.get("title") or "").strip()
+            company = (item.get("company_name") or "").strip()
+            location = (item.get("candidate_required_location") or "Worldwide").strip()
+            description = (item.get("description") or "").strip()[:500]
+            url = (item.get("url") or "").strip()
+            posted_at = (item.get("publication_date") or "").strip()
+            salary = (item.get("salary") or "").strip()
+            job_type = (item.get("job_type") or "").strip()
+            category = (item.get("category") or "").strip()
 
-            anchor = await card.query_selector("a[href*='/remote-jobs/'], a[href]")
-            href = await anchor.get_attribute("href") if anchor else None
-            if not title or not href:
-                continue
-
-            tag_nodes = await card.query_selector_all(".tag, .badge, .job-tag")
             tags: list[str] = []
-            for node in tag_nodes[:8]:
-                text = (await node.inner_text()).strip()
-                if text:
-                    tags.append(text)
+            if category:
+                tags.append(category)
+            if job_type:
+                tags.append(job_type)
+            for tag_item in item.get("tags", []):
+                if isinstance(tag_item, str) and tag_item.strip():
+                    tags.append(tag_item.strip())
 
-            employment_type = ""
-            for tag in tags:
-                lowered = tag.lower()
-                if any(token in lowered for token in ("full", "part", "contract", "freelance", "intern")):
-                    employment_type = tag
-                    break
+            if not title or not url:
+                continue
 
             score = semantic_match_score(query=query, title=title, description=description)
             jobs.append(
@@ -63,13 +75,15 @@ class RemotiveScraper(BaseScraper):
                     platform=self.platform,
                     title=title,
                     company=company or "Unknown",
-                    location=location or "Remote/Unknown",
-                    url=urljoin(self.start_url, href),
+                    location=location or "Remote/Worldwide",
+                    url=url,
                     description=description,
                     posted_at=posted_at or None,
-                    employment_type=employment_type,
-                    tags=tags,
+                    employment_type=job_type,
+                    salary_text=salary,
+                    tags=tags[:8],
                     semantic_score=score,
                 )
             )
+        logger.info("[remotive] Parsed %d valid jobs", len(jobs))
         return jobs

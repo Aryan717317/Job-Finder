@@ -1,6 +1,8 @@
-from __future__ import annotations
+﻿from __future__ import annotations
 
-from urllib.parse import quote_plus, urljoin
+import json
+import logging
+from urllib.parse import quote_plus
 
 from playwright.async_api import BrowserContext
 
@@ -8,53 +10,67 @@ from ..models import JobRecord
 from ..ranking import semantic_match_score
 from .base import BaseScraper
 
+logger = logging.getLogger("cycle_runner")
+
 
 class WorkingNomadsScraper(BaseScraper):
+    """WorkingNomads scraper using their public JSON API.
+
+    API: https://www.workingnomads.com/api/exposed_jobs/
+    Returns all jobs as a JSON array. We filter client-side by query.
+    Category-based site, does not support keyword URL search.
+    """
+
     platform = "working_nomads"
-    start_url = "https://www.workingnomads.com/jobs"
+    start_url = "https://www.workingnomads.com/api/exposed_jobs/"
 
     async def scrape(self, context: BrowserContext, query: str, run_id: str) -> list[JobRecord]:
         page = context.pages[0] if context.pages else await context.new_page()
-        target_url = f"{self.start_url}?term={quote_plus(query)}"
-        await page.goto(target_url, wait_until="domcontentloaded")
-        await self.human_pause()
 
-        for _ in range(6):
-            await page.mouse.wheel(0, 1600)
-            await self.human_pause(0.5, 1.1)
+        logger.info("[working_nomads] Fetching API: %s", self.start_url)
 
-        cards = []
-        for selector in [".job", "article", "li:has(a[href*='/jobs/'])"]:
-            cards = await page.query_selector_all(selector)
-            if cards:
-                break
+        try:
+            response = await page.goto(self.start_url, wait_until="domcontentloaded")
+            if not response or response.status != 200:
+                logger.warning("[working_nomads] API returned status %s", response.status if response else "None")
+                return []
+
+            body = await page.inner_text("body")
+            data = json.loads(body)
+        except Exception as exc:
+            logger.warning("[working_nomads] API request failed: %s", exc)
+            return []
+
+        raw_jobs = data if isinstance(data, list) else data.get("jobs", [])
+        logger.info("[working_nomads] API returned %d total jobs", len(raw_jobs))
+
+        # Client-side keyword filter since API doesn't support search
+        query_terms = [t.lower() for t in query.split() if len(t) > 2]
 
         jobs: list[JobRecord] = []
-        for card in cards[:100]:
-            title = await self.pick_text(card, ["h2", "h3", ".title", "[data-testid*='title']"])
-            company = await self.pick_text(card, [".company", ".company-name", "[data-testid*='company']"])
-            location = await self.pick_text(card, [".location", ".region", "[data-testid*='location']"])
-            description = await self.pick_text(card, ["p", ".description", "[data-testid*='description']"])
-            posted_at = await self.pick_text(card, [".date", "time", ".posted"])
-
-            anchor = await card.query_selector("a[href*='/jobs/'], a[href]")
-            href = await anchor.get_attribute("href") if anchor else None
-            if not title or not href:
+        for item in raw_jobs:
+            if not isinstance(item, dict):
                 continue
 
-            tag_nodes = await card.query_selector_all(".tag, .label, .badge")
-            tags: list[str] = []
-            for node in tag_nodes[:8]:
-                text = (await node.inner_text()).strip()
-                if text:
-                    tags.append(text)
+            title = (item.get("title") or "").strip()
+            company = (item.get("company_name") or item.get("company") or "").strip()
+            location = (item.get("location") or "Remote").strip()
+            description = (item.get("description") or "").strip()[:500]
+            url = (item.get("url") or "").strip()
+            posted_at = (item.get("pub_date") or item.get("published") or "").strip()
+            category = (item.get("category_name") or item.get("category") or "").strip()
 
-            employment_type = ""
-            for tag in tags:
-                lowered = tag.lower()
-                if any(token in lowered for token in ("full", "part", "contract", "freelance", "intern")):
-                    employment_type = tag
-                    break
+            if not title or not url:
+                continue
+
+            # Filter by query relevance
+            searchable = f"{title} {company} {description} {category}".lower()
+            if not any(term in searchable for term in query_terms):
+                continue
+
+            tags: list[str] = ["Remote"]
+            if category:
+                tags.append(category)
 
             score = semantic_match_score(query=query, title=title, description=description)
             jobs.append(
@@ -63,14 +79,13 @@ class WorkingNomadsScraper(BaseScraper):
                     platform=self.platform,
                     title=title,
                     company=company or "Unknown",
-                    location=location or "Remote/Unknown",
-                    url=urljoin(self.start_url, href),
+                    location=location or "Remote/Worldwide",
+                    url=url,
                     description=description,
                     posted_at=posted_at or None,
-                    employment_type=employment_type,
-                    tags=tags,
+                    tags=tags[:8],
                     semantic_score=score,
                 )
             )
-
+        logger.info("[working_nomads] Parsed %d matching jobs from %d total", len(jobs), len(raw_jobs))
         return jobs
