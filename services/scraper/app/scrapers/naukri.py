@@ -27,7 +27,7 @@ class NaukriScraper(BaseScraper):
             await self.human_pause(0.5, 1.15)
 
         cards = []
-        for selector in [".srp-jobtuple-wrapper", ".jobTuple", "article"]:
+        for selector in [".srp-jobtuple-wrapper", ".jobTuple"]:
             cards = await page.query_selector_all(selector)
             if cards:
                 break

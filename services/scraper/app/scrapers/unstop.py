@@ -63,8 +63,6 @@ class UnstopScraper(BaseScraper):
                 ".single_profile",
                 ".opp-listing",
                 ".opportunity-card",
-                "article",
-                "div[class*='listing'] > div[class*='card']",
             ]:
                 cards = await page.query_selector_all(selector)
                 if cards:
