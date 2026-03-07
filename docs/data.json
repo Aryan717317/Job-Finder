@@ -1,16 +1,16 @@
 {
-  "generated_at": "2026-03-06T05:08:49.956471+00:00",
-  "job_count": 302,
+  "generated_at": "2026-03-07T04:57:59.935868+00:00",
+  "job_count": 305,
   "application_count": 0,
   "jobs": [
     {
-      "external_id": "cd7a3d6dbb0b7767231624c2",
-      "run_id": "dc3b3293-8705-4ff3-8950-52f7d02e820f",
+      "external_id": "f7d12aa731cb13d68acd4295",
+      "run_id": "dd1ef521-3ef4-41d6-a595-53b636a259b4",
       "platform": "linkedin",
       "title": "Software Engineer Fresher",
       "company": "BOT Campus AI",
       "location": "India",
-      "url": "https://in.linkedin.com/jobs/view/software-engineer-fresher-at-bot-campus-ai-4367759206?position=10&pageNum=0&refId=8%2F5Sgxx909pBivRyHsn2Rg%3D%3D&trackingId=2R4pN0Xt69ozU6V0vSZdTg%3D%3D",
+      "url": "https://in.linkedin.com/jobs/view/software-engineer-fresher-at-bot-campus-ai-4367759206?position=8&pageNum=0&refId=7oqcInSKQdw%2F41p538dBDg%3D%3D&trackingId=Di9IP73SrdPSUcDj%2BTlRbw%3D%3D",
       "posted_at": "1 month ago",
       "employment_type": "",
       "salary_text": "",
@@ -18,7 +18,7 @@
       "is_fresher": true,
       "role_type": "ML",
       "semantic_score": 0.2,
-      "scraped_at": "2026-03-06T05:08:20.803409+00:00",
+      "scraped_at": "2026-03-07T04:57:31.823733+00:00",
       "is_notified": true,
       "tags": [
         "India"
@@ -28,21 +28,21 @@
       ]
     },
     {
-      "external_id": "95eb57e0ea674dda323f9dd1",
-      "run_id": "dc3b3293-8705-4ff3-8950-52f7d02e820f",
+      "external_id": "1f2e928bffbc91ab7e2dd278",
+      "run_id": "dd1ef521-3ef4-41d6-a595-53b636a259b4",
       "platform": "linkedin",
       "title": "Software Engineer - Fresher (Graduating Batch : 2026 or 2027)",
       "company": "Stadium",
       "location": "India",
-      "url": "https://in.linkedin.com/jobs/view/software-engineer-fresher-graduating-batch-2026-or-2027-at-stadium-4378790123?position=5&pageNum=0&refId=8%2F5Sgxx909pBivRyHsn2Rg%3D%3D&trackingId=f3qr3GnIsWR3pl2har1sjg%3D%3D",
-      "posted_at": "6 days ago",
+      "url": "https://in.linkedin.com/jobs/view/software-engineer-fresher-graduating-batch-2026-or-2027-at-stadium-4378790123?position=3&pageNum=0&refId=7oqcInSKQdw%2F41p538dBDg%3D%3D&trackingId=a3ukC3wfbLUOQJC5zAV%2Bng%3D%3D",
+      "posted_at": "1 week ago",
       "employment_type": "",
       "salary_text": "",
       "experience_text": "",
       "is_fresher": true,
       "role_type": "ML",
       "semantic_score": 0.2,
-      "scraped_at": "2026-03-06T05:08:20.428126+00:00",
+      "scraped_at": "2026-03-07T04:57:31.234703+00:00",
       "is_notified": true,
       "tags": [
         "India"
@@ -50,6 +50,124 @@
       "category_tags": [
         "Fresher"
       ]
+    },
+    {
+      "external_id": "d2572129796f4b2bb56dd5cd",
+      "run_id": "dd1ef521-3ef4-41d6-a595-53b636a259b4",
+      "platform": "arbeitnow",
+      "title": "Junior Software QA Tester",
+      "company": "Recare Deutschland GmbH",
+      "location": "Berlin",
+      "url": "https://www.arbeitnow.com/jobs/companies/recare-deutschland-gmbh/junior-software-qa-tester-berlin-28355",
+      "posted_at": "1772742011",
+      "employment_type": "Full-time permanent",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": false,
+      "role_type": "ML",
+      "semantic_score": 0.0,
+      "scraped_at": "2026-03-07T04:56:11.364195+00:00",
+      "is_notified": false,
+      "tags": [
+        "Full-time permanent",
+        "entry",
+        "Healthcare",
+        "high school coursework"
+      ],
+      "category_tags": []
+    },
+    {
+      "external_id": "42d39a6bb806d9a60ecb2366",
+      "run_id": "dd1ef521-3ef4-41d6-a595-53b636a259b4",
+      "platform": "arbeitnow",
+      "title": "Trainee Financial Consultant (m/w/d)",
+      "company": "Horbach Wirtschaftsberatung Dresden",
+      "location": "Dresden",
+      "url": "https://www.arbeitnow.com/jobs/companies/horbach-wirtschaftsberatung-dresden/trainee-financial-consultant-dresden-301137",
+      "posted_at": "1772791321",
+      "employment_type": "Traineeship",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": false,
+      "role_type": "ML",
+      "semantic_score": 0.0,
+      "scraped_at": "2026-03-07T04:56:11.358887+00:00",
+      "is_notified": false,
+      "tags": [
+        "Traineeship",
+        "Asset",
+        "Fonds Management"
+      ],
+      "category_tags": []
+    },
+    {
+      "external_id": "d4caa166b90e15c1634812bb",
+      "run_id": "dd1ef521-3ef4-41d6-a595-53b636a259b4",
+      "platform": "arbeitnow",
+      "title": "Talent Scout (m/w/d) mit Entwicklungsperspektive (Team-Lead Trainee)",
+      "company": "Optimedia Consulting GmbH",
+      "location": "Hagen",
+      "url": "https://www.arbeitnow.com/jobs/companies/optimedia-consulting-gmbh/talent-scout-mit-entwicklungsperspektive-team-lead-trainee-hagen-150581",
+      "posted_at": "1772805710",
+      "employment_type": "berufseinstieg",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": false,
+      "role_type": "ML",
+      "semantic_score": 0.0,
+      "scraped_at": "2026-03-07T04:56:11.356803+00:00",
+      "is_notified": false,
+      "tags": [
+        "berufseinstieg",
+        "Recruitment and Selection"
+      ],
+      "category_tags": []
+    },
+    {
+      "external_id": "0abf58f8d948cac280c90c5e",
+      "run_id": "dd1ef521-3ef4-41d6-a595-53b636a259b4",
+      "platform": "arbeitnow",
+      "title": "Intern - Full-Stack Developer",
+      "company": "acemate.ai",
+      "location": "Berlin",
+      "url": "https://www.arbeitnow.com/jobs/companies/acemateai/intern-full-stack-developer-berlin-410938",
+      "posted_at": "1772818291",
+      "employment_type": "Internship",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": false,
+      "role_type": "ML",
+      "semantic_score": 0.0,
+      "scraped_at": "2026-03-07T04:56:11.354850+00:00",
+      "is_notified": false,
+      "tags": [
+        "Internship",
+        "no experience required / student",
+        "Software Development"
+      ],
+      "category_tags": []
+    },
+    {
+      "external_id": "ccf995c6a5699c262fa58d18",
+      "run_id": "dd1ef521-3ef4-41d6-a595-53b636a259b4",
+      "platform": "arbeitnow",
+      "title": "Junior Product Engineer Wearables (Full Time) Munich, Germany",
+      "company": "NOXON",
+      "location": "Munich",
+      "url": "https://www.arbeitnow.com/jobs/companies/noxon/junior-product-engineer-wearables-full-time-munich-germany-222228",
+      "posted_at": "1772823674",
+      "employment_type": "",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": false,
+      "role_type": "ML",
+      "semantic_score": 0.0,
+      "scraped_at": "2026-03-07T04:56:11.354442+00:00",
+      "is_notified": false,
+      "tags": [
+        "Engineering"
+      ],
+      "category_tags": []
     },
     {
       "external_id": "e34619c5be6afa2f04a9468d",
@@ -115,31 +233,6 @@
       "role_type": "ML",
       "semantic_score": 0.0,
       "scraped_at": "2026-03-06T05:07:01.308304+00:00",
-      "is_notified": false,
-      "tags": [
-        "Full-time permanent",
-        "entry",
-        "Healthcare",
-        "high school coursework"
-      ],
-      "category_tags": []
-    },
-    {
-      "external_id": "d2572129796f4b2bb56dd5cd",
-      "run_id": "dc3b3293-8705-4ff3-8950-52f7d02e820f",
-      "platform": "arbeitnow",
-      "title": "Junior Software QA Tester",
-      "company": "Recare Deutschland GmbH",
-      "location": "Berlin",
-      "url": "https://www.arbeitnow.com/jobs/companies/recare-deutschland-gmbh/junior-software-qa-tester-berlin-28355",
-      "posted_at": "1772742011",
-      "employment_type": "Full-time permanent",
-      "salary_text": "",
-      "experience_text": "",
-      "is_fresher": false,
-      "role_type": "ML",
-      "semantic_score": 0.0,
-      "scraped_at": "2026-03-06T05:07:01.304737+00:00",
       "is_notified": false,
       "tags": [
         "Full-time permanent",
@@ -363,30 +456,6 @@
         "hilfstätigkeit / student",
         "Training",
         "Development"
-      ],
-      "category_tags": []
-    },
-    {
-      "external_id": "8338015aa61649adef810146",
-      "run_id": "d716f3a8-f84a-4422-a647-8063751ed222",
-      "platform": "arbeitnow",
-      "title": "Intern - Full-Stack Developer",
-      "company": "acemate.ai",
-      "location": "Berlin",
-      "url": "https://www.arbeitnow.com/jobs/companies/acemateai/intern-full-stack-developer-berlin-77829",
-      "posted_at": "1772627560",
-      "employment_type": "Working student",
-      "salary_text": "",
-      "experience_text": "",
-      "is_fresher": false,
-      "role_type": "ML",
-      "semantic_score": 0.0,
-      "scraped_at": "2026-03-05T05:09:59.165851+00:00",
-      "is_notified": false,
-      "tags": [
-        "Working student",
-        "no experience required / student",
-        "Web Development"
       ],
       "category_tags": []
     },
