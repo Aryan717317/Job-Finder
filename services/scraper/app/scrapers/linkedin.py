@@ -101,20 +101,20 @@ class LinkedInScraper(BaseScraper):
         all_jobs: list[JobRecord] = []
 
         # 1. Search India-based jobs
-        india_url = f"{self.start_url}/?keywords={quote_plus(query)}&location=India"
+        india_url = f"{self.start_url}/?keywords={quote_plus(query)}&location=India&f_TPR=r86400&sortBy=DD"
         india_jobs = await self._scrape_url(page, india_url, query, run_id, "India/Unknown")
         all_jobs.extend(india_jobs)
 
         await self.human_pause(2.0, 3.5)
 
         # 2. Search remote/WFH jobs globally (f_WT=2 = Remote filter)
-        remote_url = f"{self.start_url}/?keywords={quote_plus(query)}&f_WT=2"
+        remote_url = f"{self.start_url}/?keywords={quote_plus(query)}&f_WT=2&f_TPR=r86400&sortBy=DD"
         remote_jobs = await self._scrape_url(page, remote_url, query, run_id, "Remote/Worldwide")
         all_jobs.extend(remote_jobs)
 
         # 3. Also try India + Remote specifically
         await self.human_pause(2.0, 3.5)
-        india_remote_url = f"{self.start_url}/?keywords={quote_plus(query)}&location=India&f_WT=2"
+        india_remote_url = f"{self.start_url}/?keywords={quote_plus(query)}&location=India&f_WT=2&f_TPR=r86400&sortBy=DD"
         india_remote_jobs = await self._scrape_url(page, india_remote_url, query, run_id, "Remote/India")
         all_jobs.extend(india_remote_jobs)
 

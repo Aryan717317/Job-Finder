@@ -18,7 +18,7 @@ class JoobleScraper(BaseScraper):
         page = context.pages[0] if context.pages else await context.new_page()
         await apply_stealth(page)
 
-        target_url = f"{self.start_url}/SearchResult?ukw={quote_plus(query)}"
+        target_url = f"{self.start_url}/SearchResult?ukw={quote_plus(query)}&date=3"
         try:
             await page.goto(target_url, wait_until="domcontentloaded", timeout=30000)
         except Exception:

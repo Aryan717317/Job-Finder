@@ -69,7 +69,7 @@ jobs:
       - name: Prepare runtime env overrides
         run: |
           mkdir -p data
-          echo "JOB_QUERY_LIST=${{ github.event.inputs.queries || github.event.inputs.query || 'Software Development Engineer SDE-1,AI ML Engineer Fresher,Machine Learning Engineer,Data Scientist Fresher,Prompt Engineer LLM,Data Analyst Fresher' }}" >> "$GITHUB_ENV"
+          echo "JOB_QUERY_LIST=${{ github.event.inputs.queries || github.event.inputs.query || 'Software Development Engineer SDE-1,AI ML Engineer Fresher,Machine Learning Engineer,Data Scientist Fresher,Prompt Engineer LLM,Data Analyst Fresher,Software Engineer Intern,Machine Learning Intern,Data Science Intern' }}" >> "$GITHUB_ENV"
           echo "JOB_PLATFORMS=${{ github.event.inputs.platforms || '' }}" >> "$GITHUB_ENV"
           echo "SEND_EMAIL=${{ github.event.inputs.send_email || 'true' }}" >> "$GITHUB_ENV"
 

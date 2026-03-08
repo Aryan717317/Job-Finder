@@ -18,7 +18,7 @@ class GlassdoorScraper(BaseScraper):
         page = context.pages[0] if context.pages else await context.new_page()
         await apply_stealth(page)
 
-        target_url = f"{self.start_url}?sc.keyword={quote_plus(query)}"
+        target_url = f"{self.start_url}?sc.keyword={quote_plus(query)}&fromAge=3&sortBy=date"
         try:
             await page.goto(target_url, wait_until="domcontentloaded", timeout=30000)
         except Exception:

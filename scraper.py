@@ -18,6 +18,12 @@ DEFAULT_SEARCH_QUERIES = [
     "Prompt Engineer LLM",
     "Associate Data Scientist",
     "Data Analyst Fresher",
+    # Intern-specific queries
+    "Software Engineer Intern",
+    "Software Developer Intern",
+    "Machine Learning Intern",
+    "Data Science Intern",
+    "Backend Developer Intern",
     # Remote / WFH-specific queries
     "Remote Software Developer",
     "Remote Machine Learning Engineer",

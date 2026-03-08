@@ -15,7 +15,7 @@ class SimplyHiredScraper(BaseScraper):
 
     async def scrape(self, context: BrowserContext, query: str, run_id: str) -> list[JobRecord]:
         page = context.pages[0] if context.pages else await context.new_page()
-        target_url = f"{self.start_url}?q={quote_plus(query)}"
+        target_url = f"{self.start_url}?q={quote_plus(query)}&t=3"
         await page.goto(target_url, wait_until="domcontentloaded")
         await self.human_pause()
 

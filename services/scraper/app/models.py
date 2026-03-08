@@ -7,8 +7,9 @@ import re
 
 
 _FRESHER_PATTERNS = (
-    re.compile(r"\b0\s*(?:-|/|to)\s*1\s*(?:yr|yrs|year|years)\b", re.IGNORECASE),
+    re.compile(r"\b0\s*(?:-|/|to)\s*[12]\s*(?:yr|yrs|year|years)\b", re.IGNORECASE),
     re.compile(r"\b(?:entry[\s-]*level|fresher|freshers)\b", re.IGNORECASE),
+    re.compile(r"\b(?:intern|internship|interns)\b", re.IGNORECASE),
     re.compile(r"\b20(?:24|25|26)\s*batch\b", re.IGNORECASE),
     re.compile(r"\b(?:2024|2025|2026)(?:\s*[/,-]\s*(?:2024|2025|2026)){1,2}\s*batch\b", re.IGNORECASE),
 )

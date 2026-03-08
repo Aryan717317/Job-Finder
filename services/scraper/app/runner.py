@@ -3,6 +3,7 @@ from __future__ import annotations
 import asyncio
 from collections.abc import Awaitable, Callable, Iterable
 import inspect
+import logging
 import random
 
 from playwright.async_api import async_playwright
@@ -14,6 +15,8 @@ from .scrapers.base import BaseScraper
 
 
 EventHook = Callable[[str, str, dict | None], None | Awaitable[None]]
+
+logger = logging.getLogger("cycle_runner")
 
 SCRAPER_REGISTRY: dict[str, BaseScraper] = build_scraper_registry()
 IMPLEMENTED_PLATFORMS: set[str] = set(SCRAPER_REGISTRY.keys())
@@ -121,6 +124,7 @@ async def _scrape_platform(
 
             try:
                 jobs = await scraper.scrape(context=context, query=query, run_id=run_id)
+                logger.info("[%s] Scrape OK — %d job(s) collected (attempt %d)", platform, len(jobs), attempt)
                 await _emit_event(
                     event_hook,
                     "platform.completed",
@@ -132,6 +136,7 @@ async def _scrape_platform(
                 error_text = str(exc)
 
                 if _is_captcha_or_challenge_error(error_text):
+                    logger.warning("[%s] CAPTCHA/challenge detected — skipping: %s", platform, error_text[:200])
                     await _emit_event(
                         event_hook,
                         "platform.captcha_required",
@@ -142,6 +147,7 @@ async def _scrape_platform(
 
                 if _is_rate_limit_or_transient_error(error_text) and attempt < max_attempts:
                     delay = _retry_delay_seconds(attempt)
+                    logger.warning("[%s] Transient error (attempt %d), retrying in %.1fs: %s", platform, attempt, delay, error_text[:200])
                     await _emit_event(
                         event_hook,
                         "platform.retry_scheduled",
@@ -159,6 +165,7 @@ async def _scrape_platform(
                     continue
 
                 event_type = "platform.rate_limited" if _is_rate_limit_or_transient_error(error_text) else "platform.failed"
+                logger.error("[%s] FAILED (attempt %d): %s", platform, attempt, error_text[:300])
                 await _emit_event(
                     event_hook,
                     event_type,

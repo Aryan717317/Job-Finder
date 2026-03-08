@@ -48,7 +48,7 @@ class UnstopScraper(BaseScraper):
         search_terms = [variant.replace("{query}", query) for variant in _FRESHER_QUERY_VARIANTS]
 
         for term in search_terms:
-            target_url = f"{self.start_url}?search={quote_plus(term)}"
+            target_url = f"{self.start_url}?search={quote_plus(term)}&sort=posted_new"
             await page.goto(target_url, wait_until="domcontentloaded")
             await self.human_pause(1.0, 2.5)
 

@@ -18,7 +18,7 @@ class CareerJetScraper(BaseScraper):
         page = context.pages[0] if context.pages else await context.new_page()
         await apply_stealth(page)
 
-        target_url = f"{self.start_url}?s={quote_plus(query)}&l="
+        target_url = f"{self.start_url}?s={quote_plus(query)}&l=&sort=date&nw=7"
         try:
             await page.goto(target_url, wait_until="domcontentloaded", timeout=30000)
         except Exception:

@@ -35,6 +35,8 @@ _CS_TITLE_WHITELIST = (
     "fullstack",
     "backend",
     "frontend",
+    "intern",
+    "internship",
     # Additional titles common on remote/international job boards
     "python",
     "java",
@@ -194,10 +196,14 @@ def _filter_fresher_jobs(jobs: list, logger: logging.Logger) -> list:
         description = getattr(job, "description", "") or ""
         experience_text = getattr(job, "experience_text", "") or ""
 
-        # For remote/international platforms: accept any entry-level title
-        # since they don't use Indian 'fresher'/'batch' terminology.
+        # All platforms: always accept intern/internship titles
+        if _is_entry_level_title(title):
+            filtered.append(job)
+            continue
+
+        # For remote/international platforms: accept if fresher keywords found
         if platform in _REMOTE_PLATFORMS:
-            if _is_entry_level_title(title) or scan_fresher_keywords(
+            if scan_fresher_keywords(
                 description=description, experience_text=experience_text, title=title
             ):
                 filtered.append(job)
@@ -205,7 +211,7 @@ def _filter_fresher_jobs(jobs: list, logger: logging.Logger) -> list:
                 logger.info("[Filtered Out] Non-entry-level remote role: %s", title)
             continue
 
-        # For India-centric platforms: original fresher keyword filter applies.
+        # For India-centric platforms: fresher keyword filter applies.
         if not scan_fresher_keywords(description=description, experience_text=experience_text, title=title):
             logger.info("[Filtered Out] Non-fresher role: %s", title)
             continue
@@ -335,6 +341,7 @@ def _run_cycle(
             except Exception as email_exc:
                 logger.warning("Email notification failed (non-fatal): %s", email_exc)
                 notified_count = 0
+                # Do NOT re-raise — missing GMAIL env vars should not crash the cycle
         else:
             logger.info("Email step skipped (--no-email).")
 

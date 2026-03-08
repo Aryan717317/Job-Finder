@@ -18,7 +18,7 @@ class FounditScraper(BaseScraper):
         page = context.pages[0] if context.pages else await context.new_page()
         await apply_stealth(page)
 
-        target_url = f"{self.start_url}?query={quote_plus(query)}&locations=India"
+        target_url = f"{self.start_url}?query={quote_plus(query)}&locations=India&sort=1"
         await page.goto(target_url, wait_until="domcontentloaded")
         await self.human_pause()
 

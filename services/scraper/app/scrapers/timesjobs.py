@@ -17,6 +17,7 @@ class TimesJobsScraper(BaseScraper):
         page = context.pages[0] if context.pages else await context.new_page()
         target_url = (
             f"{self.start_url}?from=submit&searchType=personalizedSearch&txtKeywords={quote_plus(query)}"
+            "&cType=1&sort=D"
         )
         await page.goto(target_url, wait_until="domcontentloaded")
         await self.human_pause()

@@ -16,7 +16,7 @@ class FreshersworldScraper(BaseScraper):
 
     async def scrape(self, context: BrowserContext, query: str, run_id: str) -> list[JobRecord]:
         page = context.pages[0] if context.pages else await context.new_page()
-        target_url = f"{self.start_url}/jobsearch/{quote_plus(query).replace('+', '-')}-jobs"
+        target_url = f"{self.start_url}/jobsearch/{quote_plus(query).replace('+', '-')}-jobs?sort_by=date"
         await page.goto(target_url, wait_until="domcontentloaded")
         await self.human_pause()
 

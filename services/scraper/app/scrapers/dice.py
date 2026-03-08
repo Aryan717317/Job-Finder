@@ -21,6 +21,7 @@ class DiceScraper(BaseScraper):
         target_url = (
             f"{self.start_url}?q={quote_plus(query)}"
             "&countryCode=US&radius=30&radiusUnit=mi&page=1&pageSize=20"
+            "&postedDate=THREE&sort=date"
         )
         await page.goto(target_url, wait_until="domcontentloaded")
         await self.human_pause(1.0, 2.0)
