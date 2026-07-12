@@ -1,8 +1,2174 @@
 {
-  "generated_at": "2026-07-11T06:10:54.121133+00:00",
-  "job_count": 3776,
+  "generated_at": "2026-07-12T06:39:34.344541+00:00",
+  "job_count": 3808,
   "application_count": 0,
   "jobs": [
+    {
+      "external_id": "ab4b1a0776d96b50b4f7ce99",
+      "run_id": "50884396-4f33-4392-a66d-0ebf9c382a0b",
+      "platform": "linkedin",
+      "title": "Machine Learning Intern Remote",
+      "company": "MediNex Workforce",
+      "location": "India",
+      "url": "https://in.linkedin.com/jobs/view/machine-learning-intern-remote-at-medinex-workforce-4438966479?position=42&pageNum=0&refId=oIBn7h831pi4VzFJwgXsgA%3D%3D&trackingId=Msl9SDCzcvt%2BLwC00R9EBQ%3D%3D",
+      "posted_at": "3 hours ago",
+      "employment_type": "",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": true,
+      "role_type": "ML",
+      "semantic_score": 0.2,
+      "scraped_at": "2026-07-12T06:39:31.433003+00:00",
+      "is_notified": true,
+      "tags": [
+        "India"
+      ],
+      "category_tags": [
+        "Fresher"
+      ]
+    },
+    {
+      "external_id": "2d92a1f1f17a844fd739c28e",
+      "run_id": "50884396-4f33-4392-a66d-0ebf9c382a0b",
+      "platform": "linkedin",
+      "title": "Machine Learning Intern",
+      "company": "Dexter's Tech",
+      "location": "India",
+      "url": "https://in.linkedin.com/jobs/view/machine-learning-intern-at-dexter-s-tech-4439578671?position=40&pageNum=0&refId=oIBn7h831pi4VzFJwgXsgA%3D%3D&trackingId=k2vkGSqxgc5ixES0qPL4Fg%3D%3D",
+      "posted_at": "10 hours ago",
+      "employment_type": "",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": true,
+      "role_type": "ML",
+      "semantic_score": 0.2,
+      "scraped_at": "2026-07-12T06:39:31.339954+00:00",
+      "is_notified": true,
+      "tags": [
+        "India"
+      ],
+      "category_tags": [
+        "Fresher"
+      ]
+    },
+    {
+      "external_id": "74d7c100b5b9cf819c3285a6",
+      "run_id": "50884396-4f33-4392-a66d-0ebf9c382a0b",
+      "platform": "linkedin",
+      "title": "AI/ML Platform Engineering (Intern / Experienced)",
+      "company": "Cognivance Inc",
+      "location": "Greater Hyderabad Area",
+      "url": "https://in.linkedin.com/jobs/view/ai-ml-platform-engineering-intern-experienced-at-cognivance-inc-4438910775?position=30&pageNum=0&refId=oIBn7h831pi4VzFJwgXsgA%3D%3D&trackingId=D1pbsSKJ0l5EIbKKWPWWSA%3D%3D",
+      "posted_at": "22 hours ago",
+      "employment_type": "",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": true,
+      "role_type": "ML",
+      "semantic_score": 0.2,
+      "scraped_at": "2026-07-12T06:39:30.868868+00:00",
+      "is_notified": true,
+      "tags": [
+        "Greater Hyderabad Area"
+      ],
+      "category_tags": [
+        "Fresher"
+      ]
+    },
+    {
+      "external_id": "764b902ad5275b6afbdbf40f",
+      "run_id": "50884396-4f33-4392-a66d-0ebf9c382a0b",
+      "platform": "linkedin",
+      "title": "Data Science Intern",
+      "company": "RytLoop",
+      "location": "India",
+      "url": "https://in.linkedin.com/jobs/view/data-science-intern-at-rytloop-4438982010?position=25&pageNum=0&refId=oIBn7h831pi4VzFJwgXsgA%3D%3D&trackingId=X2LKV1zkTsyDr%2Bx4K9UgPQ%3D%3D",
+      "posted_at": "44 minutes ago",
+      "employment_type": "",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": true,
+      "role_type": "ML",
+      "semantic_score": 0.8,
+      "scraped_at": "2026-07-12T06:39:30.623855+00:00",
+      "is_notified": true,
+      "tags": [
+        "India"
+      ],
+      "category_tags": [
+        "Fresher"
+      ]
+    },
+    {
+      "external_id": "fbb28ced0315d3e2d93f442d",
+      "run_id": "50884396-4f33-4392-a66d-0ebf9c382a0b",
+      "platform": "linkedin",
+      "title": "Graduate Apprentice Trainee",
+      "company": "Volvo Group",
+      "location": "Bengaluru, Karnataka, India",
+      "url": "https://in.linkedin.com/jobs/view/graduate-apprentice-trainee-at-volvo-group-4427032867?position=22&pageNum=0&refId=oIBn7h831pi4VzFJwgXsgA%3D%3D&trackingId=9kIyTq%2Fw0Y6pwwJKW3kCyA%3D%3D",
+      "posted_at": "20 hours ago",
+      "employment_type": "",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": false,
+      "role_type": "ML",
+      "semantic_score": 0.0,
+      "scraped_at": "2026-07-12T06:39:30.484423+00:00",
+      "is_notified": false,
+      "tags": [
+        "Bengaluru, Karnataka, India"
+      ],
+      "category_tags": []
+    },
+    {
+      "external_id": "aed44f7ce06a917177ea0ec2",
+      "run_id": "50884396-4f33-4392-a66d-0ebf9c382a0b",
+      "platform": "linkedin",
+      "title": "Machine Learning Engineer Intern (Monetization Technology - Ads Creative) - 2026 Start (BS/MS)",
+      "company": "TikTok",
+      "location": "San Jose, CA",
+      "url": "https://www.linkedin.com/jobs/view/machine-learning-engineer-intern-monetization-technology-ads-creative-2026-start-bs-ms-at-tiktok-4274027009?position=52&pageNum=0&refId=xoCB66E1r8D%2BzdgKMKNDrw%3D%3D&trackingId=Yd%2FKkV6UnlZWBmM0olmS0w%3D%3D",
+      "posted_at": "21 hours ago",
+      "employment_type": "",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": true,
+      "role_type": "ML",
+      "semantic_score": 0.2,
+      "scraped_at": "2026-07-12T06:38:48.348176+00:00",
+      "is_notified": true,
+      "tags": [
+        "San Jose, CA"
+      ],
+      "category_tags": [
+        "Fresher"
+      ]
+    },
+    {
+      "external_id": "573e96af89fa125597ac7ef2",
+      "run_id": "50884396-4f33-4392-a66d-0ebf9c382a0b",
+      "platform": "it_org_careers",
+      "title": "Professional Services Intern – Global Customer Services (Fall 2026)",
+      "company": "Cloudflare",
+      "location": "In-Office",
+      "url": "https://boards.greenhouse.io/cloudflare/jobs/7796077?gh_jid=7796077",
+      "posted_at": "2026-07-02T15:32:30-04:00",
+      "employment_type": "",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": true,
+      "role_type": "ML",
+      "semantic_score": 0.267,
+      "scraped_at": "2026-07-12T06:37:46.956351+00:00",
+      "is_notified": true,
+      "tags": [
+        "University",
+        "London, United Kingdom",
+        "5991 - S&M Interns",
+        "['London, UK']",
+        "['Early Talent']"
+      ],
+      "category_tags": [
+        "Fresher"
+      ]
+    },
+    {
+      "external_id": "897c65201d99386701d7c75b",
+      "run_id": "50884396-4f33-4392-a66d-0ebf9c382a0b",
+      "platform": "it_org_careers",
+      "title": "Network Strategy Intern (Fall 2026)",
+      "company": "Cloudflare",
+      "location": "In-Office",
+      "url": "https://boards.greenhouse.io/cloudflare/jobs/8013562?gh_jid=8013562",
+      "posted_at": "2026-07-02T20:07:55-04:00",
+      "employment_type": "",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": true,
+      "role_type": "ML",
+      "semantic_score": 0.4,
+      "scraped_at": "2026-07-12T06:37:46.933689+00:00",
+      "is_notified": true,
+      "tags": [
+        "Strategy",
+        "Austin, TX",
+        "4991 - R&D Interns",
+        "['Austin, US']",
+        "['Early Talent']"
+      ],
+      "category_tags": [
+        "Fresher"
+      ]
+    },
+    {
+      "external_id": "14280ce6c3e55ff93151e7e2",
+      "run_id": "50884396-4f33-4392-a66d-0ebf9c382a0b",
+      "platform": "it_org_careers",
+      "title": "Global Trade Compliance Intern (Summer 2026)",
+      "company": "Cloudflare",
+      "location": "In-Office",
+      "url": "https://boards.greenhouse.io/cloudflare/jobs/7799138?gh_jid=7799138",
+      "posted_at": "2026-07-02T20:08:47-04:00",
+      "employment_type": "",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": true,
+      "role_type": "ML",
+      "semantic_score": 0.267,
+      "scraped_at": "2026-07-12T06:37:46.911179+00:00",
+      "is_notified": true,
+      "tags": [
+        "Legal, Policy, Trust & Safety",
+        "Austin, TX",
+        "6991 - G&A Interns",
+        "['Austin, US']",
+        "['Early Talent']"
+      ],
+      "category_tags": [
+        "Fresher"
+      ]
+    },
+    {
+      "external_id": "0ba56fc88d81dc4dec16bc5e",
+      "run_id": "50884396-4f33-4392-a66d-0ebf9c382a0b",
+      "platform": "it_org_careers",
+      "title": "Full Stack Engineer - Internal Audit",
+      "company": "Cloudflare",
+      "location": "Hybrid",
+      "url": "https://boards.greenhouse.io/cloudflare/jobs/8014902?gh_jid=8014902",
+      "posted_at": "2026-07-06T08:19:58-04:00",
+      "employment_type": "",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": false,
+      "role_type": "ML",
+      "semantic_score": 0.133,
+      "scraped_at": "2026-07-12T06:37:46.909186+00:00",
+      "is_notified": false,
+      "tags": [
+        "Accounting and Finance",
+        "Remote India",
+        "6350 - Internal Audit",
+        "['Bengaluru, India']",
+        "['Engineering']"
+      ],
+      "category_tags": []
+    },
+    {
+      "external_id": "602176a59d1e673ca1aaacd3",
+      "run_id": "50884396-4f33-4392-a66d-0ebf9c382a0b",
+      "platform": "it_org_careers",
+      "title": "Brand Social Media Intern (Fall 2026)",
+      "company": "Cloudflare",
+      "location": "In-Office",
+      "url": "https://boards.greenhouse.io/cloudflare/jobs/8054093?gh_jid=8054093",
+      "posted_at": "2026-07-10T11:14:43-04:00",
+      "employment_type": "",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": true,
+      "role_type": "ML",
+      "semantic_score": 0.333,
+      "scraped_at": "2026-07-12T06:37:46.860388+00:00",
+      "is_notified": true,
+      "tags": [
+        "University",
+        "San Francisco, CA",
+        "5991 - S&M Interns",
+        "['San Francisco, US']",
+        "['Early Talent']"
+      ],
+      "category_tags": [
+        "Fresher"
+      ]
+    },
+    {
+      "external_id": "35d872680f7650fccd31ff9a",
+      "run_id": "50884396-4f33-4392-a66d-0ebf9c382a0b",
+      "platform": "it_org_careers",
+      "title": "Engineering Manager",
+      "company": "Razorpay",
+      "location": "Bengaluru",
+      "url": "https://job-boards.greenhouse.io/razorpaysoftwareprivatelimited/jobs/4712147005",
+      "posted_at": "2026-07-08T02:58:11-04:00",
+      "employment_type": "",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": true,
+      "role_type": "ML",
+      "semantic_score": 0.067,
+      "scraped_at": "2026-07-12T06:37:46.056427+00:00",
+      "is_notified": true,
+      "tags": [
+        "Backend",
+        "Platforms",
+        "['Bengaluru']",
+        "Bengaluru"
+      ],
+      "category_tags": [
+        "Fresher"
+      ]
+    },
+    {
+      "external_id": "b590dbc43e42d5084b14ebb3",
+      "run_id": "50884396-4f33-4392-a66d-0ebf9c382a0b",
+      "platform": "it_org_careers",
+      "title": "AI Builder",
+      "company": "Razorpay",
+      "location": "Bengaluru",
+      "url": "https://job-boards.greenhouse.io/razorpaysoftwareprivatelimited/jobs/4713785005",
+      "posted_at": "2026-07-10T03:10:24-04:00",
+      "employment_type": "",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": true,
+      "role_type": "ML",
+      "semantic_score": 0.067,
+      "scraped_at": "2026-07-12T06:37:46.048519+00:00",
+      "is_notified": true,
+      "tags": [
+        "Business Strategy.",
+        "RazorpayX",
+        "['Bengaluru']",
+        "Bengaluru"
+      ],
+      "category_tags": [
+        "Fresher",
+        "Prompt Engineering"
+      ]
+    },
+    {
+      "external_id": "9884c02741123a04078ff6c3",
+      "run_id": "50884396-4f33-4392-a66d-0ebf9c382a0b",
+      "platform": "it_org_careers",
+      "title": "Thumbnail Designer",
+      "company": "PhonePe",
+      "location": "Bangalore",
+      "url": "https://job-boards.greenhouse.io/phonepe/jobs/7768176003",
+      "posted_at": "2026-06-23T04:37:28-04:00",
+      "employment_type": "",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": true,
+      "role_type": "ML",
+      "semantic_score": 0.133,
+      "scraped_at": "2026-07-12T06:37:45.776786+00:00",
+      "is_notified": true,
+      "tags": [
+        "Content & Education_SD2_2235",
+        "PhonePe Wealth Broking Private Limited",
+        "FTE - Regular",
+        "Bengaluru - Salarpuria Softzone (SSZ)"
+      ],
+      "category_tags": [
+        "Fresher",
+        "Generative AI"
+      ]
+    },
+    {
+      "external_id": "75ab5ef3e0413f64efa646f9",
+      "run_id": "50884396-4f33-4392-a66d-0ebf9c382a0b",
+      "platform": "it_org_careers",
+      "title": "Software Engineer - iOS",
+      "company": "PhonePe",
+      "location": "Pune",
+      "url": "https://job-boards.greenhouse.io/phonepe/jobs/7680147003",
+      "posted_at": "2026-06-15T04:53:42-04:00",
+      "employment_type": "",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": true,
+      "role_type": "ML",
+      "semantic_score": 0.133,
+      "scraped_at": "2026-07-12T06:37:45.767924+00:00",
+      "is_notified": true,
+      "tags": [
+        "Engineering Development",
+        "PhonePe Limited",
+        "FTE - Regular",
+        "Pune - Amar Business Zone"
+      ],
+      "category_tags": [
+        "Fresher"
+      ]
+    },
+    {
+      "external_id": "cbadf0b27e3e34ba03c8f0b5",
+      "run_id": "50884396-4f33-4392-a66d-0ebf9c382a0b",
+      "platform": "it_org_careers",
+      "title": "Software Engineer, Android",
+      "company": "PhonePe",
+      "location": "Bangalore",
+      "url": "https://job-boards.greenhouse.io/phonepe/jobs/7799494003",
+      "posted_at": "2026-07-09T04:47:55-04:00",
+      "employment_type": "",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": true,
+      "role_type": "ML",
+      "semantic_score": 0.133,
+      "scraped_at": "2026-07-12T06:37:45.766872+00:00",
+      "is_notified": true,
+      "tags": [
+        "Engineering Development",
+        "PhonePe Limited",
+        "FTE - Regular",
+        "Bengaluru - Salarpuria Softzone (SSZ)"
+      ],
+      "category_tags": [
+        "Fresher"
+      ]
+    },
+    {
+      "external_id": "4650649ead71372e8a9444f2",
+      "run_id": "50884396-4f33-4392-a66d-0ebf9c382a0b",
+      "platform": "it_org_careers",
+      "title": "Site Reliability Engineer 2 (Azure)",
+      "company": "PhonePe",
+      "location": "Bangalore",
+      "url": "https://job-boards.greenhouse.io/phonepe/jobs/6589348003",
+      "posted_at": "2026-07-06T01:01:00-04:00",
+      "employment_type": "",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": true,
+      "role_type": "ML",
+      "semantic_score": 0.133,
+      "scraped_at": "2026-07-12T06:37:45.763684+00:00",
+      "is_notified": true,
+      "tags": [
+        "Site Reliability",
+        "PhonePe Limited",
+        "FTE - Regular",
+        "Bengaluru - Salarpuria Softzone (SSZ)"
+      ],
+      "category_tags": [
+        "Fresher"
+      ]
+    },
+    {
+      "external_id": "f23d84aee2a4c2f8685ca521",
+      "run_id": "50884396-4f33-4392-a66d-0ebf9c382a0b",
+      "platform": "it_org_careers",
+      "title": "Site Reliability Engineer - 2",
+      "company": "PhonePe",
+      "location": "Bangalore",
+      "url": "https://job-boards.greenhouse.io/phonepe/jobs/7766868003",
+      "posted_at": "2026-06-30T06:19:23-04:00",
+      "employment_type": "",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": true,
+      "role_type": "ML",
+      "semantic_score": 0.133,
+      "scraped_at": "2026-07-12T06:37:45.761676+00:00",
+      "is_notified": true,
+      "tags": [
+        "Engineering Development",
+        "PhonePe Limited",
+        "FTE - Regular",
+        "Bengaluru - Salarpuria Softzone (SSZ)"
+      ],
+      "category_tags": [
+        "Fresher"
+      ]
+    },
+    {
+      "external_id": "e02b9c94e450392c1a32ef7a",
+      "run_id": "50884396-4f33-4392-a66d-0ebf9c382a0b",
+      "platform": "it_org_careers",
+      "title": "Service Delivery Engineer, SRE",
+      "company": "PhonePe",
+      "location": "Bangalore",
+      "url": "https://job-boards.greenhouse.io/phonepe/jobs/7762335003",
+      "posted_at": "2026-07-06T01:01:01-04:00",
+      "employment_type": "",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": true,
+      "role_type": "ML",
+      "semantic_score": 0.067,
+      "scraped_at": "2026-07-12T06:37:45.759625+00:00",
+      "is_notified": true,
+      "tags": [
+        "Site Reliability",
+        "PhonePe Limited",
+        "FTE - Regular",
+        "Bengaluru - Salarpuria Softzone (SSZ)"
+      ],
+      "category_tags": [
+        "Fresher"
+      ]
+    },
+    {
+      "external_id": "4b1a8152e4a3b0eaac805b7b",
+      "run_id": "50884396-4f33-4392-a66d-0ebf9c382a0b",
+      "platform": "it_org_careers",
+      "title": "Service Delivery Engineer",
+      "company": "PhonePe",
+      "location": "Bangalore",
+      "url": "https://job-boards.greenhouse.io/phonepe/jobs/7766920003",
+      "posted_at": "2026-07-06T01:01:00-04:00",
+      "employment_type": "",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": true,
+      "role_type": "ML",
+      "semantic_score": 0.133,
+      "scraped_at": "2026-07-12T06:37:45.758340+00:00",
+      "is_notified": true,
+      "tags": [
+        "Site Reliability",
+        "PhonePe Limited",
+        "FTE - Regular",
+        "Bengaluru - Salarpuria Softzone (SSZ)"
+      ],
+      "category_tags": [
+        "Fresher"
+      ]
+    },
+    {
+      "external_id": "a407650f697af8811ecee870",
+      "run_id": "50884396-4f33-4392-a66d-0ebf9c382a0b",
+      "platform": "it_org_careers",
+      "title": "Network Delivery Engineer 1 (Pune)",
+      "company": "PhonePe",
+      "location": "Pune",
+      "url": "https://job-boards.greenhouse.io/phonepe/jobs/7659530003",
+      "posted_at": "2026-07-06T01:01:00-04:00",
+      "employment_type": "",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": true,
+      "role_type": "ML",
+      "semantic_score": 0.2,
+      "scraped_at": "2026-07-12T06:37:45.746813+00:00",
+      "is_notified": true,
+      "tags": [
+        "Site Reliability",
+        "PhonePe Limited",
+        "FTE - Regular",
+        "Bengaluru - Salarpuria Softzone (SSZ)"
+      ],
+      "category_tags": [
+        "Fresher"
+      ]
+    },
+    {
+      "external_id": "600aff81dce52dc48caf7666",
+      "run_id": "50884396-4f33-4392-a66d-0ebf9c382a0b",
+      "platform": "it_org_careers",
+      "title": "Business Intelligence Engineer (1 - 3 Years)",
+      "company": "PhonePe",
+      "location": "Bengaluru",
+      "url": "https://job-boards.greenhouse.io/phonepe/jobs/7793358003",
+      "posted_at": "2026-07-08T05:36:34-04:00",
+      "employment_type": "",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": true,
+      "role_type": "ML",
+      "semantic_score": 0.133,
+      "scraped_at": "2026-07-12T06:37:45.724474+00:00",
+      "is_notified": true,
+      "tags": [
+        "Data Analytics",
+        "PhonePe Limited",
+        "FTE - Regular",
+        "Bengaluru - Salarpuria Softzone (SSZ)"
+      ],
+      "category_tags": [
+        "Fresher"
+      ]
+    },
+    {
+      "external_id": "0165469a3067f4bf175a2bf1",
+      "run_id": "50884396-4f33-4392-a66d-0ebf9c382a0b",
+      "platform": "it_org_careers",
+      "title": "AI Video Specialist",
+      "company": "PhonePe",
+      "location": "Bangalore",
+      "url": "https://job-boards.greenhouse.io/phonepe/jobs/7735150003",
+      "posted_at": "2026-06-15T04:53:42-04:00",
+      "employment_type": "",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": true,
+      "role_type": "ML",
+      "semantic_score": 0.2,
+      "scraped_at": "2026-07-12T06:37:45.714121+00:00",
+      "is_notified": true,
+      "tags": [
+        "Content & Education_SD2_2235",
+        "PhonePe Wealth Broking Private Limited",
+        "FTE - Regular",
+        "Bengaluru - Salarpuria Softzone (SSZ)"
+      ],
+      "category_tags": [
+        "Fresher"
+      ]
+    },
+    {
+      "external_id": "a50f42a76105dddd657559ae",
+      "run_id": "50884396-4f33-4392-a66d-0ebf9c382a0b",
+      "platform": "it_org_careers",
+      "title": "Intern - Industrial Trainee",
+      "company": "InMobi",
+      "location": "Bangalore",
+      "url": "https://job-boards.greenhouse.io/inmobi/jobs/7793050",
+      "posted_at": "2026-06-23T08:33:51-04:00",
+      "employment_type": "Intern",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": true,
+      "role_type": "ML",
+      "semantic_score": 0.267,
+      "scraped_at": "2026-07-12T06:37:45.199406+00:00",
+      "is_notified": true,
+      "tags": [
+        "Marc Steifman (Finance and Corp Dev- Ads)",
+        "Bangalore",
+        "['India']",
+        "['neeleswar.popuri@inmobi.com']",
+        "Intern",
+        "Legal, Finance & Admin"
+      ],
+      "category_tags": [
+        "Fresher"
+      ]
+    },
+    {
+      "external_id": "a400ce47695cb374c3eccf7d",
+      "run_id": "50884396-4f33-4392-a66d-0ebf9c382a0b",
+      "platform": "builtin",
+      "title": "Data Science Intern (Customer Success)",
+      "company": "Unknown",
+      "location": "Remote/Unknown",
+      "url": "https://builtin.com/company/cresta",
+      "posted_at": null,
+      "employment_type": "",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": true,
+      "role_type": "ML",
+      "semantic_score": 0.8,
+      "scraped_at": "2026-07-12T06:37:26.049033+00:00",
+      "is_notified": true,
+      "tags": [],
+      "category_tags": [
+        "Fresher"
+      ]
+    },
+    {
+      "external_id": "221e2ba725d092b12ae805a0",
+      "run_id": "50884396-4f33-4392-a66d-0ebf9c382a0b",
+      "platform": "builtin",
+      "title": "Data Science Intern",
+      "company": "Unknown",
+      "location": "Remote/Unknown",
+      "url": "https://builtin.com/company/quantco",
+      "posted_at": null,
+      "employment_type": "",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": true,
+      "role_type": "ML",
+      "semantic_score": 0.8,
+      "scraped_at": "2026-07-12T06:37:25.864811+00:00",
+      "is_notified": true,
+      "tags": [],
+      "category_tags": [
+        "Fresher"
+      ]
+    },
+    {
+      "external_id": "ff10ab952323cad212c297e8",
+      "run_id": "50884396-4f33-4392-a66d-0ebf9c382a0b",
+      "platform": "builtin",
+      "title": "Data Science Intern (Spring '25-2)",
+      "company": "Unknown",
+      "location": "Remote/Unknown",
+      "url": "https://builtin.com/company/projxon",
+      "posted_at": null,
+      "employment_type": "",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": true,
+      "role_type": "ML",
+      "semantic_score": 0.8,
+      "scraped_at": "2026-07-12T06:37:25.560487+00:00",
+      "is_notified": true,
+      "tags": [],
+      "category_tags": [
+        "Fresher"
+      ]
+    },
+    {
+      "external_id": "107ca46ffc028bf017bfd8ef",
+      "run_id": "50884396-4f33-4392-a66d-0ebf9c382a0b",
+      "platform": "arbeitnow",
+      "title": "Software Developer (Junior) - Java, Groovy, ScriptRunner, JavaScript/TypeScript, Forge (m/w/d)",
+      "company": "MESKRU GmbH",
+      "location": "Munich",
+      "url": "https://www.arbeitnow.com/jobs/companies/meskru-gmbh/software-developer-junior-java-groovy-scriptrunner-forge-munich-144529",
+      "posted_at": "1783704543",
+      "employment_type": "",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": false,
+      "role_type": "ML",
+      "semantic_score": 0.0,
+      "scraped_at": "2026-07-12T06:37:21.545089+00:00",
+      "is_notified": false,
+      "tags": [
+        "Software Development"
+      ],
+      "category_tags": []
+    },
+    {
+      "external_id": "b0464154a1be4a785de9808f",
+      "run_id": "50884396-4f33-4392-a66d-0ebf9c382a0b",
+      "platform": "arbeitnow",
+      "title": "Trainee (m/w/d) Spanish Financial Consulting & Entrepreneurship",
+      "company": "Horbach Beratungen Berlin",
+      "location": "Berlin",
+      "url": "https://www.arbeitnow.com/jobs/companies/horbach-beratungen-berlin/trainee-spanish-financial-consulting-entrepreneurship-berlin-187687",
+      "posted_at": "1783681237",
+      "employment_type": "Traineeship",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": false,
+      "role_type": "ML",
+      "semantic_score": 0.0,
+      "scraped_at": "2026-07-12T06:37:21.544133+00:00",
+      "is_notified": false,
+      "tags": [
+        "Traineeship",
+        "berufseinstieg",
+        "Asset",
+        "Fonds Management"
+      ],
+      "category_tags": []
+    },
+    {
+      "external_id": "d3f50f222f0272a08536ae8d",
+      "run_id": "50884396-4f33-4392-a66d-0ebf9c382a0b",
+      "platform": "arbeitnow",
+      "title": "Trainee (m/w/d) Persian Financial Consulting & Entrepreneurship",
+      "company": "Horbach Beratungen Berlin",
+      "location": "Berlin",
+      "url": "https://www.arbeitnow.com/jobs/companies/horbach-beratungen-berlin/trainee-persian-financial-consulting-entrepreneurship-berlin-260834",
+      "posted_at": "1783699142",
+      "employment_type": "Traineeship",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": false,
+      "role_type": "ML",
+      "semantic_score": 0.0,
+      "scraped_at": "2026-07-12T06:37:21.543859+00:00",
+      "is_notified": false,
+      "tags": [
+        "Traineeship",
+        "berufseinstieg",
+        "Asset",
+        "Fonds Management"
+      ],
+      "category_tags": []
+    },
+    {
+      "external_id": "1dc4f822b1bd74255702bcf6",
+      "run_id": "50884396-4f33-4392-a66d-0ebf9c382a0b",
+      "platform": "arbeitnow",
+      "title": "Trainee (m/w/d) Arabic Financial Consulting & Entrepreneurship",
+      "company": "Horbach Beratungen Berlin",
+      "location": "Berlin",
+      "url": "https://www.arbeitnow.com/jobs/companies/horbach-beratungen-berlin/trainee-arabic-financial-consulting-entrepreneurship-berlin-376377",
+      "posted_at": "1783684827",
+      "employment_type": "Traineeship",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": false,
+      "role_type": "ML",
+      "semantic_score": 0.0,
+      "scraped_at": "2026-07-12T06:37:21.543758+00:00",
+      "is_notified": false,
+      "tags": [
+        "Traineeship",
+        "berufseinstieg",
+        "Asset",
+        "Fonds Management"
+      ],
+      "category_tags": []
+    },
+    {
+      "external_id": "6f3cc7069f006576f965a146",
+      "run_id": "50884396-4f33-4392-a66d-0ebf9c382a0b",
+      "platform": "arbeitnow",
+      "title": "Growth Intern (m/f/d)",
+      "company": "Norman AI GmbH",
+      "location": "Berlin",
+      "url": "https://www.arbeitnow.com/jobs/companies/norman-ai-gmbh/growth-intern-berlin-306015",
+      "posted_at": "1783686669",
+      "employment_type": "Internship",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": true,
+      "role_type": "ML",
+      "semantic_score": 0.2,
+      "scraped_at": "2026-07-12T06:37:21.543628+00:00",
+      "is_notified": true,
+      "tags": [
+        "Internship",
+        "Marketing and Communication"
+      ],
+      "category_tags": [
+        "Fresher"
+      ]
+    },
+    {
+      "external_id": "10b07558a6af64f12e5bf606",
+      "run_id": "50884396-4f33-4392-a66d-0ebf9c382a0b",
+      "platform": "arbeitnow",
+      "title": "Junior Web Developer (m/w/d) -  Node.js / React",
+      "company": "FinMent GmbH",
+      "location": "Berlin",
+      "url": "https://www.arbeitnow.com/jobs/companies/finment-gmbh/junior-web-developer-nodejs-react-berlin-69353",
+      "posted_at": "1783693836",
+      "employment_type": "",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": false,
+      "role_type": "ML",
+      "semantic_score": 0.0,
+      "scraped_at": "2026-07-12T06:37:21.541595+00:00",
+      "is_notified": false,
+      "tags": [
+        "Web Development"
+      ],
+      "category_tags": []
+    },
+    {
+      "external_id": "75323419aeeabb33c4c829b0",
+      "run_id": "3c69ea0c-e914-49f1-9012-47aaa16499f2",
+      "platform": "linkedin",
+      "title": "Machine Learning Engineer Graduate (Search E-Commerce) - 2026 Start (BS/MS)",
+      "company": "TikTok",
+      "location": "Seattle, WA",
+      "url": "https://www.linkedin.com/jobs/view/machine-learning-engineer-graduate-search-e-commerce-2026-start-bs-ms-at-tiktok-4401166886?position=47&pageNum=0&refId=Nv1SLyUJET3pHE1WPMFyeA%3D%3D&trackingId=LQVVuk6YuXrHdgOyFN%2FlIw%3D%3D",
+      "posted_at": "21 hours ago",
+      "employment_type": "",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": false,
+      "role_type": "ML",
+      "semantic_score": 0.4,
+      "scraped_at": "2026-07-12T06:36:31.611291+00:00",
+      "is_notified": false,
+      "tags": [
+        "Seattle, WA"
+      ],
+      "category_tags": []
+    },
+    {
+      "external_id": "5da02f3a20027022199cfcb7",
+      "run_id": "3c69ea0c-e914-49f1-9012-47aaa16499f2",
+      "platform": "linkedin",
+      "title": "AI/ML Engineer – Associate Consultant",
+      "company": "Slalom",
+      "location": "Seattle, WA",
+      "url": "https://www.linkedin.com/jobs/view/ai-ml-engineer-%E2%80%93-associate-consultant-at-slalom-4414752404?position=39&pageNum=0&refId=Nv1SLyUJET3pHE1WPMFyeA%3D%3D&trackingId=h%2FnRBiAfMuoeSjBqqGvstg%3D%3D",
+      "posted_at": "6 hours ago",
+      "employment_type": "",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": false,
+      "role_type": "ML",
+      "semantic_score": 0.0,
+      "scraped_at": "2026-07-12T06:36:31.197019+00:00",
+      "is_notified": false,
+      "tags": [
+        "Seattle, WA"
+      ],
+      "category_tags": []
+    },
+    {
+      "external_id": "29c51632c18c40d1776f7766",
+      "run_id": "3c69ea0c-e914-49f1-9012-47aaa16499f2",
+      "platform": "linkedin",
+      "title": "AI Engineer Associate",
+      "company": "SAIC",
+      "location": "Upper Marlboro, MD",
+      "url": "https://www.linkedin.com/jobs/view/ai-engineer-associate-at-saic-4411444589?position=32&pageNum=0&refId=Nv1SLyUJET3pHE1WPMFyeA%3D%3D&trackingId=bkgQ9DP3seTw4LTlK1TQwg%3D%3D",
+      "posted_at": "13 hours ago",
+      "employment_type": "",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": false,
+      "role_type": "ML",
+      "semantic_score": 0.0,
+      "scraped_at": "2026-07-12T06:36:30.844142+00:00",
+      "is_notified": false,
+      "tags": [
+        "Upper Marlboro, MD"
+      ],
+      "category_tags": []
+    },
+    {
+      "external_id": "4f743901eae05b99611560fb",
+      "run_id": "3c69ea0c-e914-49f1-9012-47aaa16499f2",
+      "platform": "linkedin",
+      "title": "Machine Learning Engineer Graduate (Data-Search-TikTok) - 2026 Start (BS/MS)",
+      "company": "TikTok",
+      "location": "San Jose, CA",
+      "url": "https://www.linkedin.com/jobs/view/machine-learning-engineer-graduate-data-search-tiktok-2026-start-bs-ms-at-tiktok-4281123069?position=30&pageNum=0&refId=Nv1SLyUJET3pHE1WPMFyeA%3D%3D&trackingId=Cu8BJnLd%2FiWukpe0RnflIw%3D%3D",
+      "posted_at": "20 hours ago",
+      "employment_type": "",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": false,
+      "role_type": "ML",
+      "semantic_score": 0.4,
+      "scraped_at": "2026-07-12T06:36:30.745887+00:00",
+      "is_notified": false,
+      "tags": [
+        "San Jose, CA"
+      ],
+      "category_tags": []
+    },
+    {
+      "external_id": "c09e55ca67506fc6e24a9623",
+      "run_id": "3c69ea0c-e914-49f1-9012-47aaa16499f2",
+      "platform": "linkedin",
+      "title": "Machine Learning Engineer, Entry",
+      "company": "Paramount",
+      "location": "New York, NY",
+      "url": "https://www.linkedin.com/jobs/view/machine-learning-engineer-entry-at-paramount-4412418474?position=1&pageNum=0&refId=Nv1SLyUJET3pHE1WPMFyeA%3D%3D&trackingId=wSXxjR5I9Iek82c0GnO4zw%3D%3D",
+      "posted_at": "20 hours ago",
+      "employment_type": "",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": false,
+      "role_type": "ML",
+      "semantic_score": 0.4,
+      "scraped_at": "2026-07-12T06:36:29.244176+00:00",
+      "is_notified": false,
+      "tags": [
+        "New York, NY"
+      ],
+      "category_tags": []
+    },
+    {
+      "external_id": "e8b16cd67bd675b7e8ed9288",
+      "run_id": "3c69ea0c-e914-49f1-9012-47aaa16499f2",
+      "platform": "it_org_careers",
+      "title": "Internal Audit Analyst",
+      "company": "Coinbase",
+      "location": "Remote - USA",
+      "url": "https://www.coinbase.com/careers/positions/8031603?gh_jid=8031603",
+      "posted_at": "2026-06-26T18:34:25-04:00",
+      "employment_type": "",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": false,
+      "role_type": "ML",
+      "semantic_score": 0.133,
+      "scraped_at": "2026-07-12T06:35:31.573134+00:00",
+      "is_notified": false,
+      "tags": [
+        "Internships & Emerging Talent Positions",
+        "US - Remote Zone 1 (Job Requisitions Only)",
+        "Finance",
+        "209426"
+      ],
+      "category_tags": [
+        "Generative AI"
+      ]
+    },
+    {
+      "external_id": "67d771620c41a457c90564ea",
+      "run_id": "3c69ea0c-e914-49f1-9012-47aaa16499f2",
+      "platform": "it_org_careers",
+      "title": "Head of SOX and Internal Controls",
+      "company": "Coinbase",
+      "location": "Remote - Canada",
+      "url": "https://www.coinbase.com/careers/positions/7822882?gh_jid=7822882",
+      "posted_at": "2026-06-23T19:43:11-04:00",
+      "employment_type": "",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": false,
+      "role_type": "ML",
+      "semantic_score": 0.133,
+      "scraped_at": "2026-07-12T06:35:31.570451+00:00",
+      "is_notified": false,
+      "tags": [
+        "Finance & Accounting",
+        "Remote - Canada",
+        "Finance",
+        "1370515"
+      ],
+      "category_tags": [
+        "Generative AI"
+      ]
+    },
+    {
+      "external_id": "adab82099a6be0451acacfa7",
+      "run_id": "3c69ea0c-e914-49f1-9012-47aaa16499f2",
+      "platform": "it_org_careers",
+      "title": "AMLCO & Senior Compliance Associate",
+      "company": "Coinbase",
+      "location": "Remote - Cyprus",
+      "url": "https://www.coinbase.com/careers/positions/7942306?gh_jid=7942306",
+      "posted_at": "2026-07-09T14:48:00-04:00",
+      "employment_type": "",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": false,
+      "role_type": "ML",
+      "semantic_score": 0.133,
+      "scraped_at": "2026-07-12T06:35:31.554498+00:00",
+      "is_notified": false,
+      "tags": [
+        "Legal & Compliance",
+        "Remote - Cyprus",
+        "Trust & Risk",
+        "208504"
+      ],
+      "category_tags": [
+        "Generative AI"
+      ]
+    },
+    {
+      "external_id": "e4eab17095c2b569f7914b92",
+      "run_id": "3c69ea0c-e914-49f1-9012-47aaa16499f2",
+      "platform": "builtin",
+      "title": "Applied Scientist- AI/ML Intern",
+      "company": "Unknown",
+      "location": "Remote/Unknown",
+      "url": "https://builtin.com/company/wealth",
+      "posted_at": null,
+      "employment_type": "",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": true,
+      "role_type": "ML",
+      "semantic_score": 0.2,
+      "scraped_at": "2026-07-12T06:35:08.408218+00:00",
+      "is_notified": true,
+      "tags": [],
+      "category_tags": [
+        "Fresher"
+      ]
+    },
+    {
+      "external_id": "c33cef7a0069ce7de2b671a1",
+      "run_id": "3c69ea0c-e914-49f1-9012-47aaa16499f2",
+      "platform": "builtin",
+      "title": "AI/ML Engineer Intern",
+      "company": "Unknown",
+      "location": "Remote/Unknown",
+      "url": "https://builtin.com/company/melotech",
+      "posted_at": null,
+      "employment_type": "",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": true,
+      "role_type": "ML",
+      "semantic_score": 0.2,
+      "scraped_at": "2026-07-12T06:35:08.237236+00:00",
+      "is_notified": true,
+      "tags": [],
+      "category_tags": [
+        "Fresher"
+      ]
+    },
+    {
+      "external_id": "fce37577041601962d7de8bd",
+      "run_id": "3c69ea0c-e914-49f1-9012-47aaa16499f2",
+      "platform": "builtin",
+      "title": "Research Intern (PhD), Machine Learning",
+      "company": "Unknown",
+      "location": "Remote/Unknown",
+      "url": "https://builtin.com/company/output-biosciences",
+      "posted_at": null,
+      "employment_type": "",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": true,
+      "role_type": "ML",
+      "semantic_score": 0.6,
+      "scraped_at": "2026-07-12T06:35:07.999323+00:00",
+      "is_notified": true,
+      "tags": [],
+      "category_tags": [
+        "Fresher"
+      ]
+    },
+    {
+      "external_id": "6f5d569ebb9b5a6193c08a03",
+      "run_id": "3c69ea0c-e914-49f1-9012-47aaa16499f2",
+      "platform": "builtin",
+      "title": "2026 Machine Learning Intern, Autonomy",
+      "company": "Unknown",
+      "location": "Remote/Unknown",
+      "url": "https://builtin.com/company/blue-river-technology",
+      "posted_at": null,
+      "employment_type": "",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": true,
+      "role_type": "ML",
+      "semantic_score": 0.8,
+      "scraped_at": "2026-07-12T06:35:07.778992+00:00",
+      "is_notified": true,
+      "tags": [],
+      "category_tags": [
+        "Fresher"
+      ]
+    },
+    {
+      "external_id": "b1aab825181bd3e3fe73a7bc",
+      "run_id": "4dc6d705-69b6-4274-8946-8902006d2794",
+      "platform": "linkedin",
+      "title": "Python Developer Intern",
+      "company": "Zenithbyte",
+      "location": "India",
+      "url": "https://in.linkedin.com/jobs/view/python-developer-intern-at-zenithbyte-4439577720?position=38&pageNum=0&refId=VBOCwuVIlAhRl8%2BoPi2mMQ%3D%3D&trackingId=8N9faNNZ0W7wjsbh%2FQe23w%3D%3D",
+      "posted_at": "10 hours ago",
+      "employment_type": "",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": true,
+      "role_type": "ML",
+      "semantic_score": 0.2,
+      "scraped_at": "2026-07-12T06:34:58.906764+00:00",
+      "is_notified": true,
+      "tags": [
+        "India"
+      ],
+      "category_tags": [
+        "Fresher"
+      ]
+    },
+    {
+      "external_id": "0829b8fe7bb846eb483c386d",
+      "run_id": "4dc6d705-69b6-4274-8946-8902006d2794",
+      "platform": "linkedin",
+      "title": "Software Engineer Intern",
+      "company": "Herald Exchange",
+      "location": "Bengaluru, Karnataka, India",
+      "url": "https://in.linkedin.com/jobs/view/software-engineer-intern-at-herald-exchange-4438926002?position=11&pageNum=0&refId=VBOCwuVIlAhRl8%2BoPi2mMQ%3D%3D&trackingId=Jp2zAOmzPgv8xEpPXWWWJA%3D%3D",
+      "posted_at": "23 hours ago",
+      "employment_type": "",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": true,
+      "role_type": "ML",
+      "semantic_score": 0.8,
+      "scraped_at": "2026-07-12T06:34:57.564879+00:00",
+      "is_notified": true,
+      "tags": [
+        "Bengaluru, Karnataka, India"
+      ],
+      "category_tags": [
+        "Fresher"
+      ]
+    },
+    {
+      "external_id": "263a821c629304f4e09284a1",
+      "run_id": "4dc6d705-69b6-4274-8946-8902006d2794",
+      "platform": "linkedin",
+      "title": "MERN Developer Intern Siliguri",
+      "company": "Reboot AI Private Limited",
+      "location": "Siliguri, West Bengal, India",
+      "url": "https://in.linkedin.com/jobs/view/mern-developer-intern-siliguri-at-reboot-ai-private-limited-4436676900?position=9&pageNum=0&refId=VBOCwuVIlAhRl8%2BoPi2mMQ%3D%3D&trackingId=RG0IUKFs7givYlV5jnBcQg%3D%3D",
+      "posted_at": "10 hours ago",
+      "employment_type": "",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": true,
+      "role_type": "ML",
+      "semantic_score": 0.2,
+      "scraped_at": "2026-07-12T06:34:57.459129+00:00",
+      "is_notified": true,
+      "tags": [
+        "Siliguri, West Bengal, India"
+      ],
+      "category_tags": [
+        "Fresher"
+      ]
+    },
+    {
+      "external_id": "c111534600636712b26449d5",
+      "run_id": "4dc6d705-69b6-4274-8946-8902006d2794",
+      "platform": "linkedin",
+      "title": "Python Programmer (DevOps Model) (Intern / Experienced)",
+      "company": "Cognivance Inc",
+      "location": "Greater Hyderabad Area",
+      "url": "https://in.linkedin.com/jobs/view/python-programmer-devops-model-intern-experienced-at-cognivance-inc-4438908920?position=1&pageNum=0&refId=VBOCwuVIlAhRl8%2BoPi2mMQ%3D%3D&trackingId=iZEUkojkAvRLq5FQVvfCUA%3D%3D",
+      "posted_at": "22 hours ago",
+      "employment_type": "",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": true,
+      "role_type": "ML",
+      "semantic_score": 0.2,
+      "scraped_at": "2026-07-12T06:34:57.016440+00:00",
+      "is_notified": true,
+      "tags": [
+        "Greater Hyderabad Area"
+      ],
+      "category_tags": [
+        "Fresher"
+      ]
+    },
+    {
+      "external_id": "11c15caff7ff97652be2a1e8",
+      "run_id": "4dc6d705-69b6-4274-8946-8902006d2794",
+      "platform": "linkedin",
+      "title": "SAP SuccessFactors iXp Intern - AI Software Developer",
+      "company": "SAP",
+      "location": "San Ramon, CA",
+      "url": "https://www.linkedin.com/jobs/view/sap-successfactors-ixp-intern-ai-software-developer-at-sap-4438917696?position=46&pageNum=0&refId=TWmpzxD6ffIAq4duhE%2B2ig%3D%3D&trackingId=pJLVbCf84WNDthHA3sP%2FGg%3D%3D",
+      "posted_at": "21 hours ago",
+      "employment_type": "",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": true,
+      "role_type": "ML",
+      "semantic_score": 0.4,
+      "scraped_at": "2026-07-12T06:34:13.377265+00:00",
+      "is_notified": true,
+      "tags": [
+        "San Ramon, CA"
+      ],
+      "category_tags": [
+        "Fresher"
+      ]
+    },
+    {
+      "external_id": "caac510d88209431c391ad8a",
+      "run_id": "4dc6d705-69b6-4274-8946-8902006d2794",
+      "platform": "linkedin",
+      "title": "AI Intern",
+      "company": "Hendrickson",
+      "location": "Woodridge, IL",
+      "url": "https://www.linkedin.com/jobs/view/ai-intern-at-hendrickson-4412435219?position=44&pageNum=0&refId=TWmpzxD6ffIAq4duhE%2B2ig%3D%3D&trackingId=FKjhBrBLkCykDyr1wCznVQ%3D%3D",
+      "posted_at": "12 hours ago",
+      "employment_type": "",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": true,
+      "role_type": "ML",
+      "semantic_score": 0.2,
+      "scraped_at": "2026-07-12T06:34:13.275669+00:00",
+      "is_notified": true,
+      "tags": [
+        "Woodridge, IL"
+      ],
+      "category_tags": [
+        "Fresher"
+      ]
+    },
+    {
+      "external_id": "247f747ef5c583a6db5decfa",
+      "run_id": "4dc6d705-69b6-4274-8946-8902006d2794",
+      "platform": "linkedin",
+      "title": "Software Engineer, Internal Tools",
+      "company": "Metriport",
+      "location": "San Francisco, CA",
+      "url": "https://www.linkedin.com/jobs/view/software-engineer-internal-tools-at-metriport-4439545471?position=33&pageNum=0&refId=TWmpzxD6ffIAq4duhE%2B2ig%3D%3D&trackingId=6OmNAVwjI7GzPMnm%2Fx4ZWg%3D%3D",
+      "posted_at": "20 hours ago",
+      "employment_type": "",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": false,
+      "role_type": "ML",
+      "semantic_score": 0.4,
+      "scraped_at": "2026-07-12T06:34:12.741889+00:00",
+      "is_notified": false,
+      "tags": [
+        "San Francisco, CA"
+      ],
+      "category_tags": []
+    },
+    {
+      "external_id": "83ca129e6a0668ac89a2fe39",
+      "run_id": "4dc6d705-69b6-4274-8946-8902006d2794",
+      "platform": "linkedin",
+      "title": "Intern Software Engineer - API Proxy Platform Development",
+      "company": "API blaze",
+      "location": "Birmingham, MI",
+      "url": "https://www.linkedin.com/jobs/view/intern-software-engineer-api-proxy-platform-development-at-api-blaze-4439567667?position=27&pageNum=0&refId=TWmpzxD6ffIAq4duhE%2B2ig%3D%3D&trackingId=aCfzTRHMCSKu4rWO0e3J9A%3D%3D",
+      "posted_at": "12 hours ago",
+      "employment_type": "",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": true,
+      "role_type": "ML",
+      "semantic_score": 0.6,
+      "scraped_at": "2026-07-12T06:34:12.447280+00:00",
+      "is_notified": true,
+      "tags": [
+        "Birmingham, MI"
+      ],
+      "category_tags": [
+        "Fresher"
+      ]
+    },
+    {
+      "external_id": "fcea785c1ab0f587660b15dc",
+      "run_id": "4dc6d705-69b6-4274-8946-8902006d2794",
+      "platform": "linkedin",
+      "title": "Software Engineer Intern (Experimentation & Evaluation, Data Platform) - 2026 Summer (BS/MS)",
+      "company": "TikTok",
+      "location": "San Jose, CA",
+      "url": "https://www.linkedin.com/jobs/view/software-engineer-intern-experimentation-evaluation-data-platform-2026-summer-bs-ms-at-tiktok-4279795719?position=21&pageNum=0&refId=TWmpzxD6ffIAq4duhE%2B2ig%3D%3D&trackingId=SyGv19iTcM9%2FCV9N%2FFd%2Ffw%3D%3D",
+      "posted_at": "20 hours ago",
+      "employment_type": "",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": true,
+      "role_type": "ML",
+      "semantic_score": 0.8,
+      "scraped_at": "2026-07-12T06:34:12.154645+00:00",
+      "is_notified": true,
+      "tags": [
+        "San Jose, CA"
+      ],
+      "category_tags": [
+        "Fresher"
+      ]
+    },
+    {
+      "external_id": "1e120e68c4b8ead592753f66",
+      "run_id": "4dc6d705-69b6-4274-8946-8902006d2794",
+      "platform": "linkedin",
+      "title": "Software Engineering Intern",
+      "company": "Copart",
+      "location": "Dallas, TX",
+      "url": "https://www.linkedin.com/jobs/view/software-engineering-intern-at-copart-4193636392?position=20&pageNum=0&refId=TWmpzxD6ffIAq4duhE%2B2ig%3D%3D&trackingId=muQCRGh4PEX4OZ5Jg8zgbQ%3D%3D",
+      "posted_at": "14 hours ago",
+      "employment_type": "",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": true,
+      "role_type": "ML",
+      "semantic_score": 0.4,
+      "scraped_at": "2026-07-12T06:34:12.107261+00:00",
+      "is_notified": true,
+      "tags": [
+        "Dallas, TX"
+      ],
+      "category_tags": [
+        "Fresher"
+      ]
+    },
+    {
+      "external_id": "a49585ba2b9caee532e9bb84",
+      "run_id": "4dc6d705-69b6-4274-8946-8902006d2794",
+      "platform": "linkedin",
+      "title": "Backend Software Engineer Intern(Foundation Platform) - 2026 Summer (BS/MS)",
+      "company": "TikTok",
+      "location": "San Jose, CA",
+      "url": "https://www.linkedin.com/jobs/view/backend-software-engineer-intern-foundation-platform-2026-summer-bs-ms-at-tiktok-4286410193?position=17&pageNum=0&refId=TWmpzxD6ffIAq4duhE%2B2ig%3D%3D&trackingId=Dr%2BjZTcVVA9OAQyP1QMQBg%3D%3D",
+      "posted_at": "20 hours ago",
+      "employment_type": "",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": true,
+      "role_type": "ML",
+      "semantic_score": 0.8,
+      "scraped_at": "2026-07-12T06:34:11.963914+00:00",
+      "is_notified": true,
+      "tags": [
+        "San Jose, CA"
+      ],
+      "category_tags": [
+        "Fresher"
+      ]
+    },
+    {
+      "external_id": "26ea542c8b60de2a01f94378",
+      "run_id": "4dc6d705-69b6-4274-8946-8902006d2794",
+      "platform": "linkedin",
+      "title": "Junior Software Engineer",
+      "company": "Qcells North America",
+      "location": "Santa Clara, CA",
+      "url": "https://www.linkedin.com/jobs/view/junior-software-engineer-at-qcells-north-america-4438960939?position=13&pageNum=0&refId=TWmpzxD6ffIAq4duhE%2B2ig%3D%3D&trackingId=p1Xc%2F1%2FjGhj%2F86Qbl7ICCg%3D%3D",
+      "posted_at": "18 minutes ago",
+      "employment_type": "",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": false,
+      "role_type": "ML",
+      "semantic_score": 0.4,
+      "scraped_at": "2026-07-12T06:34:11.768061+00:00",
+      "is_notified": false,
+      "tags": [
+        "Santa Clara, CA",
+        "Be an early applicant"
+      ],
+      "category_tags": []
+    },
+    {
+      "external_id": "a7671be8251a22ad8e0ee7ce",
+      "run_id": "4dc6d705-69b6-4274-8946-8902006d2794",
+      "platform": "linkedin",
+      "title": "Intern Software Engineering",
+      "company": "ACI Worldwide",
+      "location": "Norcross, GA",
+      "url": "https://www.linkedin.com/jobs/view/intern-software-engineering-at-aci-worldwide-4429682896?position=4&pageNum=0&refId=TWmpzxD6ffIAq4duhE%2B2ig%3D%3D&trackingId=LYWE8B6DqghgyNVT3oIRog%3D%3D",
+      "posted_at": "14 hours ago",
+      "employment_type": "",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": true,
+      "role_type": "ML",
+      "semantic_score": 0.4,
+      "scraped_at": "2026-07-12T06:34:11.311957+00:00",
+      "is_notified": true,
+      "tags": [
+        "Norcross, GA"
+      ],
+      "category_tags": [
+        "Fresher"
+      ]
+    },
+    {
+      "external_id": "42b71ceccbb4b062adcf32a8",
+      "run_id": "4dc6d705-69b6-4274-8946-8902006d2794",
+      "platform": "linkedin",
+      "title": "Software Development Engineer Internship - Fall 2026 (US)",
+      "company": "Amazon",
+      "location": "Seattle, WA",
+      "url": "https://www.linkedin.com/jobs/view/software-development-engineer-internship-fall-2026-us-at-amazon-4332425058?position=1&pageNum=0&refId=TWmpzxD6ffIAq4duhE%2B2ig%3D%3D&trackingId=f3Q4wHQTs6%2F2EOBF6ojJ8w%3D%3D",
+      "posted_at": "15 hours ago",
+      "employment_type": "",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": true,
+      "role_type": "ML",
+      "semantic_score": 0.4,
+      "scraped_at": "2026-07-12T06:34:11.166832+00:00",
+      "is_notified": true,
+      "tags": [
+        "Seattle, WA"
+      ],
+      "category_tags": [
+        "Fresher"
+      ]
+    },
+    {
+      "external_id": "5e889300bbc5e8eec8711071",
+      "run_id": "4dc6d705-69b6-4274-8946-8902006d2794",
+      "platform": "it_org_careers",
+      "title": "Lead Engineer, Internal Engineering",
+      "company": "MongoDB",
+      "location": "Gurugram",
+      "url": "https://www.mongodb.com/careers/job/?gh_jid=7541875",
+      "posted_at": "2026-07-06T12:17:28-04:00",
+      "employment_type": "Full-time",
+      "salary_text": "{'unit': 'INR', 'max_value': '0.0', 'min_value': '0.0'}",
+      "experience_text": "",
+      "is_fresher": false,
+      "role_type": "ML",
+      "semantic_score": 0.333,
+      "scraped_at": "2026-07-12T06:33:14.317051+00:00",
+      "is_notified": false,
+      "tags": [
+        "Internal Engineering",
+        "Gurugram",
+        "10012344",
+        "D85026-Internal Engineering",
+        "327-Internal Engineering",
+        "APAC",
+        "['2-Flexible']",
+        "People Manager",
+        "Full-time",
+        "Standard",
+        "https://docs.google.com/document/d/1slMtYs-hkps-Z8nBa__hTs4y3Mn9M-T8kCjKWkAecc8/edit?tab=t.0",
+        "{'unit': 'INR', 'max_value': '0.0', 'min_value': '0.0'}"
+      ],
+      "category_tags": []
+    },
+    {
+      "external_id": "294795eabd710464ff9482de",
+      "run_id": "4dc6d705-69b6-4274-8946-8902006d2794",
+      "platform": "builtin",
+      "title": "Software Engineer Intern (Fall / Winter 2026)",
+      "company": "Unknown",
+      "location": "Remote/Unknown",
+      "url": "https://builtin.com/company/cohere-ai",
+      "posted_at": null,
+      "employment_type": "",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": true,
+      "role_type": "ML",
+      "semantic_score": 0.8,
+      "scraped_at": "2026-07-12T06:32:49.064605+00:00",
+      "is_notified": true,
+      "tags": [],
+      "category_tags": [
+        "Fresher"
+      ]
+    },
+    {
+      "external_id": "d78f01cbff86ea7137fdca39",
+      "run_id": "4dc6d705-69b6-4274-8946-8902006d2794",
+      "platform": "builtin",
+      "title": "Full Stack Software Engineer - 2026 Summer Intern",
+      "company": "Unknown",
+      "location": "Remote/Unknown",
+      "url": "https://builtin.com/company/symmetry-systems",
+      "posted_at": null,
+      "employment_type": "",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": true,
+      "role_type": "ML",
+      "semantic_score": 0.6,
+      "scraped_at": "2026-07-12T06:32:48.757005+00:00",
+      "is_notified": true,
+      "tags": [],
+      "category_tags": [
+        "Fresher"
+      ]
+    },
+    {
+      "external_id": "52aa576e7473cb91a2410f9a",
+      "run_id": "4dc6d705-69b6-4274-8946-8902006d2794",
+      "platform": "builtin",
+      "title": "Software Engineer Intern",
+      "company": "Unknown",
+      "location": "Remote/Unknown",
+      "url": "https://builtin.com/company/simular",
+      "posted_at": null,
+      "employment_type": "",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": true,
+      "role_type": "ML",
+      "semantic_score": 0.8,
+      "scraped_at": "2026-07-12T06:32:48.462074+00:00",
+      "is_notified": true,
+      "tags": [],
+      "category_tags": [
+        "Fresher"
+      ]
+    },
+    {
+      "external_id": "f65f2661d4e996eddd3df6ab",
+      "run_id": "6c47bfca-3818-4f87-b924-813e5141504f",
+      "platform": "linkedin",
+      "title": "Data Analyst Intern",
+      "company": "ZURU Toys",
+      "location": "Los Angeles Metropolitan Area",
+      "url": "https://www.linkedin.com/jobs/view/data-analyst-intern-at-zuru-toys-4411407609?position=46&pageNum=0&refId=tDtAL7B%2FOdkdrh8bbc5BYA%3D%3D&trackingId=Yrm%2Fd5kjqyDR3gfm9XCD0Q%3D%3D",
+      "posted_at": "18 hours ago",
+      "employment_type": "",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": true,
+      "role_type": "ML",
+      "semantic_score": 0.4,
+      "scraped_at": "2026-07-12T06:31:56.234473+00:00",
+      "is_notified": true,
+      "tags": [
+        "Los Angeles Metropolitan Area"
+      ],
+      "category_tags": [
+        "Fresher"
+      ]
+    },
+    {
+      "external_id": "e5714b026f7579536cdea679",
+      "run_id": "6c47bfca-3818-4f87-b924-813e5141504f",
+      "platform": "linkedin",
+      "title": "Junior Supply Chain Analyst",
+      "company": "Helic & Co",
+      "location": "United States",
+      "url": "https://www.linkedin.com/jobs/view/junior-supply-chain-analyst-at-helic-co-4439576098?position=24&pageNum=0&refId=tDtAL7B%2FOdkdrh8bbc5BYA%3D%3D&trackingId=QlSQv4ddlN%2BQhw9vUO%2FF2g%3D%3D",
+      "posted_at": "15 hours ago",
+      "employment_type": "",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": false,
+      "role_type": "ML",
+      "semantic_score": 0.2,
+      "scraped_at": "2026-07-12T06:31:55.179606+00:00",
+      "is_notified": false,
+      "tags": [
+        "United States"
+      ],
+      "category_tags": []
+    },
+    {
+      "external_id": "d4c5cf01305e6f8099921096",
+      "run_id": "6c47bfca-3818-4f87-b924-813e5141504f",
+      "platform": "linkedin",
+      "title": "Associate Business Data Analyst",
+      "company": "UL Solutions",
+      "location": "Raleigh, NC",
+      "url": "https://www.linkedin.com/jobs/view/associate-business-data-analyst-at-ul-solutions-4428297453?position=16&pageNum=0&refId=tDtAL7B%2FOdkdrh8bbc5BYA%3D%3D&trackingId=Q3Y9EQv08EPiPSxKT%2FkcMw%3D%3D",
+      "posted_at": "15 hours ago",
+      "employment_type": "",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": false,
+      "role_type": "ML",
+      "semantic_score": 0.4,
+      "scraped_at": "2026-07-12T06:31:54.788809+00:00",
+      "is_notified": false,
+      "tags": [
+        "Raleigh, NC"
+      ],
+      "category_tags": []
+    },
+    {
+      "external_id": "2f070696e631c9dc6472c8c7",
+      "run_id": "6c47bfca-3818-4f87-b924-813e5141504f",
+      "platform": "linkedin",
+      "title": "Junior Data Analyst (Manufacturing)",
+      "company": "Elbit Systems of America",
+      "location": "Roanoke, VA",
+      "url": "https://www.linkedin.com/jobs/view/junior-data-analyst-manufacturing-at-elbit-systems-of-america-4430168406?position=13&pageNum=0&refId=tDtAL7B%2FOdkdrh8bbc5BYA%3D%3D&trackingId=Xx%2Bde4GQqU9HeCp5UTlgpQ%3D%3D",
+      "posted_at": "18 hours ago",
+      "employment_type": "",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": false,
+      "role_type": "ML",
+      "semantic_score": 0.4,
+      "scraped_at": "2026-07-12T06:31:54.636773+00:00",
+      "is_notified": false,
+      "tags": [
+        "Roanoke, VA"
+      ],
+      "category_tags": []
+    },
+    {
+      "external_id": "32ad825ad4610e4a46eb3406",
+      "run_id": "6c47bfca-3818-4f87-b924-813e5141504f",
+      "platform": "linkedin",
+      "title": "Operations Data Analyst (Entry Level)",
+      "company": "Elbit Systems of America",
+      "location": "Roanoke, VA",
+      "url": "https://www.linkedin.com/jobs/view/operations-data-analyst-entry-level-at-elbit-systems-of-america-4430173351?position=11&pageNum=0&refId=tDtAL7B%2FOdkdrh8bbc5BYA%3D%3D&trackingId=caUb%2FJMmHCYYVpE4%2FJMTtg%3D%3D",
+      "posted_at": "18 hours ago",
+      "employment_type": "",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": true,
+      "role_type": "ML",
+      "semantic_score": 0.4,
+      "scraped_at": "2026-07-12T06:31:54.515194+00:00",
+      "is_notified": true,
+      "tags": [
+        "Roanoke, VA"
+      ],
+      "category_tags": [
+        "Fresher"
+      ]
+    },
+    {
+      "external_id": "23e007956fac087683903bed",
+      "run_id": "6c47bfca-3818-4f87-b924-813e5141504f",
+      "platform": "linkedin",
+      "title": "Data Analyst, New Grad",
+      "company": "Jobright.ai",
+      "location": "United States",
+      "url": "https://www.linkedin.com/jobs/view/data-analyst-new-grad-at-jobright-ai-4438930972?position=9&pageNum=0&refId=tDtAL7B%2FOdkdrh8bbc5BYA%3D%3D&trackingId=iD%2Bb85omCDEunIQGjyHgkw%3D%3D",
+      "posted_at": "9 hours ago",
+      "employment_type": "",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": false,
+      "role_type": "ML",
+      "semantic_score": 0.4,
+      "scraped_at": "2026-07-12T06:31:54.412020+00:00",
+      "is_notified": false,
+      "tags": [
+        "United States",
+        "Medical insurance +3 benefits"
+      ],
+      "category_tags": []
+    },
+    {
+      "external_id": "fce9e3cd3668468b8d851025",
+      "run_id": "6c47bfca-3818-4f87-b924-813e5141504f",
+      "platform": "linkedin",
+      "title": "Junior Data Analyst",
+      "company": "Helic & Co",
+      "location": "United States",
+      "url": "https://www.linkedin.com/jobs/view/junior-data-analyst-at-helic-co-4439567324?position=1&pageNum=0&refId=tDtAL7B%2FOdkdrh8bbc5BYA%3D%3D&trackingId=llxB7Vugm4F%2Fza2qpcd08w%3D%3D",
+      "posted_at": "15 hours ago",
+      "employment_type": "",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": false,
+      "role_type": "ML",
+      "semantic_score": 0.4,
+      "scraped_at": "2026-07-12T06:31:53.991330+00:00",
+      "is_notified": false,
+      "tags": [
+        "United States"
+      ],
+      "category_tags": []
+    },
+    {
+      "external_id": "a734b67d4b8092ea1875dd81",
+      "run_id": "6c47bfca-3818-4f87-b924-813e5141504f",
+      "platform": "linkedin",
+      "title": "Data Analyst Intern (Excel, SQL, Power BI) || Remove Fresher Tag",
+      "company": "Wake Up Whistle",
+      "location": "India",
+      "url": "https://in.linkedin.com/jobs/view/data-analyst-intern-excel-sql-power-bi-remove-fresher-tag-at-wake-up-whistle-4438963642?position=60&pageNum=0&refId=wC7qTXPWM9G2C28rjb1EbA%3D%3D&trackingId=SS9W%2B9Uyr0Yw6p%2F09eaTNw%3D%3D",
+      "posted_at": "2 hours ago",
+      "employment_type": "",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": true,
+      "role_type": "ML",
+      "semantic_score": 0.6,
+      "scraped_at": "2026-07-12T06:31:11.755485+00:00",
+      "is_notified": true,
+      "tags": [
+        "India"
+      ],
+      "category_tags": [
+        "Fresher"
+      ]
+    },
+    {
+      "external_id": "024eeffa9c4b042775fe0b96",
+      "run_id": "6c47bfca-3818-4f87-b924-813e5141504f",
+      "platform": "linkedin",
+      "title": "Management Trainee – Central Operations",
+      "company": "Sids Farm Hiring",
+      "location": "Serilingampalli, Telangana, India",
+      "url": "https://in.linkedin.com/jobs/view/management-trainee-%E2%80%93-central-operations-at-sids-farm-hiring-4439554368?position=55&pageNum=0&refId=wC7qTXPWM9G2C28rjb1EbA%3D%3D&trackingId=118qFFTiNN9C2wzx2lGHlg%3D%3D",
+      "posted_at": "19 hours ago",
+      "employment_type": "",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": false,
+      "role_type": "ML",
+      "semantic_score": 0.0,
+      "scraped_at": "2026-07-12T06:31:11.508906+00:00",
+      "is_notified": false,
+      "tags": [
+        "Serilingampalli, Telangana, India"
+      ],
+      "category_tags": []
+    },
+    {
+      "external_id": "cfa3076c677250ccc458e4d0",
+      "run_id": "6c47bfca-3818-4f87-b924-813e5141504f",
+      "platform": "linkedin",
+      "title": "Management Trainee - International Market Research (FA)",
+      "company": "Ajanta Pharma Ltd",
+      "location": "Mumbai Metropolitan Region",
+      "url": "https://in.linkedin.com/jobs/view/management-trainee-international-market-research-fa-at-ajanta-pharma-ltd-4436653901?position=32&pageNum=0&refId=wC7qTXPWM9G2C28rjb1EbA%3D%3D&trackingId=uNVn4gZSnSDCdk6IWD4Eag%3D%3D",
+      "posted_at": "22 hours ago",
+      "employment_type": "",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": false,
+      "role_type": "ML",
+      "semantic_score": 0.0,
+      "scraped_at": "2026-07-12T06:31:10.349441+00:00",
+      "is_notified": false,
+      "tags": [
+        "Mumbai Metropolitan Region"
+      ],
+      "category_tags": []
+    },
+    {
+      "external_id": "31dbcad43e4754a7ca2c919d",
+      "run_id": "6c47bfca-3818-4f87-b924-813e5141504f",
+      "platform": "linkedin",
+      "title": "Junior Data Engineer",
+      "company": "UPSTA Analytics",
+      "location": "Bengaluru, Karnataka, India",
+      "url": "https://in.linkedin.com/jobs/view/junior-data-engineer-at-upsta-analytics-4439567206?position=19&pageNum=0&refId=wC7qTXPWM9G2C28rjb1EbA%3D%3D&trackingId=oOveqj%2FFYlWFj5k2YSqnYg%3D%3D",
+      "posted_at": "16 hours ago",
+      "employment_type": "",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": false,
+      "role_type": "ML",
+      "semantic_score": 0.2,
+      "scraped_at": "2026-07-12T06:31:09.714701+00:00",
+      "is_notified": false,
+      "tags": [
+        "Bengaluru, Karnataka, India"
+      ],
+      "category_tags": []
+    },
+    {
+      "external_id": "485c6e7f070d9cfe0216c4d2",
+      "run_id": "34a647c4-c9e9-41a1-a079-4a009aee4ed6",
+      "platform": "it_org_careers",
+      "title": "International Tax Director",
+      "company": "MongoDB",
+      "location": "Atlanta; Austin; Baltimore; Charlotte; Chicago; Florida; Houston; Nashville; Raleigh",
+      "url": "https://www.mongodb.com/careers/job/?gh_jid=7843814",
+      "posted_at": "2026-07-06T12:17:28-04:00",
+      "employment_type": "Full-time",
+      "salary_text": "{'unit': 'USD', 'max_value': '196000.0', 'min_value': '137000.0'}",
+      "experience_text": "",
+      "is_fresher": false,
+      "role_type": "ML",
+      "semantic_score": 0.067,
+      "scraped_at": "2026-07-12T06:28:11.512670+00:00",
+      "is_notified": false,
+      "tags": [
+        "Tax & Treasury",
+        "Austin",
+        "10007172",
+        "D88100-Finance & Accounting",
+        "T10120-Tax",
+        "North America",
+        "['2-Flexible']",
+        "Director",
+        "Full-time",
+        "Standard",
+        "https://docs.google.com/document/d/1FqaQBZq6t1Xo7TByOgiH_h95P59V-soNmbqEddJ3v4A/edit?usp=sharing",
+        "{'unit': 'USD', 'max_value': '196000.0', 'min_value': '137000.0'}",
+        "{'unit': 'USD', 'max_value': '253000.0', 'min_value': '129000.0'}",
+        "{'unit': 'USD', 'max_value': '0.0', 'min_value': '0.0'}"
+      ],
+      "category_tags": [
+        "Generative AI"
+      ]
+    },
+    {
+      "external_id": "3ad3e53f517fcfe4603f0c36",
+      "run_id": "97dff104-105d-4ccf-9ab0-dcb2cd0e38ae",
+      "platform": "linkedin",
+      "title": "Research Scientist Graduate - (Trust and Safety - CV/NLP/Multimodal LLM, San Jose) - 2026 Start (BS/MS)",
+      "company": "TikTok",
+      "location": "San Jose, CA",
+      "url": "https://www.linkedin.com/jobs/view/research-scientist-graduate-trust-and-safety-cv-nlp-multimodal-llm-san-jose-2026-start-bs-ms-at-tiktok-4274024684?position=25&pageNum=0&refId=%2BLFMrqqi%2BkW9J2X%2FlTH22g%3D%3D&trackingId=7ChYq2QQ9cFswst0oYakIw%3D%3D",
+      "posted_at": "20 hours ago",
+      "employment_type": "",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": false,
+      "role_type": "ML",
+      "semantic_score": 0.2,
+      "scraped_at": "2026-07-12T06:26:53.739188+00:00",
+      "is_notified": false,
+      "tags": [
+        "San Jose, CA"
+      ],
+      "category_tags": [
+        "Generative AI"
+      ]
+    },
+    {
+      "external_id": "8919f6bffc245fb492b93ff9",
+      "run_id": "97dff104-105d-4ccf-9ab0-dcb2cd0e38ae",
+      "platform": "linkedin",
+      "title": "Research Scientist in Large Language Model (LLM) - Seed - Graduates - 2027 Start (BS/MS)",
+      "company": "ByteDance",
+      "location": "San Jose, CA",
+      "url": "https://www.linkedin.com/jobs/view/research-scientist-in-large-language-model-llm-seed-graduates-2027-start-bs-ms-at-bytedance-4439545757?position=18&pageNum=0&refId=%2BLFMrqqi%2BkW9J2X%2FlTH22g%3D%3D&trackingId=Wl6kKz09UGMb68ZhBewuDQ%3D%3D",
+      "posted_at": "18 hours ago",
+      "employment_type": "",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": false,
+      "role_type": "ML",
+      "semantic_score": 0.2,
+      "scraped_at": "2026-07-12T06:26:53.383310+00:00",
+      "is_notified": false,
+      "tags": [
+        "San Jose, CA",
+        "Be an early applicant"
+      ],
+      "category_tags": [
+        "Generative AI"
+      ]
+    },
+    {
+      "external_id": "0855a471e68a483d94a1c8c3",
+      "run_id": "500e1d39-51a8-4ffc-a44f-60c6648f755d",
+      "platform": "linkedin",
+      "title": "Associate Robotics AI Engineer (Entry Level)",
+      "company": "Battelle",
+      "location": "Columbus, OH",
+      "url": "https://www.linkedin.com/jobs/view/associate-robotics-ai-engineer-entry-level-at-battelle-4421218449?position=18&pageNum=0&refId=STZyWde2JbdVCTfP%2BOfbcw%3D%3D&trackingId=okP4hbSFsjdqZY4LsAG3EQ%3D%3D",
+      "posted_at": "17 hours ago",
+      "employment_type": "",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": true,
+      "role_type": "ML",
+      "semantic_score": 0.3,
+      "scraped_at": "2026-07-12T06:21:48.577630+00:00",
+      "is_notified": true,
+      "tags": [
+        "Columbus, OH"
+      ],
+      "category_tags": [
+        "Fresher"
+      ]
+    },
+    {
+      "external_id": "b5fc894e8be4b132852aeec6",
+      "run_id": "500e1d39-51a8-4ffc-a44f-60c6648f755d",
+      "platform": "linkedin",
+      "title": "Junior Engineer, AI",
+      "company": "RemoteHunter",
+      "location": "United States",
+      "url": "https://www.linkedin.com/jobs/view/junior-engineer-ai-at-remotehunter-4438914788?position=7&pageNum=0&refId=STZyWde2JbdVCTfP%2BOfbcw%3D%3D&trackingId=Crclto3N7zA%2BoU17mByDZQ%3D%3D",
+      "posted_at": "20 hours ago",
+      "employment_type": "",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": false,
+      "role_type": "ML",
+      "semantic_score": 0.3,
+      "scraped_at": "2026-07-12T06:21:47.978806+00:00",
+      "is_notified": false,
+      "tags": [
+        "United States",
+        "Medical insurance +3 benefits"
+      ],
+      "category_tags": []
+    },
+    {
+      "external_id": "f7f964a5ddad5ae2e18362c6",
+      "run_id": "500e1d39-51a8-4ffc-a44f-60c6648f755d",
+      "platform": "linkedin",
+      "title": "AI Engineer, Entry Level",
+      "company": "Jobright.ai",
+      "location": "United States",
+      "url": "https://www.linkedin.com/jobs/view/ai-engineer-entry-level-at-jobright-ai-4438936726?position=1&pageNum=0&refId=STZyWde2JbdVCTfP%2BOfbcw%3D%3D&trackingId=bZpZ27gHo5mzJwwuNY2C%2BQ%3D%3D",
+      "posted_at": "9 hours ago",
+      "employment_type": "",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": true,
+      "role_type": "ML",
+      "semantic_score": 0.3,
+      "scraped_at": "2026-07-12T06:21:47.638520+00:00",
+      "is_notified": true,
+      "tags": [
+        "United States",
+        "Medical insurance +3 benefits"
+      ],
+      "category_tags": [
+        "Fresher"
+      ]
+    },
+    {
+      "external_id": "abedc2706a48795a1a92f702",
+      "run_id": "b5ff6ab4-ec16-4a67-975c-7490b58848c7",
+      "platform": "linkedin",
+      "title": "Associate, Software Engineer, Applications",
+      "company": "BlackRock",
+      "location": "San Francisco, CA",
+      "url": "https://www.linkedin.com/jobs/view/associate-software-engineer-applications-at-blackrock-4439548691?position=59&pageNum=0&refId=%2Bz0teXjb3tAdfiSdq2XYcw%3D%3D&trackingId=fZr7rdDAd9fY1D%2BRvd6D3Q%3D%3D",
+      "posted_at": "17 hours ago",
+      "employment_type": "",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": false,
+      "role_type": "ML",
+      "semantic_score": 0.24,
+      "scraped_at": "2026-07-12T06:18:58.924936+00:00",
+      "is_notified": false,
+      "tags": [
+        "San Francisco, CA"
+      ],
+      "category_tags": []
+    },
+    {
+      "external_id": "abcf7936c47139c701566676",
+      "run_id": "b5ff6ab4-ec16-4a67-975c-7490b58848c7",
+      "platform": "linkedin",
+      "title": "Platform Software Developer - 2026 New Grads",
+      "company": "Ciena",
+      "location": "Atlanta, GA",
+      "url": "https://www.linkedin.com/jobs/view/platform-software-developer-2026-new-grads-at-ciena-4419339429?position=57&pageNum=0&refId=%2Bz0teXjb3tAdfiSdq2XYcw%3D%3D&trackingId=RYXgPXzH85pc%2Fxy3wCRo3g%3D%3D",
+      "posted_at": "12 hours ago",
+      "employment_type": "",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": false,
+      "role_type": "ML",
+      "semantic_score": 0.12,
+      "scraped_at": "2026-07-12T06:18:58.830472+00:00",
+      "is_notified": false,
+      "tags": [
+        "Atlanta, GA"
+      ],
+      "category_tags": []
+    },
+    {
+      "external_id": "f9583db751d00256957651f5",
+      "run_id": "b5ff6ab4-ec16-4a67-975c-7490b58848c7",
+      "platform": "linkedin",
+      "title": "Junior Web Developer",
+      "company": "Tech Consulting",
+      "location": "Michigan, United States",
+      "url": "https://www.linkedin.com/jobs/view/junior-web-developer-at-tech-consulting-4436663738?position=51&pageNum=0&refId=%2Bz0teXjb3tAdfiSdq2XYcw%3D%3D&trackingId=DrXJxK1cRim%2BkD0S0ojj4A%3D%3D",
+      "posted_at": "16 hours ago",
+      "employment_type": "",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": false,
+      "role_type": "ML",
+      "semantic_score": 0.0,
+      "scraped_at": "2026-07-12T06:18:58.527320+00:00",
+      "is_notified": false,
+      "tags": [
+        "Michigan, United States",
+        "Be an early applicant +1 benefits"
+      ],
+      "category_tags": []
+    },
+    {
+      "external_id": "7ddf1ec4f6d9e31335978e26",
+      "run_id": "b5ff6ab4-ec16-4a67-975c-7490b58848c7",
+      "platform": "linkedin",
+      "title": "Entry Level Software Engineer - ANF (Azure NetApp Files)",
+      "company": "NetApp",
+      "location": "San Jose, CA",
+      "url": "https://www.linkedin.com/jobs/view/entry-level-software-engineer-anf-azure-netapp-files-at-netapp-4436668203?position=46&pageNum=0&refId=%2Bz0teXjb3tAdfiSdq2XYcw%3D%3D&trackingId=4hyCvQusSigfM950lUO3XA%3D%3D",
+      "posted_at": "21 hours ago",
+      "employment_type": "",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": true,
+      "role_type": "ML",
+      "semantic_score": 0.24,
+      "scraped_at": "2026-07-12T06:18:58.303458+00:00",
+      "is_notified": true,
+      "tags": [
+        "San Jose, CA"
+      ],
+      "category_tags": [
+        "Fresher"
+      ]
+    },
+    {
+      "external_id": "eaf81ed3891cc80b8af51161",
+      "run_id": "b5ff6ab4-ec16-4a67-975c-7490b58848c7",
+      "platform": "linkedin",
+      "title": "Junior Software Engineer",
+      "company": "Tech Consulting",
+      "location": "New York, United States",
+      "url": "https://www.linkedin.com/jobs/view/junior-software-engineer-at-tech-consulting-4436673553?position=15&pageNum=0&refId=%2Bz0teXjb3tAdfiSdq2XYcw%3D%3D&trackingId=ldf2m5VGbXsVZgCEMzmg1Q%3D%3D",
+      "posted_at": "16 hours ago",
+      "employment_type": "",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": false,
+      "role_type": "ML",
+      "semantic_score": 0.24,
+      "scraped_at": "2026-07-12T06:18:56.735200+00:00",
+      "is_notified": false,
+      "tags": [
+        "New York, United States",
+        "401(k) +2 benefits"
+      ],
+      "category_tags": []
+    },
+    {
+      "external_id": "30ce171acc4e808472d85f3a",
+      "run_id": "b5ff6ab4-ec16-4a67-975c-7490b58848c7",
+      "platform": "linkedin",
+      "title": "Junior Software Engineer",
+      "company": "Helic & Co",
+      "location": "United States",
+      "url": "https://www.linkedin.com/jobs/view/junior-software-engineer-at-helic-co-4439575119?position=12&pageNum=0&refId=%2Bz0teXjb3tAdfiSdq2XYcw%3D%3D&trackingId=vIdsMIlOG8LWDOSq%2FprxPw%3D%3D",
+      "posted_at": "15 hours ago",
+      "employment_type": "",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": false,
+      "role_type": "ML",
+      "semantic_score": 0.24,
+      "scraped_at": "2026-07-12T06:18:56.598033+00:00",
+      "is_notified": false,
+      "tags": [
+        "United States"
+      ],
+      "category_tags": []
+    },
+    {
+      "external_id": "81f23f944c82bbb4b6ef7396",
+      "run_id": "b5ff6ab4-ec16-4a67-975c-7490b58848c7",
+      "platform": "linkedin",
+      "title": "Associate Embedded Software Engineer",
+      "company": "Boeing",
+      "location": "Hazelwood, MO",
+      "url": "https://www.linkedin.com/jobs/view/associate-embedded-software-engineer-at-boeing-4436672739?position=5&pageNum=0&refId=%2Bz0teXjb3tAdfiSdq2XYcw%3D%3D&trackingId=fyf348kjDk%2BeI8BdXsjHjg%3D%3D",
+      "posted_at": "14 hours ago",
+      "employment_type": "",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": false,
+      "role_type": "ML",
+      "semantic_score": 0.24,
+      "scraped_at": "2026-07-12T06:18:56.260692+00:00",
+      "is_notified": false,
+      "tags": [
+        "Hazelwood, MO",
+        "Be an early applicant"
+      ],
+      "category_tags": []
+    },
+    {
+      "external_id": "19fdadac951ef616b63089de",
+      "run_id": "b5ff6ab4-ec16-4a67-975c-7490b58848c7",
+      "platform": "linkedin",
+      "title": "Associate Engineer Software",
+      "company": "Vertiv",
+      "location": "Pune Division, Maharashtra, India",
+      "url": "https://in.linkedin.com/jobs/view/associate-engineer-software-at-vertiv-4439574859?position=48&pageNum=0&refId=k5azDD%2BVwQGmKRTV9zbNFQ%3D%3D&trackingId=gOadPzeBZP1HexyIRWlEHA%3D%3D",
+      "posted_at": "8 hours ago",
+      "employment_type": "",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": false,
+      "role_type": "ML",
+      "semantic_score": 0.24,
+      "scraped_at": "2026-07-12T06:18:14.863935+00:00",
+      "is_notified": false,
+      "tags": [
+        "Pune Division, Maharashtra, India"
+      ],
+      "category_tags": []
+    },
+    {
+      "external_id": "c6a7edbd424b935663d55d85",
+      "run_id": "b5ff6ab4-ec16-4a67-975c-7490b58848c7",
+      "platform": "linkedin",
+      "title": "Associate Software Engineer",
+      "company": "Pitney Bowes",
+      "location": "Pune/Pimpri-Chinchwad Area",
+      "url": "https://in.linkedin.com/jobs/view/associate-software-engineer-at-pitney-bowes-4438920837?position=13&pageNum=0&refId=k5azDD%2BVwQGmKRTV9zbNFQ%3D%3D&trackingId=u8qBZjcz%2B1YD0%2FB9dKHZIQ%3D%3D",
+      "posted_at": "18 hours ago",
+      "employment_type": "",
+      "salary_text": "",
+      "experience_text": "",
+      "is_fresher": false,
+      "role_type": "ML",
+      "semantic_score": 0.24,
+      "scraped_at": "2026-07-12T06:18:13.362202+00:00",
+      "is_notified": false,
+      "tags": [
+        "Pune/Pimpri-Chinchwad Area"
+      ],
+      "category_tags": []
+    },
     {
       "external_id": "5cacc9f6b0da2342b9d504eb",
       "run_id": "312db268-022f-4c7c-9f3c-5a2943ad933e",
@@ -167,30 +2333,6 @@
       "tags": [
         "India",
         "Be an early applicant"
-      ],
-      "category_tags": [
-        "Fresher"
-      ]
-    },
-    {
-      "external_id": "cb828899ac83ddb2ef2b6502",
-      "run_id": "312db268-022f-4c7c-9f3c-5a2943ad933e",
-      "platform": "linkedin",
-      "title": "Machine Learning Intern Remote",
-      "company": "MediNex Workforce",
-      "location": "India",
-      "url": "https://in.linkedin.com/jobs/view/machine-learning-intern-remote-at-medinex-workforce-4438302054?position=2&pageNum=0&refId=BBk2jRQojqh%2Fo6fiWdLRmQ%3D%3D&trackingId=HxOhT2LpHqtNIm%2BJkdtgiw%3D%3D",
-      "posted_at": "18 hours ago",
-      "employment_type": "",
-      "salary_text": "",
-      "experience_text": "",
-      "is_fresher": true,
-      "role_type": "ML",
-      "semantic_score": 0.2,
-      "scraped_at": "2026-07-11T06:10:50.984969+00:00",
-      "is_notified": true,
-      "tags": [
-        "India"
       ],
       "category_tags": [
         "Fresher"
@@ -492,709 +2634,6 @@
       "category_tags": [
         "Fresher"
       ]
-    },
-    {
-      "external_id": "573e96af89fa125597ac7ef2",
-      "run_id": "312db268-022f-4c7c-9f3c-5a2943ad933e",
-      "platform": "it_org_careers",
-      "title": "Professional Services Intern – Global Customer Services (Fall 2026)",
-      "company": "Cloudflare",
-      "location": "In-Office",
-      "url": "https://boards.greenhouse.io/cloudflare/jobs/7796077?gh_jid=7796077",
-      "posted_at": "2026-07-02T15:32:30-04:00",
-      "employment_type": "",
-      "salary_text": "",
-      "experience_text": "",
-      "is_fresher": true,
-      "role_type": "ML",
-      "semantic_score": 0.267,
-      "scraped_at": "2026-07-11T06:09:35.412578+00:00",
-      "is_notified": true,
-      "tags": [
-        "University",
-        "London, United Kingdom",
-        "5991 - S&M Interns",
-        "['London, UK']",
-        "['Early Talent']"
-      ],
-      "category_tags": [
-        "Fresher"
-      ]
-    },
-    {
-      "external_id": "897c65201d99386701d7c75b",
-      "run_id": "312db268-022f-4c7c-9f3c-5a2943ad933e",
-      "platform": "it_org_careers",
-      "title": "Network Strategy Intern (Fall 2026)",
-      "company": "Cloudflare",
-      "location": "In-Office",
-      "url": "https://boards.greenhouse.io/cloudflare/jobs/8013562?gh_jid=8013562",
-      "posted_at": "2026-07-02T20:07:55-04:00",
-      "employment_type": "",
-      "salary_text": "",
-      "experience_text": "",
-      "is_fresher": true,
-      "role_type": "ML",
-      "semantic_score": 0.4,
-      "scraped_at": "2026-07-11T06:09:35.390807+00:00",
-      "is_notified": true,
-      "tags": [
-        "Strategy",
-        "Austin, TX",
-        "4991 - R&D Interns",
-        "['Austin, US']",
-        "['Early Talent']"
-      ],
-      "category_tags": [
-        "Fresher"
-      ]
-    },
-    {
-      "external_id": "14280ce6c3e55ff93151e7e2",
-      "run_id": "312db268-022f-4c7c-9f3c-5a2943ad933e",
-      "platform": "it_org_careers",
-      "title": "Global Trade Compliance Intern (Summer 2026)",
-      "company": "Cloudflare",
-      "location": "In-Office",
-      "url": "https://boards.greenhouse.io/cloudflare/jobs/7799138?gh_jid=7799138",
-      "posted_at": "2026-07-02T20:08:47-04:00",
-      "employment_type": "",
-      "salary_text": "",
-      "experience_text": "",
-      "is_fresher": true,
-      "role_type": "ML",
-      "semantic_score": 0.267,
-      "scraped_at": "2026-07-11T06:09:35.369291+00:00",
-      "is_notified": true,
-      "tags": [
-        "Legal, Policy, Trust & Safety",
-        "Austin, TX",
-        "6991 - G&A Interns",
-        "['Austin, US']",
-        "['Early Talent']"
-      ],
-      "category_tags": [
-        "Fresher"
-      ]
-    },
-    {
-      "external_id": "0ba56fc88d81dc4dec16bc5e",
-      "run_id": "312db268-022f-4c7c-9f3c-5a2943ad933e",
-      "platform": "it_org_careers",
-      "title": "Full Stack Engineer - Internal Audit",
-      "company": "Cloudflare",
-      "location": "Hybrid",
-      "url": "https://boards.greenhouse.io/cloudflare/jobs/8014902?gh_jid=8014902",
-      "posted_at": "2026-07-06T08:19:58-04:00",
-      "employment_type": "",
-      "salary_text": "",
-      "experience_text": "",
-      "is_fresher": false,
-      "role_type": "ML",
-      "semantic_score": 0.133,
-      "scraped_at": "2026-07-11T06:09:35.367382+00:00",
-      "is_notified": false,
-      "tags": [
-        "Accounting and Finance",
-        "Remote India",
-        "6350 - Internal Audit",
-        "['Bengaluru, India']",
-        "['Engineering']"
-      ],
-      "category_tags": []
-    },
-    {
-      "external_id": "602176a59d1e673ca1aaacd3",
-      "run_id": "312db268-022f-4c7c-9f3c-5a2943ad933e",
-      "platform": "it_org_careers",
-      "title": "Brand Social Media Intern (Fall 2026)",
-      "company": "Cloudflare",
-      "location": "In-Office",
-      "url": "https://boards.greenhouse.io/cloudflare/jobs/8054093?gh_jid=8054093",
-      "posted_at": "2026-07-10T11:14:43-04:00",
-      "employment_type": "",
-      "salary_text": "",
-      "experience_text": "",
-      "is_fresher": true,
-      "role_type": "ML",
-      "semantic_score": 0.333,
-      "scraped_at": "2026-07-11T06:09:35.323976+00:00",
-      "is_notified": true,
-      "tags": [
-        "University",
-        "San Francisco, CA",
-        "5991 - S&M Interns",
-        "['San Francisco, US']",
-        "['Early Talent']"
-      ],
-      "category_tags": [
-        "Fresher"
-      ]
-    },
-    {
-      "external_id": "35d872680f7650fccd31ff9a",
-      "run_id": "312db268-022f-4c7c-9f3c-5a2943ad933e",
-      "platform": "it_org_careers",
-      "title": "Engineering Manager",
-      "company": "Razorpay",
-      "location": "Bengaluru",
-      "url": "https://job-boards.greenhouse.io/razorpaysoftwareprivatelimited/jobs/4712147005",
-      "posted_at": "2026-07-08T02:58:11-04:00",
-      "employment_type": "",
-      "salary_text": "",
-      "experience_text": "",
-      "is_fresher": true,
-      "role_type": "ML",
-      "semantic_score": 0.067,
-      "scraped_at": "2026-07-11T06:09:34.645235+00:00",
-      "is_notified": true,
-      "tags": [
-        "Backend",
-        "Platforms",
-        "['Bengaluru']",
-        "Bengaluru"
-      ],
-      "category_tags": [
-        "Fresher"
-      ]
-    },
-    {
-      "external_id": "b590dbc43e42d5084b14ebb3",
-      "run_id": "312db268-022f-4c7c-9f3c-5a2943ad933e",
-      "platform": "it_org_careers",
-      "title": "AI Builder",
-      "company": "Razorpay",
-      "location": "Bengaluru",
-      "url": "https://job-boards.greenhouse.io/razorpaysoftwareprivatelimited/jobs/4713785005",
-      "posted_at": "2026-07-10T03:10:24-04:00",
-      "employment_type": "",
-      "salary_text": "",
-      "experience_text": "",
-      "is_fresher": true,
-      "role_type": "ML",
-      "semantic_score": 0.067,
-      "scraped_at": "2026-07-11T06:09:34.640730+00:00",
-      "is_notified": true,
-      "tags": [
-        "Business Strategy.",
-        "RazorpayX",
-        "['Bengaluru']",
-        "Bengaluru"
-      ],
-      "category_tags": [
-        "Fresher",
-        "Prompt Engineering"
-      ]
-    },
-    {
-      "external_id": "9884c02741123a04078ff6c3",
-      "run_id": "312db268-022f-4c7c-9f3c-5a2943ad933e",
-      "platform": "it_org_careers",
-      "title": "Thumbnail Designer",
-      "company": "PhonePe",
-      "location": "Bangalore",
-      "url": "https://job-boards.greenhouse.io/phonepe/jobs/7768176003",
-      "posted_at": "2026-06-23T04:37:28-04:00",
-      "employment_type": "",
-      "salary_text": "",
-      "experience_text": "",
-      "is_fresher": true,
-      "role_type": "ML",
-      "semantic_score": 0.133,
-      "scraped_at": "2026-07-11T06:09:34.212003+00:00",
-      "is_notified": true,
-      "tags": [
-        "Content & Education_SD2_2235",
-        "PhonePe Wealth Broking Private Limited",
-        "FTE - Regular",
-        "Bengaluru - Salarpuria Softzone (SSZ)"
-      ],
-      "category_tags": [
-        "Fresher",
-        "Generative AI"
-      ]
-    },
-    {
-      "external_id": "75ab5ef3e0413f64efa646f9",
-      "run_id": "312db268-022f-4c7c-9f3c-5a2943ad933e",
-      "platform": "it_org_careers",
-      "title": "Software Engineer - iOS",
-      "company": "PhonePe",
-      "location": "Pune",
-      "url": "https://job-boards.greenhouse.io/phonepe/jobs/7680147003",
-      "posted_at": "2026-06-15T04:53:42-04:00",
-      "employment_type": "",
-      "salary_text": "",
-      "experience_text": "",
-      "is_fresher": true,
-      "role_type": "ML",
-      "semantic_score": 0.133,
-      "scraped_at": "2026-07-11T06:09:34.205599+00:00",
-      "is_notified": true,
-      "tags": [
-        "Engineering Development",
-        "PhonePe Limited",
-        "FTE - Regular",
-        "Pune - Amar Business Zone"
-      ],
-      "category_tags": [
-        "Fresher"
-      ]
-    },
-    {
-      "external_id": "cbadf0b27e3e34ba03c8f0b5",
-      "run_id": "312db268-022f-4c7c-9f3c-5a2943ad933e",
-      "platform": "it_org_careers",
-      "title": "Software Engineer, Android",
-      "company": "PhonePe",
-      "location": "Bangalore",
-      "url": "https://job-boards.greenhouse.io/phonepe/jobs/7799494003",
-      "posted_at": "2026-07-09T04:47:55-04:00",
-      "employment_type": "",
-      "salary_text": "",
-      "experience_text": "",
-      "is_fresher": true,
-      "role_type": "ML",
-      "semantic_score": 0.133,
-      "scraped_at": "2026-07-11T06:09:34.204708+00:00",
-      "is_notified": true,
-      "tags": [
-        "Engineering Development",
-        "PhonePe Limited",
-        "FTE - Regular",
-        "Bengaluru - Salarpuria Softzone (SSZ)"
-      ],
-      "category_tags": [
-        "Fresher"
-      ]
-    },
-    {
-      "external_id": "4650649ead71372e8a9444f2",
-      "run_id": "312db268-022f-4c7c-9f3c-5a2943ad933e",
-      "platform": "it_org_careers",
-      "title": "Site Reliability Engineer 2 (Azure)",
-      "company": "PhonePe",
-      "location": "Bangalore",
-      "url": "https://job-boards.greenhouse.io/phonepe/jobs/6589348003",
-      "posted_at": "2026-07-06T01:01:00-04:00",
-      "employment_type": "",
-      "salary_text": "",
-      "experience_text": "",
-      "is_fresher": true,
-      "role_type": "ML",
-      "semantic_score": 0.133,
-      "scraped_at": "2026-07-11T06:09:34.202672+00:00",
-      "is_notified": true,
-      "tags": [
-        "Site Reliability",
-        "PhonePe Limited",
-        "FTE - Regular",
-        "Bengaluru - Salarpuria Softzone (SSZ)"
-      ],
-      "category_tags": [
-        "Fresher"
-      ]
-    },
-    {
-      "external_id": "f23d84aee2a4c2f8685ca521",
-      "run_id": "312db268-022f-4c7c-9f3c-5a2943ad933e",
-      "platform": "it_org_careers",
-      "title": "Site Reliability Engineer - 2",
-      "company": "PhonePe",
-      "location": "Bangalore",
-      "url": "https://job-boards.greenhouse.io/phonepe/jobs/7766868003",
-      "posted_at": "2026-06-30T06:19:23-04:00",
-      "employment_type": "",
-      "salary_text": "",
-      "experience_text": "",
-      "is_fresher": true,
-      "role_type": "ML",
-      "semantic_score": 0.133,
-      "scraped_at": "2026-07-11T06:09:34.201511+00:00",
-      "is_notified": true,
-      "tags": [
-        "Engineering Development",
-        "PhonePe Limited",
-        "FTE - Regular",
-        "Bengaluru - Salarpuria Softzone (SSZ)"
-      ],
-      "category_tags": [
-        "Fresher"
-      ]
-    },
-    {
-      "external_id": "e02b9c94e450392c1a32ef7a",
-      "run_id": "312db268-022f-4c7c-9f3c-5a2943ad933e",
-      "platform": "it_org_careers",
-      "title": "Service Delivery Engineer, SRE",
-      "company": "PhonePe",
-      "location": "Bangalore",
-      "url": "https://job-boards.greenhouse.io/phonepe/jobs/7762335003",
-      "posted_at": "2026-07-06T01:01:01-04:00",
-      "employment_type": "",
-      "salary_text": "",
-      "experience_text": "",
-      "is_fresher": true,
-      "role_type": "ML",
-      "semantic_score": 0.067,
-      "scraped_at": "2026-07-11T06:09:34.200356+00:00",
-      "is_notified": true,
-      "tags": [
-        "Site Reliability",
-        "PhonePe Limited",
-        "FTE - Regular",
-        "Bengaluru - Salarpuria Softzone (SSZ)"
-      ],
-      "category_tags": [
-        "Fresher"
-      ]
-    },
-    {
-      "external_id": "4b1a8152e4a3b0eaac805b7b",
-      "run_id": "312db268-022f-4c7c-9f3c-5a2943ad933e",
-      "platform": "it_org_careers",
-      "title": "Service Delivery Engineer",
-      "company": "PhonePe",
-      "location": "Bangalore",
-      "url": "https://job-boards.greenhouse.io/phonepe/jobs/7766920003",
-      "posted_at": "2026-07-06T01:01:00-04:00",
-      "employment_type": "",
-      "salary_text": "",
-      "experience_text": "",
-      "is_fresher": true,
-      "role_type": "ML",
-      "semantic_score": 0.133,
-      "scraped_at": "2026-07-11T06:09:34.199564+00:00",
-      "is_notified": true,
-      "tags": [
-        "Site Reliability",
-        "PhonePe Limited",
-        "FTE - Regular",
-        "Bengaluru - Salarpuria Softzone (SSZ)"
-      ],
-      "category_tags": [
-        "Fresher"
-      ]
-    },
-    {
-      "external_id": "a407650f697af8811ecee870",
-      "run_id": "312db268-022f-4c7c-9f3c-5a2943ad933e",
-      "platform": "it_org_careers",
-      "title": "Network Delivery Engineer 1 (Pune)",
-      "company": "PhonePe",
-      "location": "Pune",
-      "url": "https://job-boards.greenhouse.io/phonepe/jobs/7659530003",
-      "posted_at": "2026-07-06T01:01:00-04:00",
-      "employment_type": "",
-      "salary_text": "",
-      "experience_text": "",
-      "is_fresher": true,
-      "role_type": "ML",
-      "semantic_score": 0.2,
-      "scraped_at": "2026-07-11T06:09:34.192107+00:00",
-      "is_notified": true,
-      "tags": [
-        "Site Reliability",
-        "PhonePe Limited",
-        "FTE - Regular",
-        "Bengaluru - Salarpuria Softzone (SSZ)"
-      ],
-      "category_tags": [
-        "Fresher"
-      ]
-    },
-    {
-      "external_id": "600aff81dce52dc48caf7666",
-      "run_id": "312db268-022f-4c7c-9f3c-5a2943ad933e",
-      "platform": "it_org_careers",
-      "title": "Business Intelligence Engineer (1 - 3 Years)",
-      "company": "PhonePe",
-      "location": "Bengaluru",
-      "url": "https://job-boards.greenhouse.io/phonepe/jobs/7793358003",
-      "posted_at": "2026-07-08T05:36:34-04:00",
-      "employment_type": "",
-      "salary_text": "",
-      "experience_text": "",
-      "is_fresher": true,
-      "role_type": "ML",
-      "semantic_score": 0.133,
-      "scraped_at": "2026-07-11T06:09:34.174210+00:00",
-      "is_notified": true,
-      "tags": [
-        "Data Analytics",
-        "PhonePe Limited",
-        "FTE - Regular",
-        "Bengaluru - Salarpuria Softzone (SSZ)"
-      ],
-      "category_tags": [
-        "Fresher"
-      ]
-    },
-    {
-      "external_id": "0165469a3067f4bf175a2bf1",
-      "run_id": "312db268-022f-4c7c-9f3c-5a2943ad933e",
-      "platform": "it_org_careers",
-      "title": "AI Video Specialist",
-      "company": "PhonePe",
-      "location": "Bangalore",
-      "url": "https://job-boards.greenhouse.io/phonepe/jobs/7735150003",
-      "posted_at": "2026-06-15T04:53:42-04:00",
-      "employment_type": "",
-      "salary_text": "",
-      "experience_text": "",
-      "is_fresher": true,
-      "role_type": "ML",
-      "semantic_score": 0.2,
-      "scraped_at": "2026-07-11T06:09:34.167568+00:00",
-      "is_notified": true,
-      "tags": [
-        "Content & Education_SD2_2235",
-        "PhonePe Wealth Broking Private Limited",
-        "FTE - Regular",
-        "Bengaluru - Salarpuria Softzone (SSZ)"
-      ],
-      "category_tags": [
-        "Fresher"
-      ]
-    },
-    {
-      "external_id": "a50f42a76105dddd657559ae",
-      "run_id": "312db268-022f-4c7c-9f3c-5a2943ad933e",
-      "platform": "it_org_careers",
-      "title": "Intern - Industrial Trainee",
-      "company": "InMobi",
-      "location": "Bangalore",
-      "url": "https://job-boards.greenhouse.io/inmobi/jobs/7793050",
-      "posted_at": "2026-06-23T08:33:51-04:00",
-      "employment_type": "Intern",
-      "salary_text": "",
-      "experience_text": "",
-      "is_fresher": true,
-      "role_type": "ML",
-      "semantic_score": 0.267,
-      "scraped_at": "2026-07-11T06:09:33.659076+00:00",
-      "is_notified": true,
-      "tags": [
-        "Marc Steifman (Finance and Corp Dev- Ads)",
-        "Bangalore",
-        "['India']",
-        "['neeleswar.popuri@inmobi.com']",
-        "Intern",
-        "Legal, Finance & Admin"
-      ],
-      "category_tags": [
-        "Fresher"
-      ]
-    },
-    {
-      "external_id": "a400ce47695cb374c3eccf7d",
-      "run_id": "312db268-022f-4c7c-9f3c-5a2943ad933e",
-      "platform": "builtin",
-      "title": "Data Science Intern (Customer Success)",
-      "company": "Unknown",
-      "location": "Remote/Unknown",
-      "url": "https://builtin.com/company/cresta",
-      "posted_at": null,
-      "employment_type": "",
-      "salary_text": "",
-      "experience_text": "",
-      "is_fresher": true,
-      "role_type": "ML",
-      "semantic_score": 0.8,
-      "scraped_at": "2026-07-11T06:09:14.492570+00:00",
-      "is_notified": true,
-      "tags": [],
-      "category_tags": [
-        "Fresher"
-      ]
-    },
-    {
-      "external_id": "221e2ba725d092b12ae805a0",
-      "run_id": "312db268-022f-4c7c-9f3c-5a2943ad933e",
-      "platform": "builtin",
-      "title": "Data Science Intern",
-      "company": "Unknown",
-      "location": "Remote/Unknown",
-      "url": "https://builtin.com/company/quantco",
-      "posted_at": null,
-      "employment_type": "",
-      "salary_text": "",
-      "experience_text": "",
-      "is_fresher": true,
-      "role_type": "ML",
-      "semantic_score": 0.8,
-      "scraped_at": "2026-07-11T06:09:14.377032+00:00",
-      "is_notified": true,
-      "tags": [],
-      "category_tags": [
-        "Fresher"
-      ]
-    },
-    {
-      "external_id": "ff10ab952323cad212c297e8",
-      "run_id": "312db268-022f-4c7c-9f3c-5a2943ad933e",
-      "platform": "builtin",
-      "title": "Data Science Intern (Spring '25-2)",
-      "company": "Unknown",
-      "location": "Remote/Unknown",
-      "url": "https://builtin.com/company/projxon",
-      "posted_at": null,
-      "employment_type": "",
-      "salary_text": "",
-      "experience_text": "",
-      "is_fresher": true,
-      "role_type": "ML",
-      "semantic_score": 0.8,
-      "scraped_at": "2026-07-11T06:09:14.117292+00:00",
-      "is_notified": true,
-      "tags": [],
-      "category_tags": [
-        "Fresher"
-      ]
-    },
-    {
-      "external_id": "107ca46ffc028bf017bfd8ef",
-      "run_id": "312db268-022f-4c7c-9f3c-5a2943ad933e",
-      "platform": "arbeitnow",
-      "title": "Software Developer (Junior) - Java, Groovy, ScriptRunner, JavaScript/TypeScript, Forge (m/w/d)",
-      "company": "MESKRU GmbH",
-      "location": "Munich",
-      "url": "https://www.arbeitnow.com/jobs/companies/meskru-gmbh/software-developer-junior-java-groovy-scriptrunner-forge-munich-144529",
-      "posted_at": "1783704543",
-      "employment_type": "",
-      "salary_text": "",
-      "experience_text": "",
-      "is_fresher": false,
-      "role_type": "ML",
-      "semantic_score": 0.0,
-      "scraped_at": "2026-07-11T06:09:09.943744+00:00",
-      "is_notified": false,
-      "tags": [
-        "Software Development"
-      ],
-      "category_tags": []
-    },
-    {
-      "external_id": "b0464154a1be4a785de9808f",
-      "run_id": "312db268-022f-4c7c-9f3c-5a2943ad933e",
-      "platform": "arbeitnow",
-      "title": "Trainee (m/w/d) Spanish Financial Consulting & Entrepreneurship",
-      "company": "Horbach Beratungen Berlin",
-      "location": "Berlin",
-      "url": "https://www.arbeitnow.com/jobs/companies/horbach-beratungen-berlin/trainee-spanish-financial-consulting-entrepreneurship-berlin-187687",
-      "posted_at": "1783681237",
-      "employment_type": "Traineeship",
-      "salary_text": "",
-      "experience_text": "",
-      "is_fresher": false,
-      "role_type": "ML",
-      "semantic_score": 0.0,
-      "scraped_at": "2026-07-11T06:09:09.942545+00:00",
-      "is_notified": false,
-      "tags": [
-        "Traineeship",
-        "berufseinstieg",
-        "Asset",
-        "Fonds Management"
-      ],
-      "category_tags": []
-    },
-    {
-      "external_id": "d3f50f222f0272a08536ae8d",
-      "run_id": "312db268-022f-4c7c-9f3c-5a2943ad933e",
-      "platform": "arbeitnow",
-      "title": "Trainee (m/w/d) Persian Financial Consulting & Entrepreneurship",
-      "company": "Horbach Beratungen Berlin",
-      "location": "Berlin",
-      "url": "https://www.arbeitnow.com/jobs/companies/horbach-beratungen-berlin/trainee-persian-financial-consulting-entrepreneurship-berlin-260834",
-      "posted_at": "1783699142",
-      "employment_type": "Traineeship",
-      "salary_text": "",
-      "experience_text": "",
-      "is_fresher": false,
-      "role_type": "ML",
-      "semantic_score": 0.0,
-      "scraped_at": "2026-07-11T06:09:09.942281+00:00",
-      "is_notified": false,
-      "tags": [
-        "Traineeship",
-        "berufseinstieg",
-        "Asset",
-        "Fonds Management"
-      ],
-      "category_tags": []
-    },
-    {
-      "external_id": "1dc4f822b1bd74255702bcf6",
-      "run_id": "312db268-022f-4c7c-9f3c-5a2943ad933e",
-      "platform": "arbeitnow",
-      "title": "Trainee (m/w/d) Arabic Financial Consulting & Entrepreneurship",
-      "company": "Horbach Beratungen Berlin",
-      "location": "Berlin",
-      "url": "https://www.arbeitnow.com/jobs/companies/horbach-beratungen-berlin/trainee-arabic-financial-consulting-entrepreneurship-berlin-376377",
-      "posted_at": "1783684827",
-      "employment_type": "Traineeship",
-      "salary_text": "",
-      "experience_text": "",
-      "is_fresher": false,
-      "role_type": "ML",
-      "semantic_score": 0.0,
-      "scraped_at": "2026-07-11T06:09:09.942178+00:00",
-      "is_notified": false,
-      "tags": [
-        "Traineeship",
-        "berufseinstieg",
-        "Asset",
-        "Fonds Management"
-      ],
-      "category_tags": []
-    },
-    {
-      "external_id": "6f3cc7069f006576f965a146",
-      "run_id": "312db268-022f-4c7c-9f3c-5a2943ad933e",
-      "platform": "arbeitnow",
-      "title": "Growth Intern (m/f/d)",
-      "company": "Norman AI GmbH",
-      "location": "Berlin",
-      "url": "https://www.arbeitnow.com/jobs/companies/norman-ai-gmbh/growth-intern-berlin-306015",
-      "posted_at": "1783686669",
-      "employment_type": "Internship",
-      "salary_text": "",
-      "experience_text": "",
-      "is_fresher": true,
-      "role_type": "ML",
-      "semantic_score": 0.2,
-      "scraped_at": "2026-07-11T06:09:09.942045+00:00",
-      "is_notified": true,
-      "tags": [
-        "Internship",
-        "Marketing and Communication"
-      ],
-      "category_tags": [
-        "Fresher"
-      ]
-    },
-    {
-      "external_id": "10b07558a6af64f12e5bf606",
-      "run_id": "312db268-022f-4c7c-9f3c-5a2943ad933e",
-      "platform": "arbeitnow",
-      "title": "Junior Web Developer (m/w/d) -  Node.js / React",
-      "company": "FinMent GmbH",
-      "location": "Berlin",
-      "url": "https://www.arbeitnow.com/jobs/companies/finment-gmbh/junior-web-developer-nodejs-react-berlin-69353",
-      "posted_at": "1783693836",
-      "employment_type": "",
-      "salary_text": "",
-      "experience_text": "",
-      "is_fresher": false,
-      "role_type": "ML",
-      "semantic_score": 0.0,
-      "scraped_at": "2026-07-11T06:09:09.939717+00:00",
-      "is_notified": false,
-      "tags": [
-        "Web Development"
-      ],
-      "category_tags": []
     },
     {
       "external_id": "c03312563eaa23024cc9920e",
@@ -1578,175 +3017,6 @@
       ]
     },
     {
-      "external_id": "e8b16cd67bd675b7e8ed9288",
-      "run_id": "4bc10bc2-0e5d-4614-b6aa-b54182c8a2cc",
-      "platform": "it_org_careers",
-      "title": "Internal Audit Analyst",
-      "company": "Coinbase",
-      "location": "Remote - USA",
-      "url": "https://www.coinbase.com/careers/positions/8031603?gh_jid=8031603",
-      "posted_at": "2026-06-26T18:34:25-04:00",
-      "employment_type": "",
-      "salary_text": "",
-      "experience_text": "",
-      "is_fresher": false,
-      "role_type": "ML",
-      "semantic_score": 0.133,
-      "scraped_at": "2026-07-11T06:08:16.605433+00:00",
-      "is_notified": false,
-      "tags": [
-        "Internships & Emerging Talent Positions",
-        "US - Remote Zone 1 (Job Requisitions Only)",
-        "Finance",
-        "209426"
-      ],
-      "category_tags": [
-        "Generative AI"
-      ]
-    },
-    {
-      "external_id": "67d771620c41a457c90564ea",
-      "run_id": "4bc10bc2-0e5d-4614-b6aa-b54182c8a2cc",
-      "platform": "it_org_careers",
-      "title": "Head of SOX and Internal Controls",
-      "company": "Coinbase",
-      "location": "Remote - Canada",
-      "url": "https://www.coinbase.com/careers/positions/7822882?gh_jid=7822882",
-      "posted_at": "2026-06-23T19:43:11-04:00",
-      "employment_type": "",
-      "salary_text": "",
-      "experience_text": "",
-      "is_fresher": false,
-      "role_type": "ML",
-      "semantic_score": 0.133,
-      "scraped_at": "2026-07-11T06:08:16.601009+00:00",
-      "is_notified": false,
-      "tags": [
-        "Finance & Accounting",
-        "Remote - Canada",
-        "Finance",
-        "1370515"
-      ],
-      "category_tags": [
-        "Generative AI"
-      ]
-    },
-    {
-      "external_id": "adab82099a6be0451acacfa7",
-      "run_id": "4bc10bc2-0e5d-4614-b6aa-b54182c8a2cc",
-      "platform": "it_org_careers",
-      "title": "AMLCO & Senior Compliance Associate",
-      "company": "Coinbase",
-      "location": "Remote - Cyprus",
-      "url": "https://www.coinbase.com/careers/positions/7942306?gh_jid=7942306",
-      "posted_at": "2026-07-09T14:48:00-04:00",
-      "employment_type": "",
-      "salary_text": "",
-      "experience_text": "",
-      "is_fresher": false,
-      "role_type": "ML",
-      "semantic_score": 0.133,
-      "scraped_at": "2026-07-11T06:08:16.575577+00:00",
-      "is_notified": false,
-      "tags": [
-        "Legal & Compliance",
-        "Remote - Cyprus",
-        "Trust & Risk",
-        "208504"
-      ],
-      "category_tags": [
-        "Generative AI"
-      ]
-    },
-    {
-      "external_id": "e4eab17095c2b569f7914b92",
-      "run_id": "4bc10bc2-0e5d-4614-b6aa-b54182c8a2cc",
-      "platform": "builtin",
-      "title": "Applied Scientist- AI/ML Intern",
-      "company": "Unknown",
-      "location": "Remote/Unknown",
-      "url": "https://builtin.com/company/wealth",
-      "posted_at": null,
-      "employment_type": "",
-      "salary_text": "",
-      "experience_text": "",
-      "is_fresher": true,
-      "role_type": "ML",
-      "semantic_score": 0.2,
-      "scraped_at": "2026-07-11T06:07:52.860985+00:00",
-      "is_notified": true,
-      "tags": [],
-      "category_tags": [
-        "Fresher"
-      ]
-    },
-    {
-      "external_id": "c33cef7a0069ce7de2b671a1",
-      "run_id": "4bc10bc2-0e5d-4614-b6aa-b54182c8a2cc",
-      "platform": "builtin",
-      "title": "AI/ML Engineer Intern",
-      "company": "Unknown",
-      "location": "Remote/Unknown",
-      "url": "https://builtin.com/company/melotech",
-      "posted_at": null,
-      "employment_type": "",
-      "salary_text": "",
-      "experience_text": "",
-      "is_fresher": true,
-      "role_type": "ML",
-      "semantic_score": 0.2,
-      "scraped_at": "2026-07-11T06:07:52.684099+00:00",
-      "is_notified": true,
-      "tags": [],
-      "category_tags": [
-        "Fresher"
-      ]
-    },
-    {
-      "external_id": "fce37577041601962d7de8bd",
-      "run_id": "4bc10bc2-0e5d-4614-b6aa-b54182c8a2cc",
-      "platform": "builtin",
-      "title": "Research Intern (PhD), Machine Learning",
-      "company": "Unknown",
-      "location": "Remote/Unknown",
-      "url": "https://builtin.com/company/output-biosciences",
-      "posted_at": null,
-      "employment_type": "",
-      "salary_text": "",
-      "experience_text": "",
-      "is_fresher": true,
-      "role_type": "ML",
-      "semantic_score": 0.6,
-      "scraped_at": "2026-07-11T06:07:52.492351+00:00",
-      "is_notified": true,
-      "tags": [],
-      "category_tags": [
-        "Fresher"
-      ]
-    },
-    {
-      "external_id": "6f5d569ebb9b5a6193c08a03",
-      "run_id": "4bc10bc2-0e5d-4614-b6aa-b54182c8a2cc",
-      "platform": "builtin",
-      "title": "2026 Machine Learning Intern, Autonomy",
-      "company": "Unknown",
-      "location": "Remote/Unknown",
-      "url": "https://builtin.com/company/blue-river-technology",
-      "posted_at": null,
-      "employment_type": "",
-      "salary_text": "",
-      "experience_text": "",
-      "is_fresher": true,
-      "role_type": "ML",
-      "semantic_score": 0.8,
-      "scraped_at": "2026-07-11T06:07:52.336300+00:00",
-      "is_notified": true,
-      "tags": [],
-      "category_tags": [
-        "Fresher"
-      ]
-    },
-    {
       "external_id": "2c35eecce86248db03ad436e",
       "run_id": "ef96fc80-414f-4495-a5ae-0454c135d98d",
       "platform": "linkedin",
@@ -1893,39 +3163,6 @@
       ]
     },
     {
-      "external_id": "5e889300bbc5e8eec8711071",
-      "run_id": "ef96fc80-414f-4495-a5ae-0454c135d98d",
-      "platform": "it_org_careers",
-      "title": "Lead Engineer, Internal Engineering",
-      "company": "MongoDB",
-      "location": "Gurugram",
-      "url": "https://www.mongodb.com/careers/job/?gh_jid=7541875",
-      "posted_at": "2026-07-06T12:17:28-04:00",
-      "employment_type": "Full-time",
-      "salary_text": "{'unit': 'INR', 'max_value': '0.0', 'min_value': '0.0'}",
-      "experience_text": "",
-      "is_fresher": false,
-      "role_type": "ML",
-      "semantic_score": 0.333,
-      "scraped_at": "2026-07-11T06:06:53.404423+00:00",
-      "is_notified": false,
-      "tags": [
-        "Internal Engineering",
-        "Gurugram",
-        "10012344",
-        "D85026-Internal Engineering",
-        "327-Internal Engineering",
-        "APAC",
-        "['2-Flexible']",
-        "People Manager",
-        "Full-time",
-        "Standard",
-        "https://docs.google.com/document/d/1slMtYs-hkps-Z8nBa__hTs4y3Mn9M-T8kCjKWkAecc8/edit?tab=t.0",
-        "{'unit': 'INR', 'max_value': '0.0', 'min_value': '0.0'}"
-      ],
-      "category_tags": []
-    },
-    {
       "external_id": "5adfc8385918949062be41ac",
       "run_id": "ef96fc80-414f-4495-a5ae-0454c135d98d",
       "platform": "jobicy",
@@ -1950,96 +3187,6 @@
       "category_tags": []
     },
     {
-      "external_id": "294795eabd710464ff9482de",
-      "run_id": "ef96fc80-414f-4495-a5ae-0454c135d98d",
-      "platform": "builtin",
-      "title": "Software Engineer Intern (Fall / Winter 2026)",
-      "company": "Unknown",
-      "location": "Remote/Unknown",
-      "url": "https://builtin.com/company/cohere-ai",
-      "posted_at": null,
-      "employment_type": "",
-      "salary_text": "",
-      "experience_text": "",
-      "is_fresher": true,
-      "role_type": "ML",
-      "semantic_score": 0.8,
-      "scraped_at": "2026-07-11T06:06:29.764749+00:00",
-      "is_notified": true,
-      "tags": [],
-      "category_tags": [
-        "Fresher"
-      ]
-    },
-    {
-      "external_id": "d78f01cbff86ea7137fdca39",
-      "run_id": "ef96fc80-414f-4495-a5ae-0454c135d98d",
-      "platform": "builtin",
-      "title": "Full Stack Software Engineer - 2026 Summer Intern",
-      "company": "Unknown",
-      "location": "Remote/Unknown",
-      "url": "https://builtin.com/company/symmetry-systems",
-      "posted_at": null,
-      "employment_type": "",
-      "salary_text": "",
-      "experience_text": "",
-      "is_fresher": true,
-      "role_type": "ML",
-      "semantic_score": 0.6,
-      "scraped_at": "2026-07-11T06:06:29.509338+00:00",
-      "is_notified": true,
-      "tags": [],
-      "category_tags": [
-        "Fresher"
-      ]
-    },
-    {
-      "external_id": "52aa576e7473cb91a2410f9a",
-      "run_id": "ef96fc80-414f-4495-a5ae-0454c135d98d",
-      "platform": "builtin",
-      "title": "Software Engineer Intern",
-      "company": "Unknown",
-      "location": "Remote/Unknown",
-      "url": "https://builtin.com/company/simular",
-      "posted_at": null,
-      "employment_type": "",
-      "salary_text": "",
-      "experience_text": "",
-      "is_fresher": true,
-      "role_type": "ML",
-      "semantic_score": 0.8,
-      "scraped_at": "2026-07-11T06:06:29.388264+00:00",
-      "is_notified": true,
-      "tags": [],
-      "category_tags": [
-        "Fresher"
-      ]
-    },
-    {
-      "external_id": "22c89ad98ec4d65e83992c68",
-      "run_id": "8cc30983-134e-4430-8532-5aabf8ccdbbe",
-      "platform": "linkedin",
-      "title": "Data Analyst Intern (Excel, SQL, Power BI) || Remove Fresher Tag",
-      "company": "Wake Up Whistle",
-      "location": "India",
-      "url": "https://in.linkedin.com/jobs/view/data-analyst-intern-excel-sql-power-bi-remove-fresher-tag-at-wake-up-whistle-4437973410?position=1&pageNum=0&refId=kVbCL91S188GT5dpJJLQuw%3D%3D&trackingId=qzOkQ2A76KiSwvjGqFIH%2Bg%3D%3D",
-      "posted_at": "22 hours ago",
-      "employment_type": "",
-      "salary_text": "",
-      "experience_text": "",
-      "is_fresher": true,
-      "role_type": "ML",
-      "semantic_score": 0.6,
-      "scraped_at": "2026-07-11T06:06:06.265547+00:00",
-      "is_notified": true,
-      "tags": [
-        "India"
-      ],
-      "category_tags": [
-        "Fresher"
-      ]
-    },
-    {
       "external_id": "4d0aa6702a65cc51d9060bbd",
       "run_id": "fc0ec2d0-3ae0-4ab7-a79e-4a30cc1585ed",
       "platform": "talent",
@@ -2057,65 +3204,6 @@
       "scraped_at": "2026-07-11T06:04:35.247106+00:00",
       "is_notified": false,
       "tags": [],
-      "category_tags": []
-    },
-    {
-      "external_id": "485c6e7f070d9cfe0216c4d2",
-      "run_id": "fc0ec2d0-3ae0-4ab7-a79e-4a30cc1585ed",
-      "platform": "it_org_careers",
-      "title": "International Tax Director",
-      "company": "MongoDB",
-      "location": "Atlanta; Austin; Baltimore; Charlotte; Chicago; Florida; Houston; Nashville; Raleigh",
-      "url": "https://www.mongodb.com/careers/job/?gh_jid=7843814",
-      "posted_at": "2026-07-06T12:17:28-04:00",
-      "employment_type": "Full-time",
-      "salary_text": "{'unit': 'USD', 'max_value': '196000.0', 'min_value': '137000.0'}",
-      "experience_text": "",
-      "is_fresher": false,
-      "role_type": "ML",
-      "semantic_score": 0.067,
-      "scraped_at": "2026-07-11T06:04:06.082286+00:00",
-      "is_notified": false,
-      "tags": [
-        "Tax & Treasury",
-        "Austin",
-        "10007172",
-        "D88100-Finance & Accounting",
-        "T10120-Tax",
-        "North America",
-        "['2-Flexible']",
-        "Director",
-        "Full-time",
-        "Standard",
-        "https://docs.google.com/document/d/1FqaQBZq6t1Xo7TByOgiH_h95P59V-soNmbqEddJ3v4A/edit?usp=sharing",
-        "{'unit': 'USD', 'max_value': '196000.0', 'min_value': '137000.0'}",
-        "{'unit': 'USD', 'max_value': '253000.0', 'min_value': '129000.0'}",
-        "{'unit': 'USD', 'max_value': '0.0', 'min_value': '0.0'}"
-      ],
-      "category_tags": [
-        "Generative AI"
-      ]
-    },
-    {
-      "external_id": "22df74ea37541039126d8687",
-      "run_id": "3f41c895-9931-418f-bfae-eb2fb07f9162",
-      "platform": "linkedin",
-      "title": "Junior Software Engineer",
-      "company": "Helic & Co",
-      "location": "United States",
-      "url": "https://www.linkedin.com/jobs/view/junior-software-engineer-at-helic-co-4439079320?position=52&pageNum=0&refId=%2FpEJ5t%2FNfoKgcpQbVdGVnQ%3D%3D&trackingId=WA%2Bh82HR%2BiRoOvOxZzJa4A%3D%3D",
-      "posted_at": "16 hours ago",
-      "employment_type": "",
-      "salary_text": "",
-      "experience_text": "",
-      "is_fresher": false,
-      "role_type": "ML",
-      "semantic_score": 0.2,
-      "scraped_at": "2026-07-11T06:01:26.278495+00:00",
-      "is_notified": false,
-      "tags": [
-        "United States"
-      ],
       "category_tags": []
     },
     {
@@ -2594,29 +3682,6 @@
       "is_notified": false,
       "tags": [
         "Bengaluru, Karnataka, India",
-        "Actively Hiring"
-      ],
-      "category_tags": []
-    },
-    {
-      "external_id": "217c328c00e68677924d9c50",
-      "run_id": "2c92826b-3035-4f21-80cb-7f537ec80c35",
-      "platform": "linkedin",
-      "title": "Machine Learning Engineer Graduate (Search E-Commerce) - 2026 Start (BS/MS)",
-      "company": "TikTok",
-      "location": "San Jose, CA",
-      "url": "https://www.linkedin.com/jobs/view/machine-learning-engineer-graduate-search-e-commerce-2026-start-bs-ms-at-tiktok-4401186044?position=55&pageNum=0&refId=UscqKKWSqWO70Zts2DMMuA%3D%3D&trackingId=XxTb79ISm7EUEwwg2JietA%3D%3D",
-      "posted_at": "21 hours ago",
-      "employment_type": "",
-      "salary_text": "",
-      "experience_text": "",
-      "is_fresher": false,
-      "role_type": "ML",
-      "semantic_score": 0.4,
-      "scraped_at": "2026-07-10T07:18:35.657944+00:00",
-      "is_notified": false,
-      "tags": [
-        "San Jose, CA",
         "Actively Hiring"
       ],
       "category_tags": []
@@ -3236,51 +4301,6 @@
       "category_tags": []
     },
     {
-      "external_id": "0288d39535779cf6e0feb09f",
-      "run_id": "4987e7cd-1b08-4c58-9433-7bcfc82ff856",
-      "platform": "linkedin",
-      "title": "Data Analyst, New Grad",
-      "company": "Jobright.ai",
-      "location": "United States",
-      "url": "https://www.linkedin.com/jobs/view/data-analyst-new-grad-at-jobright-ai-4437917361?position=17&pageNum=0&refId=WwUA%2FN8kpsjHoukG7Omv9Q%3D%3D&trackingId=9GlWrIfd4PM2TwX82lJwhA%3D%3D",
-      "posted_at": "10 hours ago",
-      "employment_type": "",
-      "salary_text": "",
-      "experience_text": "",
-      "is_fresher": false,
-      "role_type": "ML",
-      "semantic_score": 0.4,
-      "scraped_at": "2026-07-10T07:14:03.171114+00:00",
-      "is_notified": false,
-      "tags": [
-        "United States",
-        "Medical insurance +3 benefits"
-      ],
-      "category_tags": []
-    },
-    {
-      "external_id": "b9c15f56f6666c8348116e6a",
-      "run_id": "4987e7cd-1b08-4c58-9433-7bcfc82ff856",
-      "platform": "linkedin",
-      "title": "Junior Data Analyst",
-      "company": "Helic & Co",
-      "location": "United States",
-      "url": "https://www.linkedin.com/jobs/view/junior-data-analyst-at-helic-co-4438668352?position=1&pageNum=0&refId=WwUA%2FN8kpsjHoukG7Omv9Q%3D%3D&trackingId=xS7ZhbgYPsGx%2FPVlS3wZrw%3D%3D",
-      "posted_at": "15 hours ago",
-      "employment_type": "",
-      "salary_text": "",
-      "experience_text": "",
-      "is_fresher": false,
-      "role_type": "ML",
-      "semantic_score": 0.4,
-      "scraped_at": "2026-07-10T07:14:02.451638+00:00",
-      "is_notified": false,
-      "tags": [
-        "United States"
-      ],
-      "category_tags": []
-    },
-    {
       "external_id": "d9663eb115d427bd4ab94189",
       "run_id": "4987e7cd-1b08-4c58-9433-7bcfc82ff856",
       "platform": "talent",
@@ -3347,29 +4367,6 @@
       "category_tags": []
     },
     {
-      "external_id": "d5af42b7156f9d78a88d277a",
-      "run_id": "c0c2b7b3-79f6-4b5f-a7a4-b46a732aa35a",
-      "platform": "linkedin",
-      "title": "Junior Engineer, AI",
-      "company": "RemoteHunter",
-      "location": "United States",
-      "url": "https://www.linkedin.com/jobs/view/junior-engineer-ai-at-remotehunter-4437913367?position=12&pageNum=0&refId=ne8SO2xXDhcX%2Fz2JDvykfQ%3D%3D&trackingId=micKivcHkEtfRULBXrfVaw%3D%3D",
-      "posted_at": "10 hours ago",
-      "employment_type": "",
-      "salary_text": "",
-      "experience_text": "",
-      "is_fresher": false,
-      "role_type": "ML",
-      "semantic_score": 0.3,
-      "scraped_at": "2026-07-10T07:04:30.017383+00:00",
-      "is_notified": false,
-      "tags": [
-        "United States",
-        "Medical insurance +3 benefits"
-      ],
-      "category_tags": []
-    },
-    {
       "external_id": "0cfdbb8bc54808aaeda26080",
       "run_id": "c0c2b7b3-79f6-4b5f-a7a4-b46a732aa35a",
       "platform": "linkedin",
@@ -3389,31 +4386,6 @@
       "tags": [
         "Minneapolis, MN",
         "Actively Hiring"
-      ],
-      "category_tags": [
-        "Fresher"
-      ]
-    },
-    {
-      "external_id": "868dcbab7eaf7673ada13bd7",
-      "run_id": "c0c2b7b3-79f6-4b5f-a7a4-b46a732aa35a",
-      "platform": "linkedin",
-      "title": "AI Engineer, Entry Level",
-      "company": "Jobright.ai",
-      "location": "United States",
-      "url": "https://www.linkedin.com/jobs/view/ai-engineer-entry-level-at-jobright-ai-4437915349?position=5&pageNum=0&refId=ne8SO2xXDhcX%2Fz2JDvykfQ%3D%3D&trackingId=icWGgvQjXwJOsRBON6m5NQ%3D%3D",
-      "posted_at": "10 hours ago",
-      "employment_type": "",
-      "salary_text": "",
-      "experience_text": "",
-      "is_fresher": true,
-      "role_type": "ML",
-      "semantic_score": 0.3,
-      "scraped_at": "2026-07-10T07:04:29.709019+00:00",
-      "is_notified": true,
-      "tags": [
-        "United States",
-        "Medical insurance +3 benefits"
       ],
       "category_tags": [
         "Fresher"
@@ -3531,29 +4503,6 @@
       "is_notified": false,
       "tags": [
         "Moorestown, NJ"
-      ],
-      "category_tags": []
-    },
-    {
-      "external_id": "8b066f24ab7e67c8f1c86ddc",
-      "run_id": "9ca5d809-7f77-4f5c-80b1-63a667a2b86c",
-      "platform": "linkedin",
-      "title": "Junior Software Engineer",
-      "company": "Tech Consulting",
-      "location": "Oregon, United States",
-      "url": "https://www.linkedin.com/jobs/view/junior-software-engineer-at-tech-consulting-4435665790?position=20&pageNum=0&refId=5yE1lkQCBxXuljPJCYOW9A%3D%3D&trackingId=UZf5OIxzi0UseGb8thxYrg%3D%3D",
-      "posted_at": "18 hours ago",
-      "employment_type": "",
-      "salary_text": "",
-      "experience_text": "",
-      "is_fresher": false,
-      "role_type": "ML",
-      "semantic_score": 0.24,
-      "scraped_at": "2026-07-10T07:02:15.399048+00:00",
-      "is_notified": false,
-      "tags": [
-        "Oregon, United States",
-        "401(k) +2 benefits"
       ],
       "category_tags": []
     },
@@ -6945,30 +7894,6 @@
       ]
     },
     {
-      "external_id": "7912e499efb25226034e4429",
-      "run_id": "dba3b24f-3751-4be7-ae63-44e18b682734",
-      "platform": "linkedin",
-      "title": "Python Developer Intern",
-      "company": "Zenithbyte",
-      "location": "India",
-      "url": "https://in.linkedin.com/jobs/view/python-developer-intern-at-zenithbyte-4437147541?position=33&pageNum=0&refId=v1C5LE%2BuzRH%2BJ3s7IZ3ctA%3D%3D&trackingId=86XosQTYMR%2BEiWM03rSrDA%3D%3D",
-      "posted_at": "48 minutes ago",
-      "employment_type": "",
-      "salary_text": "",
-      "experience_text": "",
-      "is_fresher": true,
-      "role_type": "ML",
-      "semantic_score": 0.2,
-      "scraped_at": "2026-07-06T08:16:58.077438+00:00",
-      "is_notified": true,
-      "tags": [
-        "India"
-      ],
-      "category_tags": [
-        "Fresher"
-      ]
-    },
-    {
       "external_id": "03f6620579a2bef382379e51",
       "run_id": "dba3b24f-3751-4be7-ae63-44e18b682734",
       "platform": "linkedin",
@@ -8810,29 +9735,6 @@
       "category_tags": []
     },
     {
-      "external_id": "d458e9fa160df659d211c667",
-      "run_id": "31bdb744-9a46-40d9-bfb9-0feab14622c2",
-      "platform": "linkedin",
-      "title": "Graduate Apprentice Trainee",
-      "company": "Volvo Group",
-      "location": "Bengaluru, Karnataka, India",
-      "url": "https://in.linkedin.com/jobs/view/graduate-apprentice-trainee-at-volvo-group-4427647887?position=38&pageNum=0&refId=VG39SY%2F6wR2R0Pq2pCIdgw%3D%3D&trackingId=OmgdvBmMzAcyJcL%2BEPN71Q%3D%3D",
-      "posted_at": "19 hours ago",
-      "employment_type": "",
-      "salary_text": "",
-      "experience_text": "",
-      "is_fresher": false,
-      "role_type": "ML",
-      "semantic_score": 0.0,
-      "scraped_at": "2026-07-04T06:48:25.675419+00:00",
-      "is_notified": false,
-      "tags": [
-        "Bengaluru, Karnataka, India",
-        "Actively Hiring"
-      ],
-      "category_tags": []
-    },
-    {
       "external_id": "3089ec3cfa169a34551d432c",
       "run_id": "31bdb744-9a46-40d9-bfb9-0feab14622c2",
       "platform": "linkedin",
@@ -8971,28 +9873,6 @@
       "category_tags": [
         "Fresher"
       ]
-    },
-    {
-      "external_id": "8789c23a3cc12ecd5c814810",
-      "run_id": "31bdb744-9a46-40d9-bfb9-0feab14622c2",
-      "platform": "linkedin",
-      "title": "Junior Supply Chain Analyst",
-      "company": "Helic & Co",
-      "location": "United States",
-      "url": "https://www.linkedin.com/jobs/view/junior-supply-chain-analyst-at-helic-co-4436734716?position=39&pageNum=0&refId=OV4gyrCdAbfza4CsNGemLA%3D%3D&trackingId=CDD2%2Byxu1Wx1YB2UX8mPMw%3D%3D",
-      "posted_at": "16 hours ago",
-      "employment_type": "",
-      "salary_text": "",
-      "experience_text": "",
-      "is_fresher": false,
-      "role_type": "ML",
-      "semantic_score": 0.2,
-      "scraped_at": "2026-07-04T06:47:42.712869+00:00",
-      "is_notified": false,
-      "tags": [
-        "United States"
-      ],
-      "category_tags": []
     },
     {
       "external_id": "77ac61c4f9d829475bbd4424",
@@ -10240,30 +11120,6 @@
       "is_notified": true,
       "tags": [
         "Navi Mumbai, Maharashtra, India"
-      ],
-      "category_tags": [
-        "Fresher"
-      ]
-    },
-    {
-      "external_id": "aa0449193a4056fa7d148db0",
-      "run_id": "28761134-6618-42ac-b641-c341fff4567f",
-      "platform": "linkedin",
-      "title": "Software Engineering Intern",
-      "company": "Copart",
-      "location": "Dallas, TX",
-      "url": "https://www.linkedin.com/jobs/view/software-engineering-intern-at-copart-4436191383?position=54&pageNum=0&refId=YQVtsYHbaoZkt6H5lX4Ctg%3D%3D&trackingId=v8nD8l8kiOdANLdD0gXafw%3D%3D",
-      "posted_at": "23 hours ago",
-      "employment_type": "",
-      "salary_text": "",
-      "experience_text": "",
-      "is_fresher": true,
-      "role_type": "ML",
-      "semantic_score": 0.4,
-      "scraped_at": "2026-07-03T07:02:31.819590+00:00",
-      "is_notified": true,
-      "tags": [
-        "Dallas, TX"
       ],
       "category_tags": [
         "Fresher"
@@ -12170,31 +13026,6 @@
         "Seattle, WA"
       ],
       "category_tags": []
-    },
-    {
-      "external_id": "c1e63b1c86de69297abbee18",
-      "run_id": "78529a5d-9ab0-41d9-bba2-edeafe47cc64",
-      "platform": "linkedin",
-      "title": "Research Scientist in Large Language Model (LLM) - Seed - Graduates - 2027 Start (BS/MS)",
-      "company": "ByteDance",
-      "location": "San Jose, CA",
-      "url": "https://www.linkedin.com/jobs/view/research-scientist-in-large-language-model-llm-seed-graduates-2027-start-bs-ms-at-bytedance-4435854312?position=33&pageNum=0&refId=WRss0C%2Bd5TBr1KKHBXdazw%3D%3D&trackingId=wZ05uiYJOx%2BLiy3MoJSWjA%3D%3D",
-      "posted_at": "12 hours ago",
-      "employment_type": "",
-      "salary_text": "",
-      "experience_text": "",
-      "is_fresher": false,
-      "role_type": "ML",
-      "semantic_score": 0.2,
-      "scraped_at": "2026-07-02T07:02:52.002315+00:00",
-      "is_notified": false,
-      "tags": [
-        "San Jose, CA",
-        "Be an early applicant"
-      ],
-      "category_tags": [
-        "Generative AI"
-      ]
     },
     {
       "external_id": "c622aba1d6f8d82655974ad4",
@@ -22718,29 +23549,6 @@
       "category_tags": []
     },
     {
-      "external_id": "29fe2962668fd480ad584eee",
-      "run_id": "b25ee802-b858-41d3-be80-0f10baa07698",
-      "platform": "linkedin",
-      "title": "Machine Learning Engineer, Entry",
-      "company": "Paramount",
-      "location": "New York, NY",
-      "url": "https://www.linkedin.com/jobs/view/machine-learning-engineer-entry-at-paramount-4412418474?position=1&pageNum=0&refId=K4iuP0xsnLy5tupTcj04Vw%3D%3D&trackingId=JBa6XTpKQ68qLgWgea30%2BA%3D%3D",
-      "posted_at": "22 hours ago",
-      "employment_type": "",
-      "salary_text": "",
-      "experience_text": "",
-      "is_fresher": false,
-      "role_type": "ML",
-      "semantic_score": 0.8,
-      "scraped_at": "2026-06-21T08:18:14.093457+00:00",
-      "is_notified": false,
-      "tags": [
-        "New York, NY",
-        "Actively Hiring"
-      ],
-      "category_tags": []
-    },
-    {
       "external_id": "b7fb9ebaad5650a34ba83a4d",
       "run_id": "e64e6187-eb25-429d-975c-572fffa00946",
       "platform": "linkedin",
@@ -25062,54 +25870,6 @@
         "Actively Hiring"
       ],
       "category_tags": []
-    },
-    {
-      "external_id": "c3fb1014027936520a80e0e1",
-      "run_id": "fb8fe8ac-71f9-4487-b3da-8e1a263893d4",
-      "platform": "linkedin",
-      "title": "Junior Data Analyst (Manufacturing)",
-      "company": "Elbit Systems of America",
-      "location": "Roanoke, VA",
-      "url": "https://www.linkedin.com/jobs/view/junior-data-analyst-manufacturing-at-elbit-systems-of-america-4430168406?position=23&pageNum=0&refId=jhDSIk%2BiL6IX5H%2FhyfI7AA%3D%3D&trackingId=HdGBvCrZ0SOHavBg7h0NyA%3D%3D",
-      "posted_at": "6 hours ago",
-      "employment_type": "",
-      "salary_text": "",
-      "experience_text": "",
-      "is_fresher": false,
-      "role_type": "ML",
-      "semantic_score": 0.4,
-      "scraped_at": "2026-06-18T08:37:12.243705+00:00",
-      "is_notified": false,
-      "tags": [
-        "Roanoke, VA",
-        "Actively Hiring"
-      ],
-      "category_tags": []
-    },
-    {
-      "external_id": "2fce3cabb9db9dcc8d27b2aa",
-      "run_id": "fb8fe8ac-71f9-4487-b3da-8e1a263893d4",
-      "platform": "linkedin",
-      "title": "Operations Data Analyst (Entry Level)",
-      "company": "Elbit Systems of America",
-      "location": "Roanoke, VA",
-      "url": "https://www.linkedin.com/jobs/view/operations-data-analyst-entry-level-at-elbit-systems-of-america-4430173351?position=21&pageNum=0&refId=jhDSIk%2BiL6IX5H%2FhyfI7AA%3D%3D&trackingId=1NdBXlwsLYEtQ%2FQtqGNYvA%3D%3D",
-      "posted_at": "6 hours ago",
-      "employment_type": "",
-      "salary_text": "",
-      "experience_text": "",
-      "is_fresher": true,
-      "role_type": "ML",
-      "semantic_score": 0.4,
-      "scraped_at": "2026-06-18T08:37:12.161637+00:00",
-      "is_notified": true,
-      "tags": [
-        "Roanoke, VA",
-        "Actively Hiring"
-      ],
-      "category_tags": [
-        "Fresher"
-      ]
     },
     {
       "external_id": "fe777e199ee79457e71aead3",
@@ -39706,31 +40466,6 @@
       "is_notified": true,
       "tags": [
         "Mountain View, CA",
-        "Actively Hiring"
-      ],
-      "category_tags": [
-        "Fresher"
-      ]
-    },
-    {
-      "external_id": "9c3855195521a0312834915f",
-      "run_id": "d87a1ee9-2dc9-45c5-8058-81ad2e94c1a9",
-      "platform": "linkedin",
-      "title": "Intern Software Engineering",
-      "company": "ACI Worldwide",
-      "location": "Omaha, NE",
-      "url": "https://www.linkedin.com/jobs/view/intern-software-engineering-at-aci-worldwide-4375753672?position=14&pageNum=0&refId=nOYro2JEFnd6gyVZF2g7ew%3D%3D&trackingId=GuUxNMcMYRURqr3kIE2hhQ%3D%3D",
-      "posted_at": "16 hours ago",
-      "employment_type": "",
-      "salary_text": "",
-      "experience_text": "",
-      "is_fresher": true,
-      "role_type": "ML",
-      "semantic_score": 0.4,
-      "scraped_at": "2026-05-23T06:37:16.090750+00:00",
-      "is_notified": true,
-      "tags": [
-        "Omaha, NE",
         "Actively Hiring"
       ],
       "category_tags": [
